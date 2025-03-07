@@ -1,0 +1,49 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "about-us",
+      "settings": {}
+    },
+    "team_members": {
+      "type": "team-members",
+      "blocks": {
+        "tem_member_profile_7pwGxa": {
+          "type": "team-member-profile",
+          "settings": {
+            "name": "Muhammad Haris",
+            "title": "Jr. Frontend Developer",
+            "bio": "Muhammad Haris is a Computer Science graduate and a frontend developer specializing in Shopify, WordPress (Elementor, Divi), and web development. With expertise in Liquid, JavaScript, and CSS, he builds high-performing e-commerce stores and custom websites. Passionate about UI/UX, automation, and scaling businesses, he aims to become a Shopify Liquid Developer and launch a successful software house."
+          }
+        },
+        "tem_member_profile_zAgDrt": {
+          "type": "team-member-profile",
+          "settings": {
+            "name": "Muhammad Haris",
+            "title": "Jr. Frontend Developer",
+            "bio": "Muhammad Haris is a Computer Science graduate and a frontend developer specializing in Shopify, WordPress (Elementor, Divi), and web development. With expertise in Liquid, JavaScript, and CSS, he builds high-performing e-commerce stores and custom websites. Passionate about UI/UX, automation, and scaling businesses, he aims to become a Shopify Liquid Developer and launch a successful software house."
+          }
+        },
+      },
+      "block_order": [
+        "tem_member_profile_7pwGxa",
+        "tem_member_profile_zAgDrt"
+      ],
+      "settings": {
+        "title": "Meet our Team"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "team_members"
+  ]
+}
