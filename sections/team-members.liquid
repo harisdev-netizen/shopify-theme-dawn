@@ -4,9 +4,9 @@
       <h2>{{ section.settings.title | escape }}</h2>
     </div>
   {% endif %}
-  <div class="team-grid">
+  <div class="grid grid-gap grid--2-col">
     {% for member in section.blocks %}
-      <div class="team-member">
+      <div class="grid__item">
         {% if member.settings.photo != blank %}
           {{ member.settings.photo | image_url: width: 200 | image_tag }}
         {% endif %}
@@ -17,20 +17,6 @@
     {% endfor %}
   </div>
 </div>
-
-<style>
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  @media (max-width: 768px) {
-    .team-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
 
 {% schema %}
   {
