@@ -19,6 +19,7 @@
         "tem_member_profile_7pwGxa": {
           "type": "team-member-profile",
           "settings": {
+            "photo": "shopify://shop_images/Main.jpg",
             "name": "Muhammad Haris",
             "title": "Jr. Frontend Developer",
             "bio": "Muhammad Haris is a Computer Science graduate and a frontend developer specializing in Shopify, WordPress (Elementor, Divi), and web development. With expertise in Liquid, JavaScript, and CSS, he builds high-performing e-commerce stores and custom websites. Passionate about UI/UX, automation, and scaling businesses, he aims to become a Shopify Liquid Developer and launch a successful software house."
@@ -31,7 +32,7 @@
             "title": "Jr. Frontend Developer",
             "bio": "Muhammad Haris is a Computer Science graduate and a frontend developer specializing in Shopify, WordPress (Elementor, Divi), and web development. With expertise in Liquid, JavaScript, and CSS, he builds high-performing e-commerce stores and custom websites. Passionate about UI/UX, automation, and scaling businesses, he aims to become a Shopify Liquid Developer and launch a successful software house."
           }
-        },
+        }
       },
       "block_order": [
         "tem_member_profile_7pwGxa",
