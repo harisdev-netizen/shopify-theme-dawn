@@ -7,7 +7,9 @@
   <div class="team-grid">
     {% for member in section.blocks %}
       <div class="team-member">
-        {{ member.settings.photo | image_url | image_tag}}
+        {% if member.settings.photo != blank %}
+          {{ member.settings.photo | image_url: width: 500 | image_tag }}
+        {% endif %}
         <h3>{{ member.settings.name }}</h3>
         <span>{{ member.settings.title }}</span>
         <p>{{ member.settings.bio }}</p>
