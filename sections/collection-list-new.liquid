@@ -1,7 +1,7 @@
 <div class="collection-list-container-{{ section.id }}">
   {% for block in section.blocks %}
     <a class="collection-link-{{ section.id }}" href="{{ block.settings.collection_link }}">
-      <img class="collection-image-{{ section.id }}" src="{{ block.settings.collection_image | image_url: 500 }}"/>
+      <img class="collection-image-{{ section.id }}" src="{{ block.settings.collection_image | image_url: '' }}"/>
     </a>
   {% endfor %}
 </div>
