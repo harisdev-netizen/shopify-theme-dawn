@@ -15,9 +15,10 @@
   }
 </style>
 
-
-<div class="collection-list-container-{{ section.id }}">
+<div style="text-align:center;">
   <h4>{{ section.settings.collection_list_heading }}</h4>
+</div>
+<div class="collection-list-container-{{ section.id }}">
   {% for block in section.blocks %}
     <a class="collection-link-{{ section.id }}" href="{{ block.settings.collection_link }}">
       <img class="collection-image-{{ section.id }}" src="{{ block.settings.collection_image | image_url }}" />
@@ -35,7 +36,7 @@
         "type": "text",
         "id": "collection_list_heading",
         "label": "Collection Heading",
-        "default": "<h4>Explore our Best products</h4>"
+        "default": "Explore our Best products"
       }
     ],
     "blocks": [
