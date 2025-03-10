@@ -13,6 +13,18 @@
     height: auto;
     object-fit: cover;
   }
+
+  @media screen and (max-width: 1024px) {
+    .collection-list-container-{{ section.id }} {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .collection-list-container-{{ section.id }} {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 
 <div style="text-align:center;">
