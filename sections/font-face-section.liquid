@@ -1,17 +1,24 @@
 {%- liquid 
   assign heading_font = section.settings.heading_font
-
+  assign body_font = section.settings.body_font
 -%}
 
 <style>
   {{ heading_font | font_face }}
+  {{ body_font | font_face }}
+
   #shopify-section-{{ section.id }} .font-picker-section h1 {
-    font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }}
+    font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+  }
+
+  #shopify-section-{{ section.id }} .font-picker-section p {
+    font-family: {{ body_font.family }}, {{ body_font.fallback_families }};
   }
 </style>
 
 <div class="page-width font-picker-section">
   <h1>Font Picker</h1>
+  <p>This is the paragraph of Font Face Section</p>
 </div>
 
 {% schema %}
@@ -22,6 +29,12 @@
         "type": "font_picker",
         "id": "heading_font",
         "label": "Heading font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Body font",
         "default": "helvetica_n4"
       }
     ],
