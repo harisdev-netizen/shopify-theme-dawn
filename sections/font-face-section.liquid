@@ -2,6 +2,8 @@
   assign heading_font = section.settings.heading_font
   assign body_font = section.settings.body_font
   assign heading_text = section.settings.heading_text
+  assign body_text = section.settings.body_text
+
 -%}
 
 <style>
@@ -19,7 +21,7 @@
 
 <div class="page-width font-picker-section">
   <h1>{{ heading_text }}</h1>
-  <p>This is the paragraph of Font Face Section</p>
+  <p>{{ body_text }}</p>
 </div>
 
 {% schema %}
@@ -27,22 +29,28 @@
     "name": "Font Picker",
     "settings": [
       {
+        "type": "text",
+        "id": "heading_text",
+        "label": "Heading Text",
+        "default": "Font Picker"
+      },
+      {
         "type": "font_picker",
         "id": "heading_font",
         "label": "Heading font",
         "default": "helvetica_n4"
       },
       {
+        "type": "text",
+        "id": "body_text",
+        "label": "Body Text",
+        "default": "This is the paragraph of Font Face Section"
+      },
+      {
         "type": "font_picker",
         "id": "body_font",
         "label": "Body font",
         "default": "helvetica_n4"
-      },
-      {
-        "type": "text",
-        "id": "heading_text",
-        "label": "Heading Label",
-        "default": "Font Picker"
       }
     ],
     "blocks": [],
