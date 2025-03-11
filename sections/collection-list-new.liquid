@@ -1,5 +1,5 @@
 <style>
-  .collection-list-container-{{ section.id }} {
+  #shopify-section-{{ section.id }} .collection-list-container {
     width: 90vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -8,20 +8,20 @@
     box-sizing: border-box;
   }
 
-  .collection-image-{{ section.id }} {
+  #shopify-section-{{ section.id }} .collection-image {
     width: 100%;
     height: auto;
     object-fit: cover;
   }
 
-  @media screen and (max-width: 767px) {  
-    .collection-list-container-{{ section.id }} {
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .collection-list-container {
       grid-template-columns: 1fr 1fr;
     }
   }
 
   @media screen and (max-width: 520px) {
-    .collection-list-container-{{ section.id }} {
+    #shopify-section-{{ section.id }} .collection-list-container {
       grid-template-columns: 1fr;
     }
   }
@@ -30,10 +30,11 @@
 <div style="text-align:center;">
   <h4>{{ section.settings.collection_list_heading }}</h4>
 </div>
-<div class="collection-list-container-{{ section.id }}">
+
+<div class="collection-list-container">
   {% for block in section.blocks %}
-    <a class="collection-link-{{ section.id }}" href="{{ block.settings.collection_link }}">
-      <img class="collection-image-{{ section.id }}" src="{{ block.settings.collection_image | image_url }}" />
+    <a class="collection-link" href="{{ block.settings.collection_link }}">
+      <img class="collection-image" src="{{ block.settings.collection_image | image_url: width: 1024 }}" />
     </a>
   {% endfor %}
 </div>
