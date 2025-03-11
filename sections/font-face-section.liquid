@@ -1,5 +1,16 @@
+{%- liquid 
+  assign heading_font = section.settings.heading_font
 
-<div class="page-width">
+-%}
+
+<style>
+  {{ heading_font | font_face }}
+  #shopify-section-{{ section.id }} .font-picker-section h1 {
+    font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }}
+  }
+</style>
+
+<div class="page-width font-picker-section">
   <h1>Font Picker</h1>
 </div>
 
