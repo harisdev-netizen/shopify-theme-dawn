@@ -114,12 +114,21 @@
         "collection_list_LwpM9B",
         "collection_list_ifLQUa"
       ],
-      "settings": {}
+      "settings": {
+        "collection_list_heading": "Explore our Best products"
+      }
+    },
+    "font_face_section_hWx8fP": {
+      "type": "font-face-section",
+      "settings": {
+        "heading_font": "catamaran_n4"
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "collection_list_new_MTgRFY"
+    "collection_list_new_MTgRFY",
+    "font_face_section_hWx8fP"
   ]
 }
