@@ -1,7 +1,16 @@
-<div class="page-width">
+{%- liquid
+  assign discount = 25
+  assign discounted_price = 100 | minus:discount
+  assign discount_multiplier = discounted_price | divided_by: 100.0
+-%}
+
+Special Price for You: {{ product.price | times:discount_multiplier | money }}
+
+
+{% comment %} <div class="page-width">
   {{ 10 | plus: 5 }}
   <br>
   {{ 15 | minus: 10 }}
   <br>
   {{ 5 | times: 10 }}
-</div>
+</div> {% endcomment %}
