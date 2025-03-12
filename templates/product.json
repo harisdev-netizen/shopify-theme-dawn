@@ -27,6 +27,12 @@
           "type": "price",
           "settings": {}
         },
+        "custom_liquid_MwzLXQ": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{{ product.price }}"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -60,6 +66,7 @@
         "vendor",
         "title",
         "price",
+        "custom_liquid_MwzLXQ",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
