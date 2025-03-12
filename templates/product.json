@@ -30,7 +30,7 @@
         "custom_liquid_MwzLXQ": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{{ product.price }}"
+            "custom_liquid": "You save: {{ product.compare_at_price | minus: product.price | money_without_trailing_zeros }}"
           }
         },
         "variant_picker": {
