@@ -4,8 +4,9 @@
   assign discount_multiplier = discounted_price | divided_by: 100.0
 -%}
 
-Special Price for You: {{ product.price | times:discount_multiplier | money }}
-
+<div class="page-width">
+  Special Price for You: {{ product.price | times:discount_multiplier | money }}
+</div>
 
 {% comment %} <div class="page-width">
   {{ 10 | plus: 5 }}
