@@ -1,11 +1,63 @@
+<style>
+  #shopify-section-{{ section.id }} .collection-tabs ul {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
 
+  #shopify-section-{{ section.id }} .collection-tabs ul, #shopify-section-{{ section.id }} .collection-tabs li {
+    padding: 0;
+  }
 
-<div class="page-width">
+  #shopify-section-{{ section.id }} .collection-tabs ul li {
+    list-style: none;
+    border: 1px solid #808080;
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+  }
+
+  #shopify-section-{{ section.id }} .collection-tabs ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 2rem;
+    color: #212121;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .collection-tabs ul li a:hover {
+    text-decoration: underline;
+  }
+
+  #shopify-section-{{ section.id }} .collection-tabs img-{
+    width: 24px;
+    height: auto;
+  }
+
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .collection-tabs ul {
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+
+    #shopify-section-{{ section.id }} .collection-tabs ul li a {
+      font-size: 1rem;
+      width: max-content;
+    }
+  }
+
+</style>
+
+<div class="page-width collection-tabs">
   <ul>
     {% for collection in collections %}
-      <li>
-        {{ collection.title }}
-      </li>
+        <li>
+          <a href="{{ collection.url }}">
+            {{ collection.image.src | image_url: 'master' | img_tag }}
+            {{ collection.title }}
+          </a>
+        </li>
     {% endfor %}
   </ul>
 </div>
