@@ -56,44 +56,27 @@
 </style>
 
 <div class="page-width collection-tabs">
-  {% if collections.size > 0 %}
-    <ul>
-      {% for collection in collections %}
-        {% if collection.products.size > 0 %}
-          <li class="collection-tabs__item">
-            <a href="{{ collection.url }}">
-              {% if collection.image %}
-                {{ collection.image | image_url: width: 300 | image_tag: loading: 'lazy', class: 'collection-tabs__image', alt: collection.title }}
-              {% endif %}
-              <span class="collection-tabs__title">{{ collection.title }}</span>
-            </a>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>No collections available</p>
-  {% endif %}
+  <ul>
+    {% for collection in collections %}
+        <li>
+          <a href="{{ collection.url }}">
+            {{ collection.image.src | image_url: 'master' | image_tag }}
+            {{ collection.title }}
+          </a>
+        </li>
+    {% endfor %}
+  </ul>
 </div>
 
+
 {% schema %}
-{
-  "name": "Collection Tabs",
-  "settings": [
-    {
-      "type": "range",
-      "id": "tabs_per_row",
-      "min": 2,
-      "max": 6,
-      "step": 1,
-      "label": "Tabs per row",
-      "default": 4
-    }
-  ],
-  "presets": [
-    {
-      "name": "Collection Tabs"
-    }
-  ]
-}
+  {
+    "name": "Tabs",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Tabs Section"
+      }
+    ]
+  }
 {% endschema %}
