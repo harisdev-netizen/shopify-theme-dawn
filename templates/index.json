@@ -9,6 +9,10 @@
  */
 {
   "sections": {
+    "collection_tabs_YdYtpW": {
+      "type": "collection-tabs",
+      "settings": {}
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -126,17 +130,13 @@
         "body_text": "This is the paragraph of Font Face Section",
         "body_font": "helvetica_n4"
       }
-    },
-    "collection_tabs_YdYtpW": {
-      "type": "collection-tabs",
-      "settings": {}
     }
   },
   "order": [
     "image_banner",
+    "collection_tabs_YdYtpW",
     "featured_collection",
     "collection_list_new_MTgRFY",
-    "font_face_section_hWx8fP",
-    "collection_tabs_YdYtpW"
+    "font_face_section_hWx8fP"
   ]
 }
