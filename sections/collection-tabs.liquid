@@ -56,26 +56,39 @@
 </style>
 
 <div class="page-width collection-tabs">
-  <ul>
-    {% for collection in collections %}
-        <li>
-          <a href="{{ collection.url }}">
-            {{ collection.image.src | image_url: 'master' | img_tag }}
-            {{ collection.title }}
-          </a>
-        </li>
-    {% endfor %}
-  </ul>
+  {% if collections.size > 0 %}
+    <ul>
+      {% for collection in collections %}
+        {% if collection.image != blank %}
+          <li>
+            <a href="{{ collection.url }}" title="{{ collection.title }}">
+              {{ collection.image | image_url: width: 68 | image_tag: 
+                loading: 'lazy',
+                width: 34,
+                height: 34,
+                alt: collection.title 
+              }}
+              {{ collection.title }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% else %}
+    <div class="no-collections">
+      No collections found
+    </div>
+  {% endif %}
 </div>
 
 
 {% schema %}
   {
-    "name": "Tabs",
+    "name": "Collection Tabs",
     "settings": [],
     "presets": [
       {
-        "name": "Tabs Section"
+        "name": "Collection Tabs"
       }
     ]
   }
