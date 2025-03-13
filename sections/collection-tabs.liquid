@@ -1,3 +1,16 @@
+
+
+<div class="page-width">
+  <ul>
+    {% for collection in collections %}
+      <li>
+        {{ collection.title }}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+
 {% schema %}
   {
     "name": "Tabs",
