@@ -121,14 +121,22 @@
     "font_face_section_hWx8fP": {
       "type": "font-face-section",
       "settings": {
-        "heading_font": "catamaran_n4"
+        "heading_text": "Font Picker",
+        "heading_font": "catamaran_n4",
+        "body_text": "This is the paragraph of Font Face Section",
+        "body_font": "helvetica_n4"
       }
+    },
+    "collection_tabs_YdYtpW": {
+      "type": "collection-tabs",
+      "settings": {}
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
     "collection_list_new_MTgRFY",
-    "font_face_section_hWx8fP"
+    "font_face_section_hWx8fP",
+    "collection_tabs_YdYtpW"
   ]
 }
