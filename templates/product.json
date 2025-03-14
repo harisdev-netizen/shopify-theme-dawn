@@ -22,11 +22,11 @@
         "overlapping_images_CTE7rT": {
           "type": "overlapping-images",
           "settings": {
-            "overlapping_image_1": "shopify://shop_images/Main_9129b69a-0c7b-4f66-b6cf-c4222f18028a.jpg",
-            "overlapping_image_2": "shopify://shop_images/Main_9129b69a-0c7b-4f66-b6cf-c4222f18028a.jpg",
-            "overlapping_image_3": "shopify://shop_images/Main_b9e0da7f-db89-4d41-83f0-7f417b02831d.jpg",
-            "overlapping_image_4": "shopify://shop_images/Main_b9e0da7f-db89-4d41-83f0-7f417b02831d.jpg",
-            "overlapping_image_5": "shopify://shop_images/Main_0a4e9096-021a-4c1e-8750-24b233166a12.jpg",
+            "overlapping_image_1": "shopify://shop_images/model-with-leather-jacket-over-shoulders.jpg",
+            "overlapping_image_2": "shopify://shop_images/woman-poses-in-dark-room.jpg",
+            "overlapping_image_3": "shopify://shop_images/man-in-suit-on-stairs.jpg",
+            "overlapping_image_4": "shopify://shop_images/man-puts-his-hand-inside-his-jacket.jpg",
+            "overlapping_image_5": "shopify://shop_images/model-in-neutral-colors-by-window.jpg",
             "overlapping_text": "Trusted by 50k+ Customers",
             "overlapping_stars": "⭐⭐⭐⭐⭐ (4.9/5)",
             "overlapping_image_align": "left",
