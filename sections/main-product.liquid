@@ -191,6 +191,22 @@
                     {%- endif -%}
                   {%- endif -%}
                 </p>
+
+               {%- when 'overlapping-images' -%}
+                {% render 'overlapping-images',
+                  overlapping_image_1: block.settings.overlapping_image_1,
+                  overlapping_image_2: block.settings.overlapping_image_2,
+                  overlapping_image_3: block.settings.overlapping_image_3,
+                  overlapping_image_4: block.settings.overlapping_image_4,
+                  overlapping_image_5: block.settings.overlapping_image_5,
+                  overlapping_text: block.settings.overlapping_text,
+                  overlapping_stars: block.settings.overlapping_stars,
+                  overlapping_image_align: block.settings.overlapping_image_align,
+                  overlapping_image_wpc: block.settings.overlapping_image_wpc,
+                  overlapping_image_wmb: block.settings.overlapping_image_wmb
+                %}
+
+
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
@@ -841,6 +857,85 @@
           "id": "show_inventory_quantity",
           "label": "t:sections.main-product.blocks.inventory.settings.show_inventory_quantity.label",
           "default": true
+        }
+      ]
+    },
+    {
+      "type": "overlapping-images",
+      "name": "Overlapping Reviews",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "overlapping_image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "overlapping_image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "overlapping_image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "overlapping_image_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "overlapping_image_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "text",
+          "id": "overlapping_text",
+          "label": "Text",
+          "default": "Trusted by 50k+ Customers"
+        },
+        {
+          "type": "text",
+          "id": "overlapping_stars",
+          "label": "Rating",
+          "default": "⭐⭐⭐⭐⭐ (4.9/5)"
+        },
+        {
+          "type": "select",
+          "id": "overlapping_image_align",
+          "label": "Image Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "range",
+          "id": "overlapping_image_wpc",
+          "label": "Image size (Desktop)",
+          "min": 2,
+          "max": 200,
+          "step": 2,
+          "default": 64,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "overlapping_image_wmb",
+          "label": "Image size (Mobile)",
+          "min": 2,
+          "max": 200,
+          "step": 2,
+          "default": 48,
+          "unit": "px"
         }
       ]
     },
