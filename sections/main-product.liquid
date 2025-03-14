@@ -192,19 +192,19 @@
                   {%- endif -%}
                 </p>
 
-               {%- when 'overlapping-images' -%}
-                {% render 'overlapping-images',
-                  overlapping_image_1: block.settings.overlapping_image_1,
-                  overlapping_image_2: block.settings.overlapping_image_2,
-                  overlapping_image_3: block.settings.overlapping_image_3,
-                  overlapping_image_4: block.settings.overlapping_image_4,
-                  overlapping_image_5: block.settings.overlapping_image_5,
-                  overlapping_text: block.settings.overlapping_text,
-                  overlapping_stars: block.settings.overlapping_stars,
-                  overlapping_image_align: block.settings.overlapping_image_align,
-                  overlapping_image_wpc: block.settings.overlapping_image_wpc,
-                  overlapping_image_wmb: block.settings.overlapping_image_wmb
-                %}
+                {%- when 'overlapping-images' -%}
+                  {% render 'overlapping-images',
+                    overlapping_image_1: block.settings.overlapping_image_1,
+                    overlapping_image_2: block.settings.overlapping_image_2,
+                    overlapping_image_3: block.settings.overlapping_image_3,
+                    overlapping_image_4: block.settings.overlapping_image_4,
+                    overlapping_image_5: block.settings.overlapping_image_5,
+                    overlapping_text: block.settings.overlapping_text,
+                    overlapping_stars: block.settings.overlapping_stars,
+                    overlapping_image_align: block.settings.overlapping_image_align,
+                    overlapping_image_wpc: block.settings.overlapping_image_wpc,
+                    overlapping_image_wmb: block.settings.overlapping_image_wmb
+                  %}
 
 
               {%- when 'description' -%}
@@ -860,7 +860,7 @@
         }
       ]
     },
-    {
+     {
       "type": "overlapping-images",
       "name": "Overlapping Reviews",
       "settings": [
@@ -869,7 +869,7 @@
           "id": "overlapping_image_1",
           "label": "Image 1"
         },
-        {
+      {
           "type": "image_picker",
           "id": "overlapping_image_2",
           "label": "Image 2"
@@ -879,12 +879,12 @@
           "id": "overlapping_image_3",
           "label": "Image 3"
         },
-        {
+       {
           "type": "image_picker",
           "id": "overlapping_image_4",
           "label": "Image 4"
         },
-        {
+      {
           "type": "image_picker",
           "id": "overlapping_image_5",
           "label": "Image 5"
@@ -895,14 +895,14 @@
           "label": "Text",
           "default": "Trusted by 50k+ Customers"
         },
-        {
+       {
           "type": "text",
           "id": "overlapping_stars",
           "label": "Rating",
           "default": "⭐⭐⭐⭐⭐ (4.9/5)"
         },
         {
-          "type": "select",
+         "type": "select",
           "id": "overlapping_image_align",
           "label": "Image Alignment",
           "options": [
@@ -920,7 +920,7 @@
         {
           "type": "range",
           "id": "overlapping_image_wpc",
-          "label": "Image size (Desktop)",
+          "label": "Image size desktop",
           "min": 2,
           "max": 200,
           "step": 2,
@@ -930,7 +930,7 @@
         {
           "type": "range",
           "id": "overlapping_image_wmb",
-          "label": "Image size (Mobile)",
+          "label": "Image size mobile",
           "min": 2,
           "max": 200,
           "step": 2,

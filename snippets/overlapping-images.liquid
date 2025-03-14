@@ -1,66 +1,73 @@
 <style>
-  .overlapping-images-container {
+   .overlapping-images-container {
     width: 100%;
-  }
+   }
 
-  .overlapping-images {
+   .overlapping-images {
     width: 100%;
     display: flex;
     align-items: center;
-  }
+   }
 
-  .overlapping-images img {
+   .overlapping-images img {
     width: {{ overlapping_image_wpc }}px;
     height: {{ overlapping_image_wpc }}px;
     border-radius: 50%;
     object-fit: cover;
-  }
+   }
 
-  .overlapping-images img:not(:first-child) {
+   .overlapping-images img:not(:first-child) {
     margin-left: -20px;
-  }
+   }
 
-  .overlapping-images p {
+   .overlapping-images p {
     margin-left: 10px;
     font-size: 15px;
-  }
+   }
 
-  @media screen and (max-width: 450px) {
+   @media screen and (max-width: 450px){
     .overlapping-images {
-      flex-wrap: wrap;
-      justify-content: {{ overlapping_image_align }};
+        flex-wrap: wrap;
+        justify-content: {{ overlapping_image_align }};
     }
 
     .overlapping-images img {
-      width: {{ overlapping_image_wmb }}px;
-      height: {{ overlapping_image_wmb }}px;
+        width: {{ overlapping_image_wmb }}px;
+        height: {{ overlapping_image_wmb }}px;
     }
-
     .overlapping-images p {
-      font-size: 12px;
+        font-size: 12px;
     }
-
-    .overlapping-images img:not(:first-child) {
-      margin-left: -10px;
-    }
-  }
+  .overlapping-images img:not(:first-child) {
+    margin-left: -10px;
+   }
+   }
 </style>
 
-<div class="overlapping-images-container">
-  <div class="overlapping-images">
-    {% assign image_width = block.settings.overlapping_image_wpc %}
-    {% for i in (1..5) %}
-      {% assign image_variable = 'overlapping_image_' | append: i %}
-      {% if block.settings[image_variable] %}
-        <img src="{{ block.settings[image_variable] | image_url }}" alt="" 
-          width="{{ image_width }}" 
-          height="{{ image_width }}" 
+ <div class="overlapping-images-container">
+      <div class="overlapping-images">
+        <img
+          src="{{ overlapping_image_1 | img_url: 'master' }}"
+          alt=""
         />
-      {% endif %}
-    {% endfor %}
-    <p> {{ block.settings.overlapping_text }}
-      <span style="display: block; text-align: center;">{{ block.settings.overlapping_stars }}</span>
-    </p>
-  </div>
-</div>
-
+        <img
+          src="{{ overlapping_image_2 | img_url: 'master' }}"
+          alt=""
+        />
+        <img
+          src="{{ overlapping_image_3 | img_url: 'master' }}"
+          alt=""
+        />
+        <img
+          src="{{ overlapping_image_4 | img_url: 'master' }}"
+          alt=""
+        />
+        <img
+          src="{{ overlapping_image_5 | img_url: 'master' }}"
+          alt=""
+        />
+        <p> {{ overlapping_text }}
+            <span style="display: block; text-align: center;">{{ overlapping_stars }}</span>
+        </p>
+      </div>
+    </div>
