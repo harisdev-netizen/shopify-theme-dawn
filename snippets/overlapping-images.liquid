@@ -48,17 +48,19 @@
 
 <div class="overlapping-images-container">
   <div class="overlapping-images">
+    {% assign image_width = block.settings.overlapping_image_wpc %}
     {% for i in (1..5) %}
       {% assign image_variable = 'overlapping_image_' | append: i %}
       {% if block.settings[image_variable] %}
         <img src="{{ block.settings[image_variable] | image_url }}" alt="" 
-          width="{{ overlapping_image_wpc }}" 
-          height="{{ overlapping_image_wpc }}" 
+          width="{{ image_width }}" 
+          height="{{ image_width }}" 
         />
       {% endif %}
     {% endfor %}
-    <p> {{ overlapping_text }}
-      <span style="display: block; text-align: center;">{{ overlapping_stars }}</span>
+    <p> {{ block.settings.overlapping_text }}
+      <span style="display: block; text-align: center;">{{ block.settings.overlapping_stars }}</span>
     </p>
   </div>
 </div>
+
