@@ -26,30 +26,27 @@
    }
 
    @media screen and (max-width: 450px){
-    .overlapping-images {
-        flex-wrap: wrap;
-        justify-content: {{ overlapping_image_align }};
-    }
+      .overlapping-images {
+          flex-wrap: wrap;
+          justify-content: {{ overlapping_image_align }};
+      }
 
-    .overlapping-images img {
-        width: {{ overlapping_image_wmb }}px;
-        height: {{ overlapping_image_wmb }}px;
+      .overlapping-images img {
+          width: {{ overlapping_image_wmb }}px;
+          height: {{ overlapping_image_wmb }}px;
+      }
+      .overlapping-images p {
+          font-size: 12px;
+      }
+      .overlapping-images img:not(:first-child) {
+        margin-left: -10px;
+      }
     }
-    .overlapping-images p {
-        font-size: 12px;
-    }
-  .overlapping-images img:not(:first-child) {
-    margin-left: -10px;
-   }
-   }
 </style>
 
  <div class="overlapping-images-container">
-      <div class="overlapping-images">
-        <img
-          src="{{ overlapping_image_1 | img_url: 'master' }}"
-          alt=""
-        />
+    <div class="overlapping-images">
+      <img src="{{ overlapping_image_1 | img_url: 'master' }}" alt="" />
         <img
           src="{{ overlapping_image_2 | img_url: 'master' }}"
           alt=""
