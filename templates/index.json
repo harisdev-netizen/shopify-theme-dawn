@@ -130,57 +130,6 @@
         "body_text": "This is the paragraph of Font Face Section",
         "body_font": "helvetica_n4"
       }
-    },
-    "collapsible_content_a4f3xP": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_CTBAxG": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Cash on Delivery",
-            "icon": "none",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_VKTGFE": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Delivery Time",
-            "icon": "none",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_XdytUn": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Easy Return",
-            "icon": "none",
-            "row_content": "<p>We offer hassle free 5 days easy return policy.</p>",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_CTBAxG",
-        "collapsible_row_VKTGFE",
-        "collapsible_row_XdytUn"
-      ],
-      "settings": {
-        "caption": "",
-        "heading": "Collapsible content",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "none",
-        "container_color_scheme": "",
-        "color_scheme": "",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -188,7 +137,6 @@
     "collection_tabs_YdYtpW",
     "featured_collection",
     "collection_list_new_MTgRFY",
-    "font_face_section_hWx8fP",
-    "collapsible_content_a4f3xP"
+    "font_face_section_hWx8fP"
   ]
 }
