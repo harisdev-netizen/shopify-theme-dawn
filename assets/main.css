@@ -71,7 +71,7 @@ h3.accordion__title img {
 .testimonial-bottom-bar {
   width: 100%;
   height: 25%;
-  background-color: #e53935d4;
+  background-color: #e53535d4;
   clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
   border-radius: 0px 0px 10px 10px;
 }
@@ -108,19 +108,19 @@ h3.accordion__title img {
 }
 
 @media only screen and (max-width: 380px) {
-  .card-testimonial-section-gm {
+  .card-testimonial-section {
     width: 300px;
   }
 }
 
 @media only screen and (max-width: 360px) {
-  .card-testimonial-section-gm {
+  .card-testimonial-section {
     width: 280px;
   }
 }
 
 @media only screen and (max-width: 340px) {
-  .card-testimonial-section-gm {
+  .card-testimonial-section {
     width: 250px;
   }
 }
