@@ -15,6 +15,7 @@ h3.accordion__title img {
 }
 
 .main-container-testimonial-section {
+  box-sizing: border-box;
   width: 100%;
   display: flex;
   gap: 20px;
@@ -75,7 +76,7 @@ h3.accordion__title img {
   border-radius: 0px 0px 10px 10px;
 }
 
-.stars-container-gm {
+.stars-container {
   display: block;
   width: 90%;
   margin: auto;

@@ -8,12 +8,12 @@
   <div class="card-testimonial-section-gm">
     <div class="testimonial-top-bar">&nbsp;</div>
     <div class="testimonial-content-bar">
-        <img src="{{ customer_image | img_url: 'master' }}" alt="">
+        <img src="{{ customer_image | image_url: 'master' }}" width="{{ customer_image.width }}" height="{{ customer_image.height }}" alt="">
         <h2>{{ customer_name }}</h2>
         <p>{{ customer_review }}</p> 
     </div>
     <div class="testimonial-bottom-bar">
-      <div class="stars-container-gm">
+      <div class="stars-container">
         <i class="fa-solid fa-star star-fa-icons-testimonials"></i>
         <i class="fa-solid fa-star star-fa-icons-testimonials"></i>
         <i class="fa-solid fa-star star-fa-icons-testimonials"></i>
@@ -26,14 +26,37 @@
 </div>
 
 {% schema %}
-  {
-    "name": "Testimonial",
-    "settings": [],
-    "blocks": [],
-    "presets": [
-      {
-        "name": "Testimonial Section"
-      }
-    ]
-  }
+{
+   "name": "Testimonial YT Live",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "customer_image",
+          "label": "Customer Photo"
+        },
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Customer Name",
+          "default": "Genius Maker"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "customer_review",
+          "label": "Review Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial YT Live"
+    }
+  ]
+}
 {% endschema %}
