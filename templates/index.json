@@ -130,6 +130,32 @@
         "body_text": "This is the paragraph of Font Face Section",
         "body_font": "helvetica_n4"
       }
+    },
+    "testimonials_XaGtXe": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_JzUpWU": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/man-in-suit-on-stairs.jpg",
+            "customer_name": "Afaq Mehmood",
+            "customer_review": "This is an amazing product!"
+          }
+        },
+        "testimonial_q6EWzX": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/man-in-suit-on-stairs.jpg",
+            "customer_name": "Afaq Mehmood",
+            "customer_review": "This is an amazing product!"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_JzUpWU",
+        "testimonial_q6EWzX"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -137,6 +163,7 @@
     "collection_tabs_YdYtpW",
     "featured_collection",
     "collection_list_new_MTgRFY",
-    "font_face_section_hWx8fP"
+    "font_face_section_hWx8fP",
+    "testimonials_XaGtXe"
   ]
 }
