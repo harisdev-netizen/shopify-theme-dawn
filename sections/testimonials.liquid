@@ -1,28 +1,34 @@
 <div class="main-container-testimonial-section">
-  {% for block in section.blocks %}
-    {%- liquid
-      assign customer_image = block.settings.customer_image
-       assign customer_name = block.settings.customer_name
-       assign customer_review = block.settings.customer_review
-    -%}
-  <div class="card-testimonial-section-gm">
-    <div class="testimonial-top-bar">&nbsp;</div>
-    <div class="testimonial-content-bar">
-        <img src="{{ customer_image | image_url: 'master' }}" width="{{ customer_image.width }}" height="{{ customer_image.height }}" alt="">
-        <h2>{{ customer_name }}</h2>
-        <p>{{ customer_review }}</p> 
-    </div>
-    <div class="testimonial-bottom-bar">
-      <div class="stars-container">
-        <i class="fa-solid fa-star star-fa-icons-testimonials"></i>
-        <i class="fa-solid fa-star star-fa-icons-testimonials"></i>
-        <i class="fa-solid fa-star star-fa-icons-testimonials"></i>
-        <i class="fa-solid fa-star star-fa-icons-testimonials"></i>
-        <i class="fa-solid fa-star star-fa-icons-testimonials"></i>
+  {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+      {%- liquid
+        assign customer_image = block.settings.customer_image
+        assign customer_name = block.settings.customer_name
+        assign customer_review = block.settings.customer_review
+      -%}
+      <div class="card-testimonial-section-gm">
+        <div class="testimonial-top-bar">&nbsp;</div>
+        <div class="testimonial-content-bar">
+          {% if customer_image != blank %}
+            <img src="{{ customer_image | image_url: width: 100, height: 100 }}" width="100" height="100" alt="{{ customer_name }}">
+          {% endif %}
+          <h2>{{ customer_name }}</h2>
+          <p>{{ customer_review }}</p>
+        </div>
+        <div class="testimonial-bottom-bar">
+          <div class="stars-container">
+            <i class="fa-solid fa-star star-fa-icons-testimonials"></i>
+            <i class="fa-solid fa-star star-fa-icons-testimonials"></i>
+            <i class="fa-solid fa-star star-fa-icons-testimonials"></i>
+            <i class="fa-solid fa-star star-fa-icons-testimonials"></i>
+            <i class="fa-solid fa-star star-fa-icons-testimonials"></i>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-{% endfor %}
+    {% endfor %}
+  {% else %}
+    <p>No testimonials added yet.</p>
+  {% endif %}
 </div>
 
 {% schema %}
@@ -54,9 +60,18 @@
     }
   ],
   "presets": [
-    {
-      "name": "Testimonials"
-    }
-  ]
+  {
+    "name": "Testimonials",
+    "blocks": [
+      {
+        "type": "testimonial",
+        "settings": {
+          "customer_name": "Afaq Mehmood",
+          "customer_review": "This is an amazing product!"
+        }
+      }
+    ]
+  }
+]
 }
 {% endschema %}
