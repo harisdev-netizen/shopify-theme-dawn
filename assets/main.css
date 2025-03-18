@@ -25,7 +25,7 @@ h3.accordion__title img {
   -webkit-overflow-scrolling: touch;
 }
 
-.card-testimonial-section-gm {
+.card-testimonial-section {
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: auto;
