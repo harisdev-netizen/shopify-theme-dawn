@@ -2350,8 +2350,31 @@
 
 <script>
   $(document).ready(function(){
-    $('.class').each(funtion() {
-      
+    $('h3.accordion__title').each(function() {  
+      var collapsibleRowText = $(this).text().trim();
+
+      if (collapsibleRowText === "Cash on Delivery") {
+        var icon = '<img src="https://cdn.shopify.com/s/files/1/0625/4388/8495/files/cash-on-delivery.png?v=1742238133" />';
+        $(this).prepend(icon);
+      }
     });
   });
 </script>
+
+<style>
+  h3.accordion__title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  h3.accordion__title img {
+    width: 20px;
+    object-fit: cover;
+    border: 1px solid #333;
+    border-radius: 10%;
+    box-sizing: border-box;
+    padding: 2px;
+  }
+</style>
