@@ -29,9 +29,10 @@ h3.accordion__title img {
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: auto;
-  width: 320px;
-  height: 450px;
-  background-color: bisque;
+  max-width: 320px;
+  width: 100%;
+  min-height: 450px;
+  background-color: #FFF;
   border-radius: 10px;
   box-shadow: 0px 4px 20px 1px rgba(0, 60, 60, 0.3);
 }
@@ -58,7 +59,7 @@ h3.accordion__title img {
   border-radius: 50%;
   box-shadow: 0px 0px 10px 1px #d4d4d4d4;
   position: absolute;
-  top: -41%;
+  top: -24%;
   left: 50%;
   transform: translateX(-50%);
 }
