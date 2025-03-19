@@ -68,19 +68,20 @@
         },
         "product_key_highilights_T7fxLq": {
           "type": "product-key-highilights",
+          "repeater": "{{ product.metafields.custom.product_key_highlights.value }}",
           "settings": {
-            "key_highlight_key_1": "Fabric 1",
-            "key_highlight_key_2": "Fabric",
-            "key_highlight_key_3": "Fabric",
-            "key_highlight_key_4": "Fabric",
-            "key_highlight_key_5": "Fabric",
-            "key_highlight_key_6": "Fabric",
-            "key_highlight_value_1": "Premium Organic Cotton",
-            "key_highlight_value_2": "Premium Organic Cotton",
-            "key_highlight_value_3": "Premium Organic Cotton",
-            "key_highlight_value_4": "Premium Organic Cotton",
-            "key_highlight_value_5": "Premium Organic Cotton",
-            "key_highlight_value_6": "Premium Organic Cotton"
+            "key_highlight_key_1": "{{ block.repeater.key_1.value }}",
+            "key_highlight_key_2": "{{ block.repeater.key_2.value }}",
+            "key_highlight_key_3": "{{ block.repeater.key_3.value }}",
+            "key_highlight_key_4": "{{ block.repeater.key_4.value }}",
+            "key_highlight_key_5": "{{ block.repeater.key_5.value }}",
+            "key_highlight_key_6": "{{ block.repeater.key_6.value }}",
+            "key_highlight_value_1": "{{ block.repeater.value_1.value }}",
+            "key_highlight_value_2": "{{ block.repeater.value_2.value }}",
+            "key_highlight_value_3": "{{ block.repeater.value_3.value }}",
+            "key_highlight_value_4": "{{ block.repeater.value_4.value }}",
+            "key_highlight_value_5": "{{ block.repeater.value_5.value }}",
+            "key_highlight_value_6": "{{ block.repeater.value_6.value }}"
           }
         },
         "description": {
@@ -91,23 +92,6 @@
           "type": "share",
           "settings": {
             "share_label": "Share"
-          }
-        },
-        "product_key_highilights_daTkzf": {
-          "type": "product-key-highilights",
-          "settings": {
-            "key_highlight_key_1": "Fabric",
-            "key_highlight_key_2": "Fabric",
-            "key_highlight_key_3": "Fabric",
-            "key_highlight_key_4": "Fabric",
-            "key_highlight_key_5": "Fabric",
-            "key_highlight_key_6": "Fabric",
-            "key_highlight_value_1": "Premium Organic Cotton",
-            "key_highlight_value_2": "Premium Organic Cotton",
-            "key_highlight_value_3": "Premium Organic Cotton",
-            "key_highlight_value_4": "Premium Organic Cotton",
-            "key_highlight_value_5": "Premium Organic Cotton",
-            "key_highlight_value_6": "Premium Organic Cotton"
           }
         }
       },
@@ -122,8 +106,7 @@
         "buy_buttons",
         "product_key_highilights_T7fxLq",
         "description",
-        "share",
-        "product_key_highilights_daTkzf"
+        "share"
       ],
       "settings": {
         "enable_sticky_info": true,
