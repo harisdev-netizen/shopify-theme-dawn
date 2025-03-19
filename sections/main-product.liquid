@@ -676,6 +676,22 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+                {%- when 'product-key-highlights' -%}
+                  {% render 'product-key-highlights',
+                    key_highlight_key_1: block.settings.key_highlight_key_1,
+                    key_highlight_key_2: block.settings.key_highlight_key_2,
+                    key_highlight_key_3: block.settings.key_highlight_key_3,
+                    key_highlight_key_4: block.settings.key_highlight_key_4,
+                    key_highlight_key_5: block.settings.key_highlight_key_5,
+                    key_highlight_key_6: block.settings.key_highlight_key_6,
+
+                    key_highlight_value_1: block.settings.key_highlight_value_1,
+                    key_highlight_value_2: block.settings.key_highlight_value_2,
+                    key_highlight_value_3: block.settings.key_highlight_value_3,
+                    key_highlight_value_4: block.settings.key_highlight_value_4,
+                    key_highlight_value_5: block.settings.key_highlight_value_5,
+                    key_highlight_value_6: block.settings.key_highlight_value_6,
+                  %}
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -938,6 +954,84 @@
           "unit": "px"
         }
       ]
+    },
+    {
+      "type": "product-key-highilights",
+      "name": "Key Highlights",
+      "settings": [
+        {
+          "type": "text",
+          "id": "key_highlight_key_1",
+          "label": "Key 1",
+          "default": "Fabric"
+        },
+        {
+          "type": "text",
+          "id": "key_highlight_key_2",
+          "label": "Key 2",
+          "default": "Fabric"
+        },
+        {
+          "type": "text",
+          "id": "key_highlight_key_3",
+          "label": "Key 3",
+          "default": "Fabric"
+        },
+        {
+          "type": "text",
+          "id": "key_highlight_key_4",
+          "label": "Key 4",
+          "default": "Fabric"
+        },
+        {
+          "type": "text",
+          "id": "key_highlight_key_5",
+          "label": "Key 5",
+          "default": "Fabric"
+        },
+        {
+          "type": "text",
+          "id": "key_highlight_key_6",
+          "label": "Key 6",
+          "default": "Fabric"
+        },
+        {
+          "type": "text",
+          "id": "key_highlight_value_1",
+          "label": "Value 1",
+          "default": "Premium Organic Cotton"
+        },
+        {
+          "type": "text",
+          "id": "key_highlight_value_2",
+          "label": "Value 2",
+          "default": "Premium Organic Cotton"
+        },
+        {
+          "type": "text",
+          "id": "key_highlight_value_3",
+          "label": "Value 3",
+          "default": "Premium Organic Cotton"
+        },
+        {
+          "type": "text",
+          "id": "key_highlight_value_4",
+          "label": "Value 4",
+          "default": "Premium Organic Cotton"
+        },
+        {
+          "type": "text",
+          "id": "key_highlight_value_5",
+          "label": "Value 5",
+          "default": "Premium Organic Cotton"
+        },
+        {
+          "type": "text",
+          "id": "key_highlight_value_6",
+          "label": "Value 6",
+          "default": "Premium Organic Cotton"
+        }
+      ],
     },
     {
       "type": "quantity_selector",
@@ -2351,7 +2445,7 @@
 
 <script>
   $(document).ready(function(){
-    $('h3.accordion__title').each(function() {  
+    $('h3.accordion__title').each(function() {
       var collapsibleRowText = $(this).text().trim();
 
       if (collapsibleRowText === "Cash on Delivery") {
