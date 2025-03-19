@@ -88,6 +88,22 @@
 
           {%- for block in section.blocks -%}
             {%- case block.type -%}
+              {%- when 'product-key-highlights' -%}
+                  {% render 'product-key-highlights',
+                    key_highlight_key_1: block.settings.key_highlight_key_1,
+                    key_highlight_key_2: block.settings.key_highlight_key_2,
+                    key_highlight_key_3: block.settings.key_highlight_key_3,
+                    key_highlight_key_4: block.settings.key_highlight_key_4,
+                    key_highlight_key_5: block.settings.key_highlight_key_5,
+                    key_highlight_key_6: block.settings.key_highlight_key_6,
+
+                    key_highlight_value_1: block.settings.key_highlight_value_1,
+                    key_highlight_value_2: block.settings.key_highlight_value_2,
+                    key_highlight_value_3: block.settings.key_highlight_value_3,
+                    key_highlight_value_4: block.settings.key_highlight_value_4,
+                    key_highlight_value_5: block.settings.key_highlight_value_5,
+                    key_highlight_value_6: block.settings.key_highlight_value_6,
+                  %}
               {%- when '@app' -%}
                 {% render block %}
               {%- when 'text' -%}
@@ -676,22 +692,6 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
-                {%- when 'product-key-highlights' -%}
-                  {% render 'product-key-highlights',
-                    key_highlight_key_1: block.settings.key_highlight_key_1,
-                    key_highlight_key_2: block.settings.key_highlight_key_2,
-                    key_highlight_key_3: block.settings.key_highlight_key_3,
-                    key_highlight_key_4: block.settings.key_highlight_key_4,
-                    key_highlight_key_5: block.settings.key_highlight_key_5,
-                    key_highlight_key_6: block.settings.key_highlight_key_6,
-
-                    key_highlight_value_1: block.settings.key_highlight_value_1,
-                    key_highlight_value_2: block.settings.key_highlight_value_2,
-                    key_highlight_value_3: block.settings.key_highlight_value_3,
-                    key_highlight_value_4: block.settings.key_highlight_value_4,
-                    key_highlight_value_5: block.settings.key_highlight_value_5,
-                    key_highlight_value_6: block.settings.key_highlight_value_6,
-                  %}
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -956,7 +956,7 @@
       ]
     },
     {
-      "type": "product-key-highilights",
+      "type": "product-key-highlights",
       "name": "Key Highlights",
       "settings": [
         {
