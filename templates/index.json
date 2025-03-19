@@ -139,7 +139,8 @@
           "settings": {
             "customer_image": "shopify://shop_images/man-in-suit-on-stairs.jpg",
             "customer_name": "Afaq Mehmood",
-            "customer_review": "This is an amazing product!"
+            "customer_review": "This is an amazing product!",
+            "rating": 2
           }
         },
         "testimonial_q6EWzX": {
@@ -147,7 +148,8 @@
           "settings": {
             "customer_image": "shopify://shop_images/man-in-suit-on-stairs.jpg",
             "customer_name": "Afaq Mehmood",
-            "customer_review": "This is an amazing product!"
+            "customer_review": "This is an amazing product!",
+            "rating": 5
           }
         }
       },
