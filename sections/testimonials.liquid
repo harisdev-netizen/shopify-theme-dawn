@@ -6,6 +6,7 @@
         assign customer_name = block.settings.customer_name
         assign customer_review = block.settings.customer_review
         assign rating = block.settings.rating | default: 5 | at_most: 5 | at_least: 0
+        assign rating = rating | plus: 0
       -%}
 
       <div class="card-testimonial-section">
@@ -46,7 +47,7 @@
 
 {% schema %}
 {
-   "name": "Testimonial",
+  "name": "Testimonial",
   "settings": [],
   "blocks": [
     {
@@ -82,27 +83,27 @@
     }
   ],
   "presets": [
-  {
-    "name": "Testimonials",
-    "blocks": [
-      {
-        "type": "testimonial",
-        "settings": {
-          "customer_name": "Afaq Mehmood",
-          "customer_review": "This is an amazing product!",
-          "rating": 4
+    {
+      "name": "Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Afaq Mehmood",
+            "customer_review": "This is an amazing product!",
+            "rating": 4
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "New Customer",
+            "customer_review": "I love it!",
+            "rating": 5
+          }
         }
-      },
-      {
-        "type": "testimonial",
-        "settings": {
-          "customer_name": "New Customer",
-          "customer_review": "I love it!",
-          "rating": 5
-        }
-      }
-    ]
-  }
-]
+      ]
+    }
+  ]
 }
 {% endschema %}
