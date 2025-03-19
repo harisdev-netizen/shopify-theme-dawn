@@ -6,7 +6,7 @@
         assign customer_name = block.settings.customer_name
         assign customer_review = block.settings.customer_review
         assign rating = block.settings.rating | default: 5 | at_most: 5 | at_least: 0
-        assign rating = rating | plus: 0
+        assign rating_value = rating | plus: 0
       -%}
 
       <div class="card-testimonial-section">
@@ -29,14 +29,14 @@
         <div class="testimonial-bottom-bar">
           <div class="stars-container">
             {% for i in (1..5) %}
-              {% if i <= rating %}
+              {% if i <= rating_value %}
                 <i class="fa-solid fa-star star-fa-icons-testimonials filled" aria-label="Filled star"></i>
               {% else %}
                 <i class="fa-solid fa-star star-fa-icons-testimonials empty" aria-label="Empty star"></i>
               {% endif %}
             {% endfor %}
           </div>
-          <p class="rating-debug">Rating: {{ rating }}</p>
+          <p class="rating-debug">Rating: {{ rating_value }}</p>
         </div>
       </div>
     {% endfor %}
@@ -47,7 +47,7 @@
 
 {% schema %}
 {
-  "name": "Testimonial",
+   "name": "Testimonial",
   "settings": [],
   "blocks": [
     {
@@ -83,27 +83,27 @@
     }
   ],
   "presets": [
-    {
-      "name": "Testimonials",
-      "blocks": [
-        {
-          "type": "testimonial",
-          "settings": {
-            "customer_name": "Afaq Mehmood",
-            "customer_review": "This is an amazing product!",
-            "rating": 4
-          }
-        },
-        {
-          "type": "testimonial",
-          "settings": {
-            "customer_name": "New Customer",
-            "customer_review": "I love it!",
-            "rating": 5
-          }
+  {
+    "name": "Testimonials",
+    "blocks": [
+      {
+        "type": "testimonial",
+        "settings": {
+          "customer_name": "Afaq Mehmood",
+          "customer_review": "This is an amazing product!",
+          "rating": 4
         }
-      ]
-    }
-  ]
+      },
+      {
+        "type": "testimonial",
+        "settings": {
+          "customer_name": "New Customer",
+          "customer_review": "I love it!",
+          "rating": 5
+        }
+      }
+    ]
+  }
+]
 }
 {% endschema %}
