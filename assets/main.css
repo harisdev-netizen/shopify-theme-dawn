@@ -14,6 +14,7 @@ h3.accordion__title img {
   padding: 2px;
 }
 
+/* TESTIMONIAL SECTION */
 .main-container-testimonial-section {
   box-sizing: border-box;
   width: 100%;
@@ -32,7 +33,7 @@ h3.accordion__title img {
   max-width: 320px;
   width: 100%;
   min-height: 450px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 4px 20px 1px rgba(0, 60, 60, 0.3);
 }
@@ -51,7 +52,6 @@ h3.accordion__title img {
   position: relative;
   padding: 10px 20px;
 }
-
 
 .testimonial-content-bar img {
   width: 73px;
@@ -123,5 +123,84 @@ h3.accordion__title img {
 @media only screen and (max-width: 340px) {
   .card-testimonial-section {
     width: 250px;
+  }
+}
+
+/* KEY HIGHLIGHTS SNIPPET STYLE */
+.key-highlights__main-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.key-highlights__main-container h2 {
+  font-size: 2.5rem;
+}
+
+.key-highlights__inner-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.key-highlights__box {
+  width: 45%;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.key-highlights__key {
+  color: #96a6bc;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.key-highlights__value {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.key-highlights__disclaimer--text {
+  font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .key-highlights__main-container h2 {
+    font-size: 2rem;
+  }
+
+  .key-highlights__key {
+    font-size: 1.5rem;
+  }
+
+  .key-highlights__value {
+    font-size: 1.3rem;
+  }
+
+  .key-highlights__disclaimer--text {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .key-highlights__main-container h2 {
+    font-size: 1.7rem;
+  }
+
+  .key-highlights__key {
+    font-size: 1.2rem;
+  }
+
+  .key-highlights__value {
+    font-size: 1rem;
+  }
+
+  .key-highlights__disclaimer--text {
+    font-size: 1rem;
   }
 }
