@@ -7,29 +7,35 @@
         assign customer_review = block.settings.customer_review
         assign rating = block.settings.rating | default: 5 | at_most: 5 | at_least: 0
       -%}
+
       <div class="card-testimonial-section">
         <div class="testimonial-top-bar">&nbsp;</div>
+
         <div class="testimonial-content-bar">
           {% if customer_image != blank %}
             <div class="customer-image-container">
               <img class="customer-image" src="{{ customer_image | image_url: width: 100, height: 100 }}" width="100" height="100" alt="{{ customer_name }}'s photo">
             </div>
           {% endif %}
+          
           <h2 class="customer-name">{{ customer_name }}</h2>
+          
           {% if customer_review != blank %}
             <p class="customer-review">{{ customer_review }}</p>
           {% endif %}
         </div>
+
         <div class="testimonial-bottom-bar">
           <div class="stars-container">
             {% for i in (1..5) %}
               {% if i <= rating %}
                 <i class="fa-solid fa-star star-fa-icons-testimonials filled" aria-label="Filled star"></i>
               {% else %}
-                <i class="fa-solid fa-star star-fa-icons-testimonials" aria-label="Empty star"></i>
+                <i class="fa-solid fa-star star-fa-icons-testimonials empty" aria-label="Empty star"></i>
               {% endif %}
             {% endfor %}
           </div>
+          <p class="rating-debug">Rating: {{ rating }}</p>
         </div>
       </div>
     {% endfor %}
