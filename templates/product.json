@@ -66,6 +66,23 @@
             "show_gift_card_recipient": true
           }
         },
+        "product_key_highilights_T7fxLq": {
+          "type": "product-key-highilights",
+          "settings": {
+            "key_highlight_key_1": "Fabric 1",
+            "key_highlight_key_2": "Fabric",
+            "key_highlight_key_3": "Fabric",
+            "key_highlight_key_4": "Fabric",
+            "key_highlight_key_5": "Fabric",
+            "key_highlight_key_6": "Fabric",
+            "key_highlight_value_1": "Premium Organic Cotton",
+            "key_highlight_value_2": "Premium Organic Cotton",
+            "key_highlight_value_3": "Premium Organic Cotton",
+            "key_highlight_value_4": "Premium Organic Cotton",
+            "key_highlight_value_5": "Premium Organic Cotton",
+            "key_highlight_value_6": "Premium Organic Cotton"
+          }
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -103,6 +120,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "product_key_highilights_T7fxLq",
         "description",
         "share",
         "product_key_highilights_daTkzf"
