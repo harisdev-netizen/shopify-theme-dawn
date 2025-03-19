@@ -78,13 +78,10 @@ h3.accordion__title img {
 }
 
 .stars-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  display: block;
+  width: 90%;
   margin: auto;
   text-align: center;
-  gap: 3px;
 }
 
 .star-fa-icons-testimonials {
