@@ -30,12 +30,11 @@
           <div class="stars-container">
             {% for i in (1..5) %}
               {% if i <= rating_value %}
-                <i class="fa-solid fa-star star-fa-icons-testimonials filled" aria-label="Filled star"></i>
+                <i class="fas fa-star star-fa-icons-testimonials filled" aria-label="Filled star"></i>
               {% else %}
-                <i class="fa-solid fa-star star-fa-icons-testimonials empty" aria-label="Empty star"></i>
+                <i class="far fa-star star-fa-icons-testimonials empty" aria-label="Empty star"></i>
               {% endif %}
             {% endfor %}
-            <p class="rating-debug">Rating: {{ rating_value }}</p>
           </div>
         </div>
       </div>
