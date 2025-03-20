@@ -3595,3 +3595,8 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+li.thumbnail-list__item.slider__slide {
+  width: calc(28% - 20px);
+  height: calc(28% - 10px);
+}
