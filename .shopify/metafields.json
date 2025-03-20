@@ -29,6 +29,16 @@
         "name": "dimension",
         "category": "MEASUREMENT"
       }
+    },
+    {
+      "key": "product_key_highlights",
+      "namespace": "custom",
+      "name": "Product Key Highlights",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
     }
   ],
   "variant": [],
