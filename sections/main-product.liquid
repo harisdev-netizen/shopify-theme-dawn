@@ -256,7 +256,13 @@
                     <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
                       {{ block.settings.content }}
                       {{ block.settings.page.content }}
-                      <div class="AirReviews-Widget AirReviews-Widget--Block"></div>
+                        {% if block.settings.heading == 'Reviews' %}
+                        <div class="AirReviews-Widget AirReviews-Widget--Block" aria-label="Customer Reviews"></div>
+                        {% else %}
+                          {% if block.settings.heading == 'Reviews' %}
+                              <div class="AirReviews-Widget AirReviews-Widget--Block"></div>
+                          {% endif %}
+                        {% endif %}
                     </div>
                   </details>
                 </div>
