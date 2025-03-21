@@ -89,6 +89,15 @@
             "key_highlight_value_6": "{{ block.repeater.value_6.value }}"
           }
         },
+        "collapsible_tab_Qzrck9": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Reviews",
+            "icon": "return",
+            "content": "",
+            "page": ""
+          }
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -111,6 +120,7 @@
         "quantity_selector",
         "buy_buttons",
         "product_key_highlights_EiHDih",
+        "collapsible_tab_Qzrck9",
         "description",
         "share"
       ],
