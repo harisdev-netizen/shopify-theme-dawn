@@ -93,7 +93,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Reviews",
-            "icon": "return",
+            "icon": "star",
             "content": "",
             "page": ""
           }
