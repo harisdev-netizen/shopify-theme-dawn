@@ -182,12 +182,20 @@
             "question": "What if I want to return the product?",
             "answer": "<p>We have a hassle free 5 days return policy. You can email or call us at our support number within 48 hours of receiving the product.</p>"
           }
+        },
+        "accordions_3GCTCU": {
+          "type": "accordions",
+          "settings": {
+            "question": "When will I receive my ordered items?",
+            "answer": "<p>There is no order verification time. We will ship your order within 1 day, and we will try to get it delivered to you within 3–4 days.</p>"
+          }
         }
       },
       "block_order": [
         "accordions_8JJexe",
         "accordions_apkVfJ",
-        "accordions_izcwch"
+        "accordions_izcwch",
+        "accordions_3GCTCU"
       ],
       "settings": {
         "open": true,
