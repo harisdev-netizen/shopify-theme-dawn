@@ -189,13 +189,21 @@
             "question": "When will I receive my ordered items?",
             "answer": "<p><strong>PREPAID OFFERS:</strong> We offer FREE DELIVERY for Prepaid Customers.<br/><br/>There is no order verification time. We will ship your order within 1 day, and we will try to get it delivered to you within 3–4 days.<br/><br/><strong>CASH ON DELIVERY (COD) ORDERS:</strong> For those who prefer Cash on Delivery (COD), we offer two options to suit your needs.<br/><br/>Please note that COD orders require a verification process, so expect 1-2 days for order verification, an additional day for processing, and a total delivery time of about one 4 to 5 days.</p>"
           }
+        },
+        "accordions_gDd9Lq": {
+          "type": "accordions",
+          "settings": {
+            "question": "How to contact if I need any help?",
+            "answer": "<p>Our team is happy to help you in your shopping journey.<br/><br/>Email us at: support@domain.com<br/>WhatsApp: +92 99999 99999<br/><br/>Timings: 10AM to 5PM (Mon to Friday)</p>"
+          }
         }
       },
       "block_order": [
         "accordions_8JJexe",
         "accordions_apkVfJ",
         "accordions_izcwch",
-        "accordions_3GCTCU"
+        "accordions_3GCTCU",
+        "accordions_gDd9Lq"
       ],
       "settings": {
         "open": true,
