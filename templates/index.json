@@ -176,7 +176,7 @@
       "settings": {
         "open": false,
         "title": "Frequently Asked Questions",
-        "title_align": "left",
+        "title_align": "center",
         "title_margin": 2,
         "section_width": 60,
         "section_bg": "#fff",
