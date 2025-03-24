@@ -166,7 +166,7 @@
           "type": "accordions",
           "settings": {
             "question": "Put your question here?",
-            "answer": "<p>Write your answer here.</p>"
+            "answer": "<p>Write your answer here. Hey there</p>"
           }
         }
       },
@@ -174,9 +174,9 @@
         "accordions_8JJexe"
       ],
       "settings": {
-        "open": false,
+        "open": true,
         "title": "Frequently Asked Questions",
-        "title_align": "center",
+        "title_align": "left",
         "title_margin": 2,
         "section_width": 60,
         "section_bg": "#fff",
