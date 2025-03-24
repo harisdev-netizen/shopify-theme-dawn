@@ -171,39 +171,41 @@
 }
 </style>
 
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 <section class="accordion-main-container-{{ section.id }}">
-  <div class="accordion-container-{{ section.id }}" x-data="{% if open == false %}{ accordionOpen : 0 } {% else %} { accordionOpen : 1} {% endif %}">
+  <div class="accordion-container-{{ section.id }}" x-data="{ accordionOpen: null }">
     {% if title != blank %}
       <h2>{{ title }}</h2>
     {% endif %}
     {% for block in section.blocks %}
         <div class="single-accordion">
-          <button x-on:click="accordionOpen !== {{ forloop.index }} ? accordionOpen = {{ forloop.index }} : accordionOpen = null" x-bind:class="accordionOpen == {{ forloop.index }} ? 'active-button' : ''" >
-            <!-- plus icon -->
-            <svg x-bind:class="accordionOpen == {{ forloop.index }} ? 'hide' : 'show' "
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <button @click="accordionOpen = (accordionOpen === {{ forloop.index }}) ? null : {{ forloop.index }}" 
+                  :class="{ 'active-button': accordionOpen === {{ forloop.index }} }">
+            <!-- Plus icon -->
+            <svg :class="accordionOpen === {{ forloop.index }} ? 'hide' : 'show' "
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
             <!-- Minus icon -->
-            <svg x-bind:class="accordionOpen == {{ forloop.index }} ? 'show' : 'hide'"
-              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <svg :class="accordionOpen === {{ forloop.index }} ? 'show' : 'hide'"
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
             </svg>
 
-            <span class= "accordion-button-text">{{ block.settings.question }}</span>
-            </button>
-            <div class="answer-content"
+            <span class="accordion-button-text">{{ block.settings.question }}</span>
+          </button>
+
+          <div class="answer-content"
               x-ref="content-{{ forloop.index }}"
-              x-bind:style="accordionOpen == {{ forloop.index }} ? 'max-height: ' + $ref['content-{{ forloop.index }}'].scrollHeight + 'px' : ''"
-              x-bind:class="accordionOpen == {{ forloop.index }} ? 'active-answer' : ''">
+              x-bind:style="accordionOpen === {{ forloop.index }} ? 'max-height: ' + $refs['content-{{ forloop.index }}'].scrollHeight + 'px' : 'max-height: 0px'"
+              :class="{ 'active-answer': accordionOpen === {{ forloop.index }} }">
               {{ block.settings.answer }}
-            </div>
           </div>
+        </div>
     {% endfor %}
   </div>
 </section>
-
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 {% schema %}
   {
