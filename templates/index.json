@@ -168,10 +168,18 @@
             "question": "How will I track my order?",
             "answer": "<p>You will receive tracking number via email and your phone number once the order is processed from our warehouse.</p>"
           }
+        },
+        "accordions_apkVfJ": {
+          "type": "accordions",
+          "settings": {
+            "question": "Which payment methods can I use to place order?",
+            "answer": "<p>At Glowfinity we provide <br/>Cash on delivery, Cards and Net Banking as payment methods to place order.</p>"
+          }
         }
       },
       "block_order": [
-        "accordions_8JJexe"
+        "accordions_8JJexe",
+        "accordions_apkVfJ"
       ],
       "settings": {
         "open": true,
