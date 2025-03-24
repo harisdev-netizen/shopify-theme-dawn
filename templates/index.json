@@ -165,8 +165,8 @@
         "accordions_8JJexe": {
           "type": "accordions",
           "settings": {
-            "question": "Put your question here?",
-            "answer": "<p>Write your answer here. Hey there</p>"
+            "question": "How will I track my order?",
+            "answer": "<p>You will receive tracking number via email and your phone number once the order is processed from our warehouse.</p>"
           }
         }
       },
