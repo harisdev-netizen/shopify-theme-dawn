@@ -46,7 +46,7 @@
     margin: 0 auto;
   }
   
-  .accordion-container-gm-{{ section.id }} {
+  .accordion-container-{{ section.id }} {
     width: {{ section_width }}%;
     background-color: {{ inner_bg }};
     margin: 0 auto;
@@ -54,7 +54,7 @@
     border-radius: {{ border_radius_inner }}px;
 }
   
-.accordion-main-container-{{ section.id }} .accordion-container-gm-{{ section.id }} h2 {
+.accordion-main-container-{{ section.id }} .accordion-container-{{ section.id }} h2 {
   color: {{ text_icon_color }};
   text-align: {{ title_align }};
   font-family: {{ tfont.family }}, {{ tfont.fallback_families }};
@@ -62,11 +62,11 @@
   margin-bottom: {{ title_margin }}rem;
   padding: 0 20px;
 }
-.accordion-container-gm-{{ section.id }} .single-accordion-gm button{
+.accordion-container-{{ section.id }} .single-accordion button{
   color: {{ text_icon_color }}; /* Question text color */
 }
   
-.accordion-container-gm-{{ section.id }} .single-accordion-gm button {
+.accordion-container-{{ section.id }} .single-accordion button {
     display: block;
     width: 100%;
     position: relative;
@@ -78,15 +78,15 @@
 
 
 
-/* .accordion-container-gm-{{ section.id }} .single-accordion-gm:not(:first-child) {
+/* .accordion-container-{{ section.id }} .single-accordion:not(:first-child) {
     border-top: 1px solid #cacaca !important;
 } */
 
-.accordion-container-gm-{{ section.id }} .single-accordion-gm {
+.accordion-container-{{ section.id }} .single-accordion {
     border-bottom: 1px solid {{ border_color }} !important;
 }
 
- .accordion-container-gm-{{ section.id }} .single-accordion-gm button span.accordion-button-text {
+ .accordion-container-{{ section.id }} .single-accordion button span.accordion-button-text {
     display: inline-block;
     font-family: {{ qfont.family }}, {{ qfont.fallback_families }};
     font-size: {{ question_size }}rem;
@@ -95,7 +95,7 @@
     line-height: 1.5;
   }
 
-.single-accordion-gm button svg {
+.single-accordion button svg {
     height: {{ icon_size }}rem;
     stroke-width: {{ icon_width }}px;
     position: absolute;
@@ -108,7 +108,7 @@
     -o-transform: translateY(-50%);
 }
 
-.answer-content-gm {
+.answer-content {
     max-height: 0;
     overflow: hidden;
     transition: all .5s ease;
@@ -118,7 +118,7 @@
     -o-transition: all .5s esae;
 }
 
-.answer-content-gm p {
+.answer-content p {
     padding: 20px 30px;
     font-size: 16px;
     font-family: {{ afont.family }}, {{ afont.fallback_families }};
@@ -149,35 +149,35 @@
 }
 
 @media only screen and (max-width: 800px){
-    .accordion-container-gm-{{ section.id }} {
+    .accordion-container-{{ section.id }} {
         width: 100%;    
        padding: 30px 10px 50px;
     }  
-  .accordion-main-container-{{ section.id }} .accordion-container-gm-{{ section.id }} h2{
+  .accordion-main-container-{{ section.id }} .accordion-container-{{ section.id }} h2{
     font-size: {{ title_size_mb }}rem;
   }
-  .accordion-container-gm-{{ section.id }} .single-accordion-gm button span.accordion-button-text {
+  .accordion-container-{{ section.id }} .single-accordion button span.accordion-button-text {
     font-size: {{ question_size_mb }}rem;
     width: 90% !important;
   }
-  .single-accordion-gm button svg {
+  .single-accordion button svg {
     height: {{ icon_size_mb }}rem;
     stroke-width: {{ icon_width_mb }}px;
     right: 2%;
   }
-  .answer-content-gm p {
+  .answer-content p {
     font-size: {{ answer_size_mb }}rem;
   }
 }
 </style>
 
 <section class="accordion-main-container-{{ section.id }}">
-  <div class="accordion-container-gm-{{ section.id }}" x-data="{% if open == false %}{ accordionOpen : 0 } {% else %} { accordionOpen : 1} {% endif %}">
+  <div class="accordion-container-{{ section.id }}" x-data="{% if open == false %}{ accordionOpen : 0 } {% else %} { accordionOpen : 1} {% endif %}">
     {% if title != blank %}
       <h2>{{ title }}</h2>
     {% endif %}
     {% for block in section.blocks %}
-        <div class="single-accordion-gm">
+        <div class="single-accordion">
           <button x-on:click="accordionOpen !== {{ forloop.index }} ? accordionOpen = {{ forloop.index }} : accordionOpen = null" x-bind:class="accordionOpen == {{ forloop.index }} ? 'active-button' : ''" >
             <!-- plus icon -->
             <svg x-bind:class="accordionOpen == {{ forloop.index }} ? 'hide' : 'show' "
@@ -192,7 +192,7 @@
 
             <span class= "accordion-button-text">{{ block.settings.question }}</span>
             </button>
-            <div class="answer-content-gm"
+            <div class="answer-content"
               x-ref="content-{{ forloop.index }}"
               x-bind:style="accordionOpen == {{ forloop.index }} ? 'max-height: ' + $ref['content-{{ forloop.index }}'].scrollHeight + 'px' : ''"
               x-bind:class="accordionOpen == {{ forloop.index }} ? 'active-answer' : ''">
@@ -207,7 +207,7 @@
 
 {% schema %}
   {
-    "name": "Accordions GM",
+    "name": "Accordions",
     "settings": [
       {
         "type": "checkbox",
@@ -477,7 +477,7 @@
     ],
     "presets": [
       {
-        "name": "Accordions GM"
+        "name": "Accordions"
       }
     ]
   }
