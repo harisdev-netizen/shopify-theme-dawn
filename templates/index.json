@@ -175,11 +175,19 @@
             "question": "Which payment methods can I use to place order?",
             "answer": "<p>At Glowfinity we provide <br/>Cash on delivery, Cards and Net Banking as payment methods to place order.</p>"
           }
+        },
+        "accordions_izcwch": {
+          "type": "accordions",
+          "settings": {
+            "question": "What if I want to return the product?",
+            "answer": "<p>We have a hassle free 5 days return policy. You can email or call us at our support number within 48 hours of receiving the product.</p>"
+          }
         }
       },
       "block_order": [
         "accordions_8JJexe",
-        "accordions_apkVfJ"
+        "accordions_apkVfJ",
+        "accordions_izcwch"
       ],
       "settings": {
         "open": true,
