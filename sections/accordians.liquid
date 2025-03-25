@@ -28,6 +28,14 @@
   assign icon_size_mb = section.settings.icon_size_mb
   assign icon_width = section.settings.icon_width
   assign icon_width_mb = section.settings.icon_width_mb
+
+  assign accordion_open = section.settings.open_default
+  if accordian_open == true
+    assign accordionOpen = 1
+  else
+    assign accordionOpen = 'null'
+  endif
+  echo accordionOpen | prepend: 'accordian Open: '
 -%}
 
 <style>
@@ -169,13 +177,13 @@
 {% comment %} <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> {% endcomment %}
 
 <section class="accordion-main-container-{{ section.id }}">
-  <div class="accordion-container-{{ section.id }}" x-data="{ accordionOpen: null }">
+  <div class="accordion-container-{{ section.id }}" x-data="{ accordionOpen: {{ accordionOpen }} }">
     {% if title != blank %}
       <h2>{{ title }}</h2>
     {% endif %}
     {% for block in section.blocks %}
         <div class="single-accordion">
-          <button @click="accordionOpen = (accordionOpen === {{ forloop.index }}) ? null : {{ forloop.index }}" 
+          <button @click="accordionOpen = (accordionOpen === {{ forloop.index }}) ? null : {{ forloop.index }}"
                   :class="{ 'active-button': accordionOpen === {{ forloop.index }} }">
             <!-- Plus icon -->
             <svg :class="accordionOpen === {{ forloop.index }} ? 'hide' : 'show' "
@@ -208,9 +216,9 @@
     "settings": [
       {
         "type": "checkbox",
-        "id": "open",
+        "id": "open_default",
         "label": "1st Accordion open by default",
-        "default": false
+        "default": true
       },
          {
             "type": "text",
