@@ -206,12 +206,12 @@
         "accordions_gDd9Lq"
       ],
       "settings": {
-        "open": true,
+        "open_default": true,
         "title": "Frequently Asked Questions",
         "title_align": "left",
-        "title_margin": 2,
-        "section_width": 60,
-        "section_bg": "#ffffff",
+        "title_margin": 3.8,
+        "section_width": 66,
+        "section_bg": "rgba(0,0,0,0)",
         "inner_bg": "#ffffff",
         "border_color": "#cacaca",
         "border_radius_inner": 6,
