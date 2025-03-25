@@ -30,12 +30,11 @@
   assign icon_width_mb = section.settings.icon_width_mb
 
   assign accordion_open = section.settings.open_default
-  if accordian_open == true
+  if accordion_open == true
     assign accordionOpen = 1
   else
     assign accordionOpen = 'null'
   endif
-  echo accordionOpen | prepend: 'accordian Open: '
 -%}
 
 <style>
@@ -78,8 +77,6 @@
     border: none;
     cursor: pointer;
 }
-
-
 
 /* .accordion-container-{{ section.id }} .single-accordion:not(:first-child) {
     border-top: 1px solid #cacaca !important;
