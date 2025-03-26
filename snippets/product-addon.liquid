@@ -1,5 +1,5 @@
 
-<style>
+{% comment %} <style>
   :root {
     --addon-bg: {{ addon_bg | default: "#ffffff" }};
     --checkbox-active-color: {{ checkbox_active_color | default: "#000000" }};
@@ -17,10 +17,10 @@
     --title-size-mb: {{ title_size_mb | default: "14" }}px;
     --price-size-mb: {{ price_size_mb | default: "12" }}px;
   }
-</style>
+</style> {% endcomment %}
 
-{% comment %} <style>
-  .product-addon-container-gm {
+<style>
+  .product-addon-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -31,13 +31,13 @@
     box-sizing: border-box;
   }
 
-  .product-addon-container-gm .product-addon-item {
+  .product-addon-container .product-addon-item {
     display: flex;
     align-items: center;
     gap: 10px;
   }
 
-  .product-addon-container-gm .product-addon-item .product-addon-checkbox {
+  .product-addon-container .product-addon-item .product-addon-checkbox {
     cursor: pointer;
     accent-color: {{ checkbox_active_color }};
   }
@@ -79,10 +79,9 @@
       font-size: {{ price_size_mb }}px;
     }
   }
-  
-</style> {% endcomment %}
+</style>
 
-<div class="product-addon-container-gm">
+<div class="product-addon-container">
   {% for product in product_addon %}
     {% if product != blank and product.available %}
       <div class="product-addon-item" data-product-id="{{ product.variants.first.id }}">
