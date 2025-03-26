@@ -68,7 +68,8 @@
           "type": "product-addon",
           "settings": {
             "product_addon": [
-              "gift-wrap"
+              "gift-wrap",
+              "gift-card"
             ],
             "addon_bg": "#ffffff",
             "checkbox_active_color": "#000000",
