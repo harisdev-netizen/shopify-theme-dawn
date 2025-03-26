@@ -313,7 +313,7 @@ h3.accordion__title img {
 } */
 
 /* PRODUCT ADDON SNIPPET */
-/* .product-addon-container-gm {
+.product-addon-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -324,13 +324,13 @@ h3.accordion__title img {
   box-sizing: border-box;
 }
 
-.product-addon-container-gm .product-addon-item {
+.product-addon-container .product-addon-item {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.product-addon-container-gm .product-addon-item .product-addon-checkbox {
+.product-addon-container .product-addon-item .product-addon-checkbox {
   cursor: pointer;
   accent-color: var(--checkbox-active-color);
 }
@@ -373,4 +373,4 @@ h3.accordion__title img {
   .product-addon-price {
     font-size: var(--price-size-mb);
   }
-} */
+}
