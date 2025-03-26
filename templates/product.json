@@ -60,6 +60,30 @@
             "swatch_shape": "circle"
           }
         },
+        "product_addon_xnLUbJ": {
+          "type": "product-addon",
+          "settings": {
+            "product_addon": [
+              "gift-card",
+              "selling-plans-ski-wax"
+            ],
+            "addon_bg": "#f0f8ff",
+            "checkbox_active_color": "#000",
+            "checkbox_size": 20,
+            "image_size": 64,
+            "image_size_mb": 56,
+            "image_type": "5",
+            "title_size": 14,
+            "title_size_mb": 12,
+            "font_weight": "bold",
+            "price_size": 12,
+            "price_size_mb": 10,
+            "free_gift_info": "👉 Claim free gift",
+            "title_color": "#000",
+            "price_color": "#000",
+            "price_opacity": 0.7
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -117,6 +141,7 @@
         "price",
         "custom_liquid_MwzLXQ",
         "variant_picker",
+        "product_addon_xnLUbJ",
         "quantity_selector",
         "buy_buttons",
         "product_key_highlights_EiHDih",
