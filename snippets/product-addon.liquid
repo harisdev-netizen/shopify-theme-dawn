@@ -1,21 +1,21 @@
 
 <style>
   :root {
-    --addon-bg: {{ addon_bg }};
-    --checkbox-active-color: {{ checkbox_active_color }};
-    --image-size: {{ image_size }}px;
-    --image-type: {{ image_type }}%;
-    --title-size: {{ title_size }}px;
-    --font-weight: {{ font_weight }};
-    --title-color: {{ title_color }};
-    --price-size: {{ price_size }}px;
-    --price-color: {{ price_color }};
-    --price-opacity: {{ price_opacity }};
+    --addon-bg: {{ addon_bg | default: "#ffffff" }};
+    --checkbox-active-color: {{ checkbox_active_color | default: "#000000" }};
+    --image-size: {{ image_size | default: "50" }}px;
+    --image-type: {{ image_type | default: "0" }}%;
+    --title-size: {{ title_size | default: "16" }}px;
+    --font-weight: {{ font_weight | default: "400" }};
+    --title-color: {{ title_color | default: "#333333" }};
+    --price-size: {{ price_size | default: "14" }}px;
+    --price-color: {{ price_color | default: "#666666" }};
+    --price-opacity: {{ price_opacity | default: "1" }};
 
     /* Mobile Variables */
-    --image-size-mb: {{ image_size_mb }}px;
-    --title-size-mb: {{ title_size_mb }}px;
-    --price-size-mb: {{ price_size_mb }}px;
+    --image-size-mb: {{ image_size_mb | default: "40" }}px;
+    --title-size-mb: {{ title_size_mb | default: "14" }}px;
+    --price-size-mb: {{ price_size_mb | default: "12" }}px;
   }
 </style>
 
