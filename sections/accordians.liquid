@@ -37,6 +37,50 @@
   endif
 -%}
 
+{% comment %} <style>
+  {{ tfont | font_face }}
+{{ qfont | font_face }}
+{{ afont | font_face }}
+  #accordion-{{ section.id }} {
+    --accordion-section-bg: {{ section.settings.section_bg }};
+    --accordion-padding-top: {{ section.settings.padding_top }}px;
+    --accordion-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --accordion-section-width: {{ section.settings.section_width }}%;
+    --accordion-inner-bg: {{ section.settings.inner_bg }};
+    --accordion-border-radius: {{ section.settings.border_radius_inner }}px;
+    --accordion-title-color: {{ section.settings.text_icon_color }};
+    --accordion-title-align: {{ section.settings.title_align }};
+    --accordion-title-size: {{ section.settings.title_size }}rem;
+    --accordion-title-margin: {{ section.settings.title_margin }}rem;
+    --accordion-border-color: {{ section.settings.border_color }};
+    --accordion-question-size: {{ section.settings.question_size }}rem;
+    --accordion-icon-size: {{ section.settings.icon_size }}rem;
+    --accordion-icon-width: {{ section.settings.icon_width }}px;
+    --accordion-answer-size: {{ section.settings.answer_size }}rem;
+    --accordion-btn-bg: {{ section.settings.btn_bg }};
+    --accordion-active-btn-color: {{ section.settings.activebtn_fontcolor }};
+    --accordion-answer-bg: {{ section.settings.answer_bg }};
+    --accordion-answer-text-color: {{ section.settings.answer_text }};
+  
+    /* Mobile Variables */
+    --accordion-title-size-mb: {{ section.settings.title_size_mb }}rem;
+    --accordion-question-size-mb: {{ section.settings.question_size_mb }}rem;
+    --accordion-icon-size-mb: {{ section.settings.icon_size_mb }}rem;
+    --accordion-icon-width-mb: {{ section.settings.icon_width_mb }}px;
+    --accordion-answer-size-mb: {{ section.settings.answer_size_mb }}rem;
+
+    background-color: var(--accordion-section-bg);
+    padding: var(--accordion-padding-top) 0 var(--accordion-padding-bottom);
+    margin: 0 auto;
+  }
+
+  @media only screen and (max-width: 800px){
+    #accordion-{{ section.id }} {
+        padding: 30px 10px 50px;
+    }
+  }
+</style> {% endcomment %}
+
 <style>
 {{ tfont | font_face }}
 {{ qfont | font_face }}
@@ -150,7 +194,7 @@
 
 @media only screen and (max-width: 800px){
     .accordion-container-{{ section.id }} {
-        width: 100%;    
+        width: 100%;
        padding: 30px 10px 50px;
     }  
   .accordion-main-container-{{ section.id }} .accordion-container-{{ section.id }} h2{
