@@ -266,6 +266,27 @@
                     </div>
                   </details>
                 </div>
+
+              {% when 'product-addons' %}
+                {% render 'product-addon',
+                  product_addon : block.settings.product_addon,
+                  addon_bg : block.settings.addon_bg,
+                  checkbox_active_color : block.settings.checkbox_active_color,
+                  checkbox_size : block.settings.checkbox_size,
+                  image_size : block.settings.image_size,
+                  image_size_mb : block.settings.image_size_mb,
+                  image_type : block.settings.image_type,
+                  title_size : block.settings.title_size,
+                  title_size_mb : block.settings.title_size_mb,
+                  font_weight : block.settings.font_weight,
+                  price_size : block.settings.price_size,
+                  price_size_mb : block.settings.price_size_mb,
+                  free_gift_info : block.settings.free_gift_info,
+                  title_color : block.settings.title_color,
+                  price_color : block.settings.price_color,
+                  price_opacity : block.settings.price_opacity
+                %}
+
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
@@ -1039,6 +1060,163 @@
           "default": "Premium Organic Cotton"
         }
       ],
+    },
+     {
+      "type": "product-addon",
+      "name": "Product Addon",
+      "settings": [
+        {
+          "type": "product_list",
+          "id": "product_addon",
+          "label": "Select product addons"
+        },
+        {
+          "type": "color",
+          "id": "addon_bg",
+          "label": "Background color",
+          "default": "#f0f8ff"
+        },
+        {
+         "type": "color",
+          "id": "checkbox_active_color",
+          "label": "Active checkbox color",
+          "default": "#000"
+        },
+         {
+          "type": "range",
+          "id": "checkbox_size",
+          "label": "Checkbox size",
+          "min": 10,
+          "max": 40,
+          "step": 2,
+          "unit": "px",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "image_size",
+          "label": "Image size",
+          "min": 32,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "default": 64
+        },
+        {
+          "type": "range",
+          "id": "image_size_mb",
+          "label": "Image size mobile",
+          "min": 32,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "default": 56
+        },
+        {
+          "type": "select",
+          "id": "image_type",
+          "label": "Product image type",
+          "options": [
+            {
+              "value": "5",
+              "label": "Square"
+            },
+            {
+              "value": "50",
+              "label": "Circle"
+            }
+          ],
+          "default": "5"
+        },
+        {
+          "type": "range",
+          "id": "title_size",
+          "label": "Title font size",
+          "min": 10,
+          "max": 30,
+          "step": 2,
+          "unit": "px",
+          "default": 14
+        },
+         {
+          "type": "range",
+          "id": "title_size_mb",
+          "label": "Title font size mobile",
+          "min": 10,
+          "max": 30,
+          "step": 2,
+          "unit": "px",
+          "default": 12
+        },
+        {
+          "type": "select",
+          "id": "font_weight",
+          "label": "Font boldness",
+          "options": [
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "medium",
+              "label": "Medium"
+            },
+            {
+              "value": "bold",
+              "label": "Bold"
+            }
+          ],
+          "default": "bold"
+        },
+         {
+          "type": "range",
+          "id": "price_size",
+          "label": "Price font size",
+          "min": 10,
+          "max": 30,
+          "step": 2,
+          "unit": "px",
+          "default": 12
+        },
+         {
+          "type": "range",
+          "id": "price_size_mb",
+          "label": "Price font size mobile",
+          "min": 10,
+          "max": 30,
+          "step": 2,
+          "unit": "px",
+          "default": 10
+        },
+         {
+          "type": "text",
+          "id": "free_gift_info",
+          "label": "Free product info",
+          "info": "Buy x get y free needs to be setup first",
+          "default": "👉 Claim free gift"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title color",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "price_color",
+          "label": "Price color",
+          "default": "#000"
+        },
+        {
+          "type": "range",
+          "id": "price_opacity",
+          "label": "Price color transparency",
+          "min": 0.1,
+          "max": 1,
+          "step": 0.1,
+          "default": 0.7
+        }
+      ]
     },
     {
       "type": "quantity_selector",
