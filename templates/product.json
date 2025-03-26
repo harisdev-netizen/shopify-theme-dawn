@@ -60,12 +60,17 @@
             "swatch_shape": "circle"
           }
         },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
         "product_addon_xnLUbJ": {
           "type": "product-addon",
           "settings": {
             "product_addon": [
               "gift-card",
-              "selling-plans-ski-wax"
+              "selling-plans-ski-wax",
+              "gift-wrap"
             ],
             "addon_bg": "#ffffff",
             "checkbox_active_color": "#000000",
@@ -83,10 +88,6 @@
             "price_color": "#000000",
             "price_opacity": 0.7
           }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -141,8 +142,8 @@
         "price",
         "custom_liquid_MwzLXQ",
         "variant_picker",
-        "product_addon_xnLUbJ",
         "quantity_selector",
+        "product_addon_xnLUbJ",
         "buy_buttons",
         "product_key_highlights_EiHDih",
         "collapsible_tab_Qzrck9",
