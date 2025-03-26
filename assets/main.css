@@ -311,3 +311,66 @@ h3.accordion__title img {
     font-size: var(--accordion-answer-size-mb);
   }
 } */
+
+/* PRODUCT ADDON SNIPPET */
+.product-addon-container-gm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%;
+  background-color: var(--addon-bg);
+  padding: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.product-addon-container-gm .product-addon-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-addon-container-gm .product-addon-item .product-addon-checkbox {
+  cursor: pointer;
+  accent-color: var(--checkbox-active-color);
+}
+
+.product-addon-image {
+  width: var(--image-size);
+  height: var(--image-size);
+  object-fit: cover;
+  border-radius: var(--image-type);
+}
+
+.product-addon-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-addon-title {
+  font-size: var(--title-size);
+  font-weight: var(--font-weight);
+  color: var(--title-color);
+}
+
+.product-addon-price {
+  font-size: var(--price-size);
+  color: var(--price-color);
+  opacity: var(--price-opacity);
+}
+
+@media only screen and (max-width: 600px) {
+  .product-addon-image {
+    width: var(--image-size-mb);
+    height: var(--image-size-mb);
+  }
+
+  .product-addon-title {
+    font-size: var(--title-size-mb);
+  }
+
+  .product-addon-price {
+    font-size: var(--price-size-mb);
+  }
+}
