@@ -319,7 +319,7 @@ h3.accordion__title img {
   gap: 20px;
   max-width: 100%;
   background-color: var(--addon-bg);
-  padding: 20px;
+  padding: 20px 0px;
   border-radius: 5px;
   box-sizing: border-box;
 }
