@@ -68,8 +68,6 @@
           "type": "product-addon",
           "settings": {
             "product_addon": [
-              "gift-card",
-              "selling-plans-ski-wax",
               "gift-wrap"
             ],
             "addon_bg": "#ffffff",
