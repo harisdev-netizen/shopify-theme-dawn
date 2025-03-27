@@ -17,29 +17,30 @@
     --price-size-mb: {{ price_size_mb }}px;
   }
 </style>
-
-<div class="product-addon-container">
-  {% for product in product_addon %}
-    {% if product != blank and product.available %}
-      <div class="product-addon-item" data-product-id="{{ product.variants.first.id }}">
-        <input style="width: {{ checkbox_size }}px !important; height: {{ checkbox_size }}px !important; min-width: {{ checkbox_size }}px !important; min-height: {{ checkbox_size }}px !important;" type="checkbox" 
-          class="product-addon-checkbox" 
-          id="product-addon-checkbox-{{ forloop.index }}" 
-          name="product-addon-checkbox-{{ forloop.index }}" 
-          data-product-id="{{ product.variants.first.id }}" >
-        <img class="product-addon-image" src="{{ product.featured_image | image_url }}" alt="{{ product.title }}">
-        <div class="product-addon-details">
-          <span class="product-addon-title">{{ product.title | truncatewords: 4 }}</span>
-          {% if product.tags contains 'free-gift' %}
-            <span class="product-addon-price">{{ free_gift_info }}</span>
-          {% else %}
-            <span class="product-addon-price">{{ product.price | money }}</span>
-          {% endif %}
+{% if product.metafields.custom.product_addons %}
+  <div class="product-addon-container">
+    {% for product in product_addon %}
+      {% if product != blank and product.available %}
+        <div class="product-addon-item" data-product-id="{{ product.variants.first.id }}">
+          <input style="width: {{ checkbox_size }}px !important; height: {{ checkbox_size }}px !important; min-width: {{ checkbox_size }}px !important; min-height: {{ checkbox_size }}px !important;" type="checkbox" 
+            class="product-addon-checkbox" 
+            id="product-addon-checkbox-{{ forloop.index }}" 
+            name="product-addon-checkbox-{{ forloop.index }}" 
+            data-product-id="{{ product.variants.first.id }}" >
+          <img class="product-addon-image" src="{{ product.featured_image | image_url }}" alt="{{ product.title }}">
+          <div class="product-addon-details">
+            <span class="product-addon-title">{{ product.title | truncatewords: 4 }}</span>
+            {% if product.tags contains 'free-gift' %}
+              <span class="product-addon-price">{{ free_gift_info }}</span>
+            {% else %}
+              <span class="product-addon-price">{{ product.price | money }}</span>
+            {% endif %}
+          </div>
         </div>
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
