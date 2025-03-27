@@ -62,9 +62,10 @@
           .then((response) => response.json())
           .then((data) => {
             console.log('Product added to cart:', data);
-
+            console.log(window.cart_type);
             // Check cart type and redirect accordingly
-            const cartType = Shopify.theme.settings.cart_type; // Assuming 'cart_type' is set in theme settings
+            const cartType = window.cart_type; // Assuming 'cart_type' is set in theme settings
+            console.log('Cart type:', cartType);
             if (cartType === 'page') {
               // Redirect to cart page
               window.location.href = routes.cart_url;
