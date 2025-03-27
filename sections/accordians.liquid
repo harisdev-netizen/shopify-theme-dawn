@@ -37,8 +37,8 @@
   endif
 -%}
 
-{% comment %} <style>
-  {{ tfont | font_face }}
+<style>
+{{ tfont | font_face }}
 {{ qfont | font_face }}
 {{ afont | font_face }}
   #accordion-{{ section.id }} {
@@ -79,9 +79,9 @@
         padding: 30px 10px 50px;
     }
   }
-</style> {% endcomment %}
+</style>
 
-<style>
+{% comment %} <style>
 {{ tfont | font_face }}
 {{ qfont | font_face }}
 {{ afont | font_face }}
@@ -213,11 +213,11 @@
     font-size: {{ answer_size_mb }}rem;
   }
 }
-</style>
+</style> {% endcomment %}
 
 {% comment %} <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> {% endcomment %}
 
-<section class="accordion-main-container-{{ section.id }}">
+<section id="accordion-{{ section.id }}"class="accordion-main-container-{{ section.id }}">
   <div class="accordion-container-{{ section.id }}" x-data="{ accordionOpen: {{ accordionOpen }} }">
     {% if title != blank %}
       <h2>{{ title }}</h2>

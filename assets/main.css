@@ -206,7 +206,7 @@ h3.accordion__title img {
 }
 
 /* ACCORDION SECTION */
-/* .accordion-main-container {
+.accordion-main-container {
   width: 100%;
   background-color: var(--accordion-section-bg);
   padding: var(--accordion-padding-top) 0 var(--accordion-padding-bottom);
@@ -310,7 +310,7 @@ h3.accordion__title img {
   .answer-content p {
     font-size: var(--accordion-answer-size-mb);
   }
-} */
+}
 
 /* PRODUCT ADDON SNIPPET */
 .product-addon-container {
