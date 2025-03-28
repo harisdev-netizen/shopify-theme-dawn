@@ -69,6 +69,16 @@
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
+    },
+    {
+      "key": "product_addons",
+      "namespace": "custom",
+      "name": "Product Addons",
+      "description": "",
+      "type": {
+        "name": "metaobject_reference",
+        "category": "REFERENCE"
+      }
     }
   ],
   "variant": [],
