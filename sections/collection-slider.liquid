@@ -1,6 +1,6 @@
 <div class="collection-slider-wrapper">
   {% for collection in shop.metaobjects.collection_slider.values %}
-    {% render 'gm-collection-slider',
+    {% render 'collection-slider',
       collection_url: collection.url,
       collection_image: collection.image| image_url,
       collection_name: collection.name,
