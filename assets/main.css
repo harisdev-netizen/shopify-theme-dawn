@@ -393,7 +393,6 @@ h3.accordion__title img {
   --content-width: var(--collection-width);
 }
 
-/* To center the main container while keeping horizontal scroll */
 .collection-slider-wrapper::before,
 .collection-slider-wrapper::after {
   content: "";
