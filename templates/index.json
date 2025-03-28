@@ -48,19 +48,19 @@
         "show_text_below": false
       }
     },
-    "collection_tabs_YdYtpW": {
-      "type": "collection-tabs",
-      "settings": {}
-    },
     "collection_slider_yCX3Fr": {
       "type": "collection-slider",
       "settings": {
         "gradient_color": "linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(246, 247, 249, 1) 48%, rgba(0, 0, 0, 0.76) 100%)",
         "collection_width": 200,
-        "border_radius": 50,
+        "border_radius": 100,
         "scrollbar_color": "#121212",
         "margin_block": 10
       }
+    },
+    "collection_tabs_YdYtpW": {
+      "type": "collection-tabs",
+      "settings": {}
     },
     "featured_collection": {
       "type": "featured-collection",
