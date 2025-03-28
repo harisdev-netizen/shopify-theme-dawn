@@ -1,4 +1,4 @@
-<div class="collection-slider-wrapper--gm">
+<div class="collection-slider-wrapper">
   {% for collection in shop.metaobjects.collection_slider.values %}
     {% render 'gm-collection-slider',
       collection_url: collection.url,
@@ -15,7 +15,7 @@
 
 {% schema %}
 {
-  "name": "GM Collection Slider",
+  "name": "Collection Slider",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -71,7 +71,7 @@
   "blocks": [],
   "presets": [
     {
-      "name": "GM Collection Slider"
+      "name": "Collection Slider"
     }
   ]
 }
