@@ -9,6 +9,16 @@
  */
 {
   "sections": {
+    "collection_slider_yCX3Fr": {
+      "type": "collection-slider",
+      "settings": {
+        "gradient_color": "linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(216, 216, 216, 1) 48%, rgba(0, 0, 0, 0.76) 100%)",
+        "collection_width": 200,
+        "border_radius": 50,
+        "scrollbar_color": "#121212",
+        "margin_block": 0
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -239,6 +249,7 @@
     }
   },
   "order": [
+    "collection_slider_yCX3Fr",
     "image_banner",
     "collection_tabs_YdYtpW",
     "featured_collection",
