@@ -12,7 +12,7 @@
     "collection_slider_yCX3Fr": {
       "type": "collection-slider",
       "settings": {
-        "gradient_color": "linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(216, 216, 216, 1) 48%, rgba(0, 0, 0, 0.76) 100%)",
+        "gradient_color": "linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(246, 247, 249, 1) 48%, rgba(0, 0, 0, 0.76) 100%)",
         "collection_width": 200,
         "border_radius": 50,
         "scrollbar_color": "#121212",
