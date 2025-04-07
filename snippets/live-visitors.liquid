@@ -1,41 +1,13 @@
 <style>
-.live_visitors {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding-left: 13px;
-}
-
-.live_visitors::before {
-  position: absolute;
-  display: inline-block;
-  content: "";
-  width: 8px;
-  height: 8px;
-  background: currentColor;
-  color: #21b646;
-  box-shadow: 0 0 0 0 #21b646;
-  border-radius: 100%;
-  margin-left: -14px;
-  transform: translateY(-50%, -50%);
-  animation: pulse-green 2s infinite;
-}
-
-@keyframes pulse-green {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(33, 182, 70, 0.7);
+  :root {
+    --live-gap: {{ live_gap | default: "0.5rem" }};
+    --live-padding-left: {{ live_padding_left | default: "13px" }};
+    --live-dot-size: {{ live_dot_size | default: "8px" }};
+    --live-dot-color: {{ live_dot_color | default: "#21b646" }};
+    --live-dot-margin-left: {{ live_dot_margin_left | default: "-14px" }};
+    --live-dot-animation-duration: {{ live_dot_animation_duration | default: "2s" }};
+    --live-dot-shadow-color: {{ live_dot_shadow_color | default: "rgba(33, 182, 70, 0.7)" }};
   }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(33, 182, 70, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(33, 182, 70, 0);
-  }
-}
 </style>
 
 <p class="live_visitors">
