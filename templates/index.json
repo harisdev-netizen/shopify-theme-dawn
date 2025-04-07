@@ -76,9 +76,9 @@
         "collection_UxBdVX"
       ],
       "settings": {
-        "gradient_color": "linear-gradient(358deg, rgba(17, 189, 251, 1) 15%, rgba(33, 249, 150, 1) 85%)",
-        "collection_width": 150,
-        "border_radius": 100,
+        "gradient_color": "linear-gradient(358deg, rgba(123, 123, 214, 1) 9%, rgba(255, 228, 196, 1) 100%)",
+        "collection_width": 100,
+        "border_radius": 50,
         "scrollbar_color": "#121212",
         "margin_block": 10
       }
