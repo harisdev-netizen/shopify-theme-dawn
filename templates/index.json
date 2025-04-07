@@ -50,6 +50,31 @@
     },
     "collection_slider_yCX3Fr": {
       "type": "collection-slider",
+      "blocks": {
+        "collection_DjTyH7": {
+          "type": "collection",
+          "settings": {
+            "collection": "automated-collection"
+          }
+        },
+        "collection_VarLYV": {
+          "type": "collection",
+          "settings": {
+            "collection": "flash-sale"
+          }
+        },
+        "collection_UxBdVX": {
+          "type": "collection",
+          "settings": {
+            "collection": "hydrogen"
+          }
+        }
+      },
+      "block_order": [
+        "collection_DjTyH7",
+        "collection_VarLYV",
+        "collection_UxBdVX"
+      ],
       "settings": {
         "gradient_color": "linear-gradient(358deg, rgba(17, 189, 251, 1) 15%, rgba(33, 249, 150, 1) 85%)",
         "collection_width": 150,
