@@ -530,3 +530,21 @@ h3.accordion__title img {
     box-shadow: 0 0 0 0 rgba(33, 182, 70, 0);
   }
 }
+
+/* PRODUCT OFFER */
+.product-form__fieldset {
+  border: 2px dotted #aaa;
+  border-radius: 8px;
+}
+
+.product-form__legend {
+  background-color: #E34234;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.5rem 0.7rem;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 3px #1E1E1E;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
