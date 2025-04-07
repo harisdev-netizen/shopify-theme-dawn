@@ -90,10 +90,10 @@
         "collection_wHDdq9"
       ],
       "settings": {
-        "gradient_color": "linear-gradient(358deg, rgba(123, 123, 214, 1) 9%, rgba(255, 228, 196, 1) 100%)",
+        "gradient_color": "linear-gradient(358deg, rgba(142, 128, 214, 0.57) 17%, rgba(255, 228, 196, 1) 90%)",
         "collection_width": 100,
         "border_radius": 50,
-        "scrollbar_color": "#121212",
+        "scrollbar_color": "#666666",
         "margin_block": 10
       }
     },
