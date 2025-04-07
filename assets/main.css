@@ -538,11 +538,11 @@ h3.accordion__title img {
 }
 
 .product-form__legend {
-  background-color: #E34234;
+  background-color: #292929;
   color: #fff;
   border-radius: 5px;
   padding: 0.5rem 0.7rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-shadow: 1px 1px 3px #1E1E1E;
   display: flex;
   align-items: center;
