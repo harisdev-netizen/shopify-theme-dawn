@@ -255,59 +255,12 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "accordians_YC3iiV": {
-      "type": "accordians",
-      "blocks": {
-        "accordions_67iewf": {
-          "type": "accordions",
-          "settings": {
-            "question": "Put your question here?",
-            "answer": "<p>Write your answer here.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "accordions_67iewf"
-      ],
-      "settings": {
-        "open_default": true,
-        "title": "Frequently Asked Questions",
-        "title_align": "left",
-        "title_margin": 2,
-        "section_width": 60,
-        "section_bg": "#ffffff",
-        "inner_bg": "#ffffff",
-        "border_color": "#cacaca",
-        "border_radius_inner": 6,
-        "text_icon_color": "#000000",
-        "btn_bg": "#4169e1",
-        "activebtn_fontcolor": "#ffffff",
-        "answer_bg": "#ffe4c4",
-        "answer_text": "#333333",
-        "title_size": 3,
-        "title_size_mb": 2.2,
-        "question_size": 2,
-        "question_size_mb": 1.8,
-        "answer_size": 1.8,
-        "answer_size_mb": 1.6,
-        "icon_size": 1.6,
-        "icon_size_mb": 1.4,
-        "icon_width": 1.5,
-        "icon_width_mb": 1.5,
-        "tfont": "helvetica_n4",
-        "qfont": "helvetica_n4",
-        "afont": "helvetica_n4",
-        "padding_top": 50,
-        "padding_bottom": 50
-      }
     }
   },
   "order": [
     "main",
     "related-products",
     "17425723083b008ed3",
-    "collapsible_content_mJUJ36",
-    "accordians_YC3iiV"
+    "collapsible_content_mJUJ36"
   ]
 }
