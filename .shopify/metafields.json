@@ -2,7 +2,18 @@
   "article": [],
   "blog": [],
   "brand": [],
-  "collection": [],
+  "collection": [
+    {
+      "key": "subcollections",
+      "namespace": "custom",
+      "name": "Subcollections",
+      "description": "",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    }
+  ],
   "company": [],
   "company_location": [],
   "location": [],
