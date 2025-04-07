@@ -1,5 +1,9 @@
 <div class="collection-slider-wrapper">
-  {% for collection in shop.metaobjects.collection_slider.values %}
+  {% for block in section.blocks %}
+    {% assign collection = block.settings.collection %}
+    {% if collection == blank %}
+      {% continue %}
+    {% endif %}
     {% render 'collection-slider',
       collection_url: collection.url,
       collection_image: collection.image| image_url,
@@ -68,7 +72,19 @@
       "default": 0
     }
   ],
-  "blocks": [],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select collection"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "Collection Slider"
