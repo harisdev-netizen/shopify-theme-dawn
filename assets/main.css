@@ -495,29 +495,29 @@ h3.accordion__title img {
   position: relative;
   display: flex;
   align-items: center;
-  gap: var(--live-gap);
-  padding-left: var(--live-padding-left);
+  gap: 0.5rem;
+  padding-left: 13px;
 }
 
 .live_visitors::before {
   position: absolute;
   display: inline-block;
   content: "";
-  width: var(--live-dot-size);
-  height: var(--live-dot-size);
+  width: 8px;
+  height: 8px;
   background: currentColor;
-  color: var(--live-dot-color);
-  box-shadow: 0 0 0 0 var(--live-dot-color);
+  color: #21b646;
+  box-shadow: 0 0 0 0 #21b646;
   border-radius: 100%;
-  margin-left: var(--live-dot-margin-left);
+  margin-left: -14px;
   transform: translateY(-50%, -50%);
-  animation: pulse-green var(--live-dot-animation-duration) infinite;
+  animation: pulse-green 2s infinite;
 }
 
 @keyframes pulse-green {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 var(--live-dot-shadow-color);
+    box-shadow: 0 0 0 0 rgba(33, 182, 70, 0.7);
   }
 
   70% {
