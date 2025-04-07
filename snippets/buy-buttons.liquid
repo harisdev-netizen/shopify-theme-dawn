@@ -11,25 +11,6 @@
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
 
-{% comment %} <style>
-  fieldset {
-    border: 2px dotted #aaa;
-    border-radius: 8px;
-  }
-
-  legend {
-    background-color: #E34234;
-    color: #fff;
-    border-radius: 5px;
-    padding: 0.5rem 0.7rem;
-    font-size: 1.2rem;
-    text-shadow: 1px 1px 3px #1E1E1E;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-  }
-</style> {% endcomment %}
-
   <div {{ block.shopify_attributes }}>
     {%- if product != blank -%}
       {%- liquid
@@ -179,7 +160,7 @@
     {%- endif -%}
   </div>
 
-{% schema %}
+{% comment %} {% schema %}
   {
   "name": "Product Buttons Offer",
   "settings": [
@@ -191,4 +172,4 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %} {% endcomment %}
