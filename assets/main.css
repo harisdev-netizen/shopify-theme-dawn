@@ -33,7 +33,7 @@ h3.accordion__title img {
   max-width: 320px;
   width: 100%;
   min-height: 450px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-radius: 10px;
   box-shadow: 0px 4px 20px 1px rgba(0, 60, 60, 0.3);
 }
@@ -41,7 +41,7 @@ h3.accordion__title img {
 .testimonial-top-bar {
   width: 100%;
   height: 25%;
-  background-color: #000000d4;
+  background-color: #000000D4;
   clip-path: polygon(0 1%, 100% 0, 100% 80%, 0% 100%);
   border-radius: 10px 10px 0px 0px;
 }
@@ -57,7 +57,7 @@ h3.accordion__title img {
   width: 73px;
   height: auto;
   border-radius: 50%;
-  box-shadow: 0px 0px 10px 1px #d4d4d4d4;
+  box-shadow: 0px 0px 10px 1px #D4D4D4;
   position: absolute;
   top: -24%;
   left: 50%;
@@ -72,7 +72,7 @@ h3.accordion__title img {
 .testimonial-bottom-bar {
   width: 100%;
   height: 25%;
-  background-color: #000000d4;
+  background-color: #000000D4;
   clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
   border-radius: 0px 0px 10px 10px;
 }
@@ -87,7 +87,7 @@ h3.accordion__title img {
 .star-fa-icons-testimonials {
   display: inline-block;
   padding: 45px 3px;
-  color: #ffd700;
+  color: #FFD700;
   font-size: 24px;
 }
 
@@ -145,7 +145,7 @@ h3.accordion__title img {
 .key-highlights__box {
   width: 45%;
   padding: 5px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #CCC;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -155,7 +155,7 @@ h3.accordion__title img {
 }
 
 .key-highlights__key {
-  color: #96a6bc;
+  color: #96A6BC;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -212,7 +212,7 @@ h3.accordion__title img {
   padding: var(--accordion-padding-top) 0 var(--accordion-padding-bottom);
   margin: 0 auto;
 }
-  
+
 .accordion-container {
   width: var(--accordion-section-width);
   background-color: var(--accordion-inner-bg);
@@ -487,7 +487,7 @@ h3.accordion__title img {
 .collection-slider-wrapper::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-color);
   border-radius: 100px !important;
-  border: 3px solid #ffffff;
+  border: 3px solid #FFFFFF;
 }
 
 /* LIVE VISITORS SNIPPET */
@@ -506,8 +506,8 @@ h3.accordion__title img {
   width: 8px;
   height: 8px;
   background: currentColor;
-  color: #21b646;
-  box-shadow: 0 0 0 0 #21b646;
+  color: #21B646;
+  box-shadow: 0 0 0 0 #21B646;
   border-radius: 100%;
   margin-left: -14px;
   transform: translateY(-50%, -50%);
@@ -533,13 +533,13 @@ h3.accordion__title img {
 
 /* PRODUCT OFFER */
 .product-form__fieldset {
-  border: 2px dotted #aaaaaa;
+  border: 2px dotted #AAA;
   border-radius: 8px;
 }
 
 .product-form__legend {
   background-color: #292929;
-  color: #fff;
+  color: #FFF;
   border-radius: 5px;
   padding: 0.5rem 0.7rem;
   font-size: 1.3rem;
