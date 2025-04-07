@@ -443,7 +443,7 @@ h3.accordion__title img {
 }
 
 @media only screen and (max-width: 992px) {
-  .collection-slider-wrapper--gm {
+  .collection-slider-wrapper {
     scrollbar-width: none;
   }
 
