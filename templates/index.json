@@ -68,12 +68,26 @@
           "settings": {
             "collection": "hydrogen"
           }
+        },
+        "collection_iCiUCE": {
+          "type": "collection",
+          "settings": {
+            "collection": "summer-collection"
+          }
+        },
+        "collection_wHDdq9": {
+          "type": "collection",
+          "settings": {
+            "collection": "winter-collection"
+          }
         }
       },
       "block_order": [
         "collection_DjTyH7",
         "collection_VarLYV",
-        "collection_UxBdVX"
+        "collection_UxBdVX",
+        "collection_iCiUCE",
+        "collection_wHDdq9"
       ],
       "settings": {
         "gradient_color": "linear-gradient(358deg, rgba(123, 123, 214, 1) 9%, rgba(255, 228, 196, 1) 100%)",
