@@ -1,29 +1,50 @@
-<p class="live_visitors">
-  <span id="visitors_count"></span>
-  {{ section.settings.live_visitors_text }}
-</p>
+{% for block in section.blocks %}
+  {% if block.type == 'live_visitors' %}
+    <p class="live_visitors">
+      <span id="visitors_count_{{ block.id }}"></span>
+      {{ block.settings.live_visitors_text }}
+    </p>
 
-<script>
-  const minVisitors = 100, maxVisitors = 200, updateInterval = 2000;
-  const visitorsCount = document.getElementById('visitors_count');
-  const updateVisitors = () => {
-    if (visitorsCount) {
-      visitorsCount.textContent = Math.floor(Math.random() * (maxVisitors - minVisitors + 1) + minVisitors);
-    }
-  };
-  updateVisitors();
-  setInterval(updateVisitors, updateInterval);
-</script>
+    <script>
+      const minVisitors = 100, maxVisitors = 200, updateInterval = 2000;
+      const visitorsCount = document.getElementById('visitors_count_{{ block.id }}');
+      const updateVisitors = () => {
+        if (visitorsCount) {
+          visitorsCount.textContent = Math.floor(Math.random() * (maxVisitors - minVisitors + 1) + minVisitors);
+        }
+      };
+      updateVisitors();
+      setInterval(updateVisitors, updateInterval);
+    </script>
+  {% endif %}
+{% endfor %}
 
 {% schema %}
 {
   "name": "Live Visitors",
-  "settings": [
+  "blocks": [
     {
-      "type": "text",
-      "id": "live_visitors_text",
-      "label": "Live Visitors Text",
-      "default": "People are watching right now"
+      "type": "live_visitors",
+      "name": "Live Visitors Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "live_visitors_text",
+          "label": "Live Visitors Text",
+          "default": "People are watching right now"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "live_visitors"
+        }
+      ]
     }
   ]
 }
