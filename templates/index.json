@@ -40,8 +40,8 @@
         "slide_9qnY7k"
       ],
       "settings": {
-        "autoplay_speed": 5000,
-        "pagination_margin_top": 20,
+        "autoplay_speed": 2000,
+        "pagination_margin_top": 100,
         "pagination_margin_top_mobile": 10,
         "pagination_min_height": 16,
         "pagination_min_height_mobile": 12,
