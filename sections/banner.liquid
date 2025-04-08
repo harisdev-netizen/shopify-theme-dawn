@@ -1,6 +1,6 @@
 {%- liquid
-  assign swiper_aspect_desktop = section.settings.swiper_aspect_desktop_width | append: " / " | append: section.settings.swiper_aspect_desktop_height
-  assign swiper_aspect_mobile = section.settings.swiper_aspect_mobile_width | append: " / " | append: section.settings.swiper_aspect_mobile_height
+  assign swiper_aspect_desktop_width = section.settings.swiper_aspect_desktop_width | append: " / " | append: section.settings.swiper_aspect_desktop_height
+  assign swiper_aspect_mobile_width = section.settings.swiper_aspect_mobile_width | append: " / " | append: section.settings.swiper_aspect_mobile_height
   assign unique_id = section.id
   assign autoplay_speed = section.settings.autoplay_speed
   assign bullet_color = section.settings.bullet_color
