@@ -108,7 +108,7 @@
         "section_width": 1440,
         "content_max_width": 700,
         "mobile_breakpoint": 1023,
-        "desktop_button_position": "row",
+        "desktop_button_position": "row-reverse",
         "mobile_button_position": "column",
         "container_gap": 50,
         "description_top_space": 12,
