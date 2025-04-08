@@ -501,6 +501,159 @@
         "html_class": ""
       }
     },
+    "tp_contact_form_1_wjaXYf": {
+      "type": "tp-contact-form-1",
+      "blocks": {
+        "info_XJXW3a": {
+          "type": "info",
+          "settings": {
+            "heading": "Chat to us",
+            "description": "Our friendly team is here to help.",
+            "highlighted_text": "Help@sh.com"
+          }
+        },
+        "info_GeLxYU": {
+          "type": "info",
+          "settings": {
+            "heading": "Visit us",
+            "description": "Come say hello at our office HQ.",
+            "highlighted_text": "45 john street Washington VIC 3084 USA"
+          }
+        },
+        "info_M88BQd": {
+          "type": "info",
+          "settings": {
+            "heading": "Call us",
+            "description": "Mon-Sat from 9am to 6pm.",
+            "highlighted_text": "+1(456) 987-0099"
+          }
+        },
+        "text_PdNTAj": {
+          "type": "text",
+          "settings": {
+            "placeholder": "First name",
+            "name": "First Name",
+            "required": false
+          }
+        },
+        "text_XgLV8K": {
+          "type": "text",
+          "settings": {
+            "placeholder": "Last name",
+            "name": "Last Name",
+            "required": false
+          }
+        },
+        "text_YmiQpQ": {
+          "type": "text",
+          "settings": {
+            "placeholder": "Email address",
+            "name": "Email",
+            "required": false
+          }
+        },
+        "phone_8fURiE": {
+          "type": "phone",
+          "settings": {
+            "placeholder": "Phone number",
+            "name": "Phone",
+            "required": true
+          }
+        },
+        "textarea_p8M6kX": {
+          "type": "textarea",
+          "settings": {
+            "placeholder": "Write message",
+            "name": "Message",
+            "height": 6,
+            "required": false
+          }
+        },
+        "checkbox_Gjqw8h": {
+          "type": "checkbox",
+          "settings": {
+            "label": "Morning",
+            "required": false
+          }
+        },
+        "checkbox_cee8DT": {
+          "type": "checkbox",
+          "settings": {
+            "label": "Afternoon",
+            "required": false
+          }
+        },
+        "checkbox_MddGNz": {
+          "type": "checkbox",
+          "settings": {
+            "label": "Evening",
+            "required": false
+          }
+        },
+        "social_links_UKcGRz": {
+          "type": "social_links",
+          "settings": {
+            "whatsapp": "+92 123 678",
+            "facebook": "https://www.facebook.com",
+            "youtube": "https://www.youtube.com",
+            "linkedin": "https://www.linkedin.com",
+            "instagram": "https://www.instagram.com",
+            "tiktok": ""
+          }
+        }
+      },
+      "block_order": [
+        "info_XJXW3a",
+        "info_GeLxYU",
+        "info_M88BQd",
+        "text_PdNTAj",
+        "text_XgLV8K",
+        "text_YmiQpQ",
+        "phone_8fURiE",
+        "textarea_p8M6kX",
+        "checkbox_Gjqw8h",
+        "checkbox_cee8DT",
+        "checkbox_MddGNz",
+        "social_links_UKcGRz"
+      ],
+      "settings": {
+        "heading": "Award-winning interior design studio based in USA.",
+        "desktop_heading_text_size": 40,
+        "mobile_heading_text_size": 32,
+        "heading_text_weight": "400",
+        "form_heading": "Contact Us",
+        "form_description": "Have a question or comment? Interested in placing a wholesale order? Get in touch and we'll reply to your message as soon as we can.",
+        "checkboxes_wrapper_title": "When is the best time to reach you?",
+        "submit_button_text": "Submit",
+        "desktop_form_description_text_size": 18,
+        "mobile_form_description_text_size": 16,
+        "input_text_size": 16,
+        "button_max_width": 236,
+        "button_hover": "fade",
+        "button_text_size": 16,
+        "button_text_weight": "400",
+        "background_color": "",
+        "background_gradient": "",
+        "primary_color": "#000000",
+        "secondary_color": "#FFFFFF",
+        "form_description_color": "#525252",
+        "highlighted_text": "#FFDD00",
+        "section_width": 1920,
+        "desktop_details_top_space": 80,
+        "mobile_details_top_space": 40,
+        "desktop_social_links_top_space": 80,
+        "mobile_social_links_top_space": 40,
+        "fields_gap": 20,
+        "desktop_button_top_space": 50,
+        "mobile_button_top_space": 20,
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0,
+        "html_id": "",
+        "html_class": ""
+      }
+    },
     "collection_slider_yCX3Fr": {
       "type": "collection-slider",
       "blocks": {
@@ -807,6 +960,7 @@
     "tp_marquee_1_aUqpDj",
     "tp_image_with_text_2_9EiiTL",
     "tp_featured_products_1_KmG48r",
+    "tp_contact_form_1_wjaXYf",
     "collection_slider_yCX3Fr",
     "collection_tabs_YdYtpW",
     "featured_collection",
