@@ -1,0 +1,372 @@
+{% comment %}
+  {
+    "name": "Announcement Bar 1",
+    "version": "1.0.0",
+    "url": "https://themepack.co/section/announcement-bar-1",
+    "author": "Themepack",
+    "license": "MIT"
+  }
+{% endcomment %}
+
+{% comment %}
+  [-] Add option for auto sliding delay
+  [-] In blocks, add option to override colors for each block
+  [-] Use #shopify-section-{{ section.id }} for sticky approach
+  [-] Move third-party libraries to sh CDN
+  [-] Create a robust JS class wrapper to be used in every section. Refer to Design Packs.
+  [-] Add time control options, to show/hide announcement before or after a specified time.
+{% endcomment %}
+
+{%- liquid
+  assign version_parameter = 'now' | date: '%s' | plus: 0 | divided_by : 3600 | minus: 1
+  assign has_carousel = false
+
+  if section.blocks.size > 1
+    assign has_carousel = true
+  endif
+-%}
+
+{%- capture html_id -%}
+  {%- if section.settings.html_id != blank -%}
+    id="{{ section.settings.html_id | handleize }}"
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- if has_carousel -%}
+  {{ 'https://cdn.shopify.com/s/files/1/0828/2452/8179/files/swiper-10.3.1.min.css?v=1708370778' | stylesheet_tag }}
+{%- endif -%}
+
+{{ 'https://cdn.shopify.com/s/files/1/0814/8054/8667/files/tp-core.css?v=' | append: version_parameter | stylesheet_tag }}
+
+
+{%- capture styles -%}
+<style>
+  #tp-{{ section.id }} {
+    padding-block: {{ section.settings.mobile_top_padding }}px {{ section.settings.mobile_bottom_padding }}px;
+    background: {{ section.settings.background_gradient | default: section.settings.background_color }};
+  }
+
+  #tp-{{ section.id }} .tp__container {
+    max-width: calc({{ section.settings.section_width }}px + 20px * 2);
+  }
+
+  #tp-{{ section.id }} .tp__announcement {
+    font-size: {{ section.settings.mobile_text_size }}px;
+    color: {{ section.settings.text_color }};
+    font-weight: {{ section.settings.text_weight }};
+    padding-inline: 30px;
+  }
+
+  #tp-{{ section.id }} .tp__announcement a {
+    color: {{ section.settings.link_color }};
+  }
+
+  #tp-{{ section.id }} .tp__carousal-button::after {
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.mobile_text_size }}px;
+  }
+
+  #tp-{{ section.id }} .swiper-slide-prev {
+    opacity: 0 !important;
+  }
+
+  @media screen and (min-width: {{ section.settings.mobile_breakpoint | plus: 1 | append: 'px' }}) {
+    #tp-{{ section.id }} {
+      padding-block: {{ section.settings.desktop_top_padding }}px {{ section.settings.desktop_bottom_padding }}px;
+    }
+
+    #tp-{{ section.id }} .tp__announcement,
+    #tp-{{ section.id }} .tp__carousal-button::after {
+      font-size: {{ section.settings.desktop_text_size }}px;
+    }
+  }
+</style>
+{%- endcapture -%}
+
+{{ styles | strip_newlines }}
+
+<div id="tp-{{ section.id }}">
+  <div
+    {{ html_id }}
+    class="{{ 'tp__container tp__overflow-hidden tp__relative' | append: section.settings.html_class | strip }}"
+  >
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        {%- if block.settings.title != blank -%}
+          <div class="tp__block-{{ block.id }} tp__announcement swiper-slide tp__align-{{ section.settings.text_alignment }} tp__text-{{ section.settings.text_alignment }}">
+            {{ block.settings.title }}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if has_carousel -%}
+      <div class="swiper-button-next tp__carousal-button tp__transform-50">&nbsp;</div>
+      <div class="swiper-button-prev tp__carousal-button tp__transform-50">&nbsp;</div>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- if has_carousel -%}
+  <script src="https://cdn.shopify.com/s/files/1/0828/2452/8179/files/swiper-10.3.1.min.js?v=1708370795" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let announcements = document.querySelector('#tp-{{ section.id }} .tp__container');
+
+      const announcementsCarousel = function() {
+        if(!announcements && !Swiper) return;
+        new Swiper(announcements, {
+          slidesPerView: 1,
+          effect: "{{ section.settings.carousal_effect }}",
+          autoplay: {{ section.settings.auto_play }},
+          loop: {{ section.settings.loop }},
+          navigation: {
+            prevEl: "#tp-{{ section.id }} .swiper-button-prev",
+            nextEl: "#tp-{{ section.id }} .swiper-button-next"
+          }
+        });
+      }
+
+      announcementsCarousel()
+    });
+
+    document.addEventListener('shopify:section:load', announcementsCarousel);
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "TP - Announcement bar 1",
+  "class": "tp-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section information",
+      "info": "Codename: tp-announcement-1. For detailed documentation and best practices on using this section, please visit the [Section Guide](https://example.com)."
+    },
+    {
+      "type": "select",
+      "id": "carousal_effect",
+      "label": "Carousal effect",
+      "options": [
+        {
+          "value": "slide",
+          "label": "Slide"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        }
+      ],
+      "default": "fade"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_play",
+      "label": "Autoplay",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop",
+      "default": false
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "center"
+    },
+    {
+      "type": "number",
+      "id": "desktop_text_size",
+      "label": "Desktop: text size (px)",
+      "default": 16
+    },
+    {
+      "type": "number",
+      "id": "mobile_text_size",
+      "label": "Mobile: text size (px)",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Text weight",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin"
+        },
+        {
+          "value": "200",
+          "label": "Extra Light"
+        },
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "header",
+      "content": "Design"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient",
+      "info": "If set, overrides the background color."
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link color",
+      "default": "#FFFF00",
+      "info": "Color for links in the announcement message."
+    },
+    {
+      "type": "header",
+      "content": "Section layout"
+    },
+    {
+      "type": "number",
+      "id": "section_width",
+      "label": "Section width (px)",
+      "default": 1440
+    },
+    {
+      "type": "number",
+      "id": "mobile_breakpoint",
+      "label": "Mobile breakpoint (px)",
+      "default": 768
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "desktop_top_padding",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop: top padding",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desktop_bottom_padding",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop: bottom padding",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_top_padding",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile: top padding",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "mobile_bottom_padding",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile: bottom padding",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "html_id",
+      "label": "HTML ID",
+      "info": "Unique identifier for linking directly to this section. Leave blank if unsure."
+    },
+    {
+      "type": "text",
+      "id": "html_class",
+      "label": "HTML Class",
+      "info": "Comma separated list of classes."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Announcement message"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TP - Announcement bar 1",
+      "blocks": [
+        {
+          "type": "Announcement",
+          "settings": {
+            "title": "Welcome to our <a href=\"#\" target=\"_blank\" title=\"#\">Store</a>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
