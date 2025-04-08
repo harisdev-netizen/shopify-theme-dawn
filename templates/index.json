@@ -163,6 +163,7 @@
         "collection_iCiUCE",
         "collection_wHDdq9"
       ],
+      "disabled": true,
       "settings": {
         "gradient_color": "linear-gradient(358deg, rgba(142, 128, 214, 0.57) 17%, rgba(255, 228, 196, 1) 90%)",
         "collection_width": 140,
