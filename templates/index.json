@@ -43,7 +43,7 @@
         "autoplay_speed": 2000,
         "pagination_margin_top": 20,
         "pagination_margin_top_mobile": 0,
-        "pagination_min_height": 16,
+        "pagination_min_height": 43,
         "pagination_min_height_mobile": 12,
         "bullet_width": 23,
         "bullet_color": "#1e1e1e",
