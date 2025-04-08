@@ -1,6 +1,6 @@
 {%- liquid
-  assign swiper_aspect_desktop = section.settings.swiper_aspect_desktop
-  assign swiper_aspect_mobile = section.settings.swiper_aspect_mobile
+  assign swiper_aspect_desktop = section.settings.swiper_aspect_desktop_width | append: " / " | append: section.settings.swiper_aspect_desktop_height
+  assign swiper_aspect_mobile = section.settings.swiper_aspect_mobile_width | append: " / " | append: section.settings.swiper_aspect_mobile_height
   assign unique_id = section.id
   assign autoplay_speed = section.settings.autoplay_speed
   assign bullet_color = section.settings.bullet_color
@@ -20,8 +20,8 @@
 
 <style>
   :root {
-    --swiper-aspect-desktop: {{ swiper_aspect_desktop | default: "1920 / 640" }};
-    --swiper-aspect-mobile: {{ swiper_aspect_mobile | default: "750 / 1100" }};
+    --swiper-aspect-desktop: {{ swiper_aspect_desktop }};
+    --swiper-aspect-mobile: {{ swiper_aspect_mobile }};
     --pagination-margin-top: {{ pagination_margin_top | default: "20px" }};
     --pagination-margin-top-mobile: {{ pagination_margin_top_mobile | default: "10px" }};
     --pagination-min-height: {{ pagination_min_height | default: "16px" }};
@@ -98,16 +98,44 @@
   },
   "settings": [
     {
-      "type": "text",
-      "id": "swiper_aspect_desktop",
-      "label": "Aspect Ratio (Desktop)",
-      "default": "1920 / 640"
+      "type": "range",
+      "id": "swiper_aspect_desktop_width",
+      "label": "Aspect Width (Desktop)",
+      "min": 100,
+      "max": 4000,
+      "step": 10,
+      "default": 1920,
+      "unit": "px"
     },
     {
-      "type": "text",
-      "id": "swiper_aspect_mobile",
-      "label": "Aspect Ratio (Mobile)",
-      "default": "750 / 1100"
+      "type": "range",
+      "id": "swiper_aspect_desktop_height",
+      "label": "Aspect Height (Desktop)",
+      "min": 100,
+      "max": 2000,
+      "step": 10,
+      "default": 640,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "swiper_aspect_mobile_width",
+      "label": "Aspect Width (Mobile)",
+      "min": 100,
+      "max": 2000,
+      "step": 10,
+      "default": 750,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "swiper_aspect_mobile_height",
+      "label": "Aspect Height (Mobile)",
+      "min": 100,
+      "max": 2000,
+      "step": 10,
+      "default": 1100,
+      "unit": "px"
     },
     {
       "type": "range",
