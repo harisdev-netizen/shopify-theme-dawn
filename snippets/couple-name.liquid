@@ -1,0 +1,20 @@
+<fieldset class="custom-fields">
+  <legend>
+    <span class="heart-emoji">💖</span> <span>{{ 'My heart beats for you' }}</span>
+  </legend>
+  <div class="field">
+    <input required class="field__input" type="text" id="lucky-one" name="properties[Lucky One]" form="product-form-{{ section.id }}" value="" placeholder="You the lucky one" />
+    <label class="field__label" for="lucky-one">{{ 'You the lucky one' }}</label>
+  </div>
+
+  <div class="field">
+    <input required class="field__input" type="text" id="beloved-partner" name="properties[Partner Name]" form="product-form-{{ section.id }}" value="" placeholder="Your beloved partner" />
+    <label class="field__label" for="beloved-partner" >{{ 'Beloved partner' }}</label>
+  </div>
+</fieldset>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("form[novalidate]").removeAttribute("novalidate");
+  });
+</script>
