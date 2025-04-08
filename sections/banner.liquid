@@ -1,4 +1,6 @@
 {%- liquid
+  assign swiper_aspect_desktop = section.settings.swiper_aspect_desktop
+  assign swiper_aspect_mobile = section.settings.swiper_aspect_mobile
   assign unique_id = section.id
   assign autoplay_speed = section.settings.autoplay_speed
   assign bullet_color = section.settings.bullet_color
@@ -38,24 +40,20 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-<div class="swiper autoplay-slideshow-{{ unique_id }}">
+<div class="swiper autoplay-slideshow autoplay-slideshow-{{ unique_id }}">
   <div class="swiper-wrapper swiper-wrapper-{{ unique_id }}">
     {% for block in section.blocks %}
       <div class="swiper-slide swiper-slide-{{ unique_id }}">
-        {% if block.settings.collection_link %}
-          <a href="{{ block.settings.collection_link }}">
-        {% endif %}
-            <picture>
-              <!-- Desktop image (min-width: 750px) -->
-              <source media="(min-width: 750px)" srcset="{{ block.settings.slide_desktop | image_url: width: 1920 }}" width="1920" height="640">
-              <!-- Mobile image (max-width: 749px) -->
-              <source media="(max-width: 749px)" srcset="{{ block.settings.slide_mobile | image_url: width: 750 }}" width="750" height="1100">
-              <!-- Fallback image -->
-              <img src="{{ block.settings.slide_desktop | image_url: width: 1920 }}" alt="{{ block.settings.slide_desktop.alt | escape }}" width="1920" height="640" loading="eager">
-            </picture>
-        {% if block.settings.collection_link %}''
-          </a>
-        {% endif %}
+        <a href="{{ block.settings.collection_link }}">
+          <picture>
+            <!-- Desktop image (min-width: 750px) -->
+            <source media="(min-width: 750px)" srcset="{{ block.settings.slide_desktop | image_url: width: 1920 }}" width="1920" height="640" >
+            <!-- Mobile image (max-width: 749px) -->
+            <source media="(max-width: 749px)" srcset="{{ block.settings.slide_mobile | image_url: width: 750 }}" width="750" height="1100" >
+            <!-- Fallback image -->
+            <img src="{{ block.settings.slide_desktop | image_url: width: 1920 }}" alt="{{ block.settings.slide_desktop.alt | escape }}" width="1920" height="640" loading="eager" >
+          </picture>
+        </a>
       </div>
     {% endfor %}
   </div>
@@ -97,83 +95,83 @@
   "class": "section",
   "disabled_on": {"groups": ["header", "footer"]},
   "settings": [
-        {
-          "type": "range",
-          "id": "autoplay_speed",
-          "label": "Rotate slides in ms",
-          "info": "1000ms = 1sec",
-          "min": 1000,
-          "max": 9000,
-          "step": 1000,
-          "default": 2000,
-          "unit": "ms"
-        },
-        {
-          "type": "range",
-          "id": "pagination_margin_top",
-          "label": "Pagination Margin Top (Desktop)",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "default": 20,
-          "unit": "px"
-        },
-        {
-          "type": "range",
-          "id": "pagination_margin_top_mobile",
-          "label": "Pagination Margin Top (Mobile)",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "default": 10,
-          "unit": "px"
-        },
-        {
-          "type": "range",
-          "id": "pagination_min_height",
-          "label": "Pagination Min Height (Desktop)",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "default": 16,
-          "unit": "px"
-        },
-        {
-          "type": "range",
-          "id": "pagination_min_height_mobile",
-          "label": "Pagination Min Height (Mobile)",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "default": 12,
-          "unit": "px"
-        },
-        {
-        	"type":"header",
-        	"content":"Bullet Design"
-        },
-        {
-          "type": "range",
-          "id": "bullet_width",
-          "label": "Bullet Width (Desktop)",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "default": 16,
-          "unit": "px"
-        },
-        {
-          "type": "color",
-          "id": "bullet_color",
-          "label": "Bullet Color",
-          "default": "#1e1e1e"
-        },
-        {
-          "type": "color",
-          "id": "active_bullet_color",
-          "label": "Active Bullet Color",
-          "default": "#0080FF"
-        }
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Rotate slides in ms",
+      "info": "1000ms = 1sec",
+      "min": 1000,
+      "max": 9000,
+      "step": 1000,
+      "default": 2000,
+      "unit": "ms"
+    },
+    {
+      "type": "range",
+      "id": "pagination_margin_top",
+      "label": "Pagination Margin Top (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pagination_margin_top_mobile",
+      "label": "Pagination Margin Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pagination_min_height",
+      "label": "Pagination Min Height (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "pagination_min_height_mobile",
+      "label": "Pagination Min Height (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type":"header",
+      "content":"Bullet Design"
+    },
+    {
+      "type": "range",
+      "id": "bullet_width",
+      "label": "Bullet Width (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "bullet_color",
+      "label": "Bullet Color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "color",
+      "id": "active_bullet_color",
+      "label": "Active Bullet Color",
+      "default": "#0080FF"
+    }
   ],
   "blocks": [
     {
