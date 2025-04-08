@@ -12,32 +12,32 @@
     "banner_4QCyX7": {
       "type": "banner",
       "blocks": {
-        "slide_qhMNT3": {
+        "slide_TBkxKJ": {
           "type": "slide",
           "settings": {
-            "slide_desktop": "shopify://shop_images/theme_cover_image.jpg",
+            "slide_desktop": "shopify://shop_images/banner_image.jpg",
             "collection_link": ""
           }
         },
-        "slide_DjBcgG": {
+        "slide_tyeRw6": {
           "type": "slide",
           "settings": {
-            "slide_desktop": "shopify://shop_images/theme_cover_image.jpg",
+            "slide_desktop": "shopify://shop_images/banner_image.jpg",
             "collection_link": ""
           }
         },
-        "slide_9jtFH7": {
+        "slide_9qnY7k": {
           "type": "slide",
           "settings": {
-            "slide_desktop": "shopify://shop_images/theme_cover_image.jpg",
+            "slide_desktop": "shopify://shop_images/banner_image.jpg",
             "collection_link": ""
           }
         }
       },
       "block_order": [
-        "slide_qhMNT3",
-        "slide_DjBcgG",
-        "slide_9jtFH7"
+        "slide_TBkxKJ",
+        "slide_tyeRw6",
+        "slide_9qnY7k"
       ],
       "settings": {
         "autoplay_speed": 2000,
