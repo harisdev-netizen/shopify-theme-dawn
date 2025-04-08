@@ -1,20 +1,23 @@
 <fieldset class="custom-fields">
   <legend>
-    <span class="heart-emoji">💖</span> <span>{{ 'My heart beats for you' }}</span>
+    <span class="heart-emoji">{{ block.settings.emoji }}</span>
+    <span>{{ block.settings.legend_text }}</span>
   </legend>
+
   <div class="field">
-    <input required class="field__input" type="text" id="lucky-one" name="properties[Lucky One]" form="product-form-{{ section.id }}" value="" placeholder="You the lucky one" />
-    <label class="field__label" for="lucky-one">{{ 'You the lucky one' }}</label>
+    <input required class="field__input" type="text" id="lucky-one" name="properties[Lucky One]" form="product-form-{{ section.id }}" value="" placeholder="{{ block.settings.placeholder_lucky_one }}" />
+    <label class="field__label" for="lucky-one">{{ block.settings.label_lucky_one }}</label>
   </div>
 
   <div class="field">
-    <input required class="field__input" type="text" id="beloved-partner" name="properties[Partner Name]" form="product-form-{{ section.id }}" value="" placeholder="Your beloved partner" />
-    <label class="field__label" for="beloved-partner" >{{ 'Beloved partner' }}</label>
+    <input required class="field__input" type="text" id="beloved-partner" name="properties[Partner Name]" form="product-form-{{ section.id }}" value="" placeholder="{{ block.settings.placeholder_partner }}" />
+    <label class="field__label" for="beloved-partner">{{ block.settings.label_partner }}</label>
   </div>
 </fieldset>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("form[novalidate]").removeAttribute("novalidate");
+    const form = document.querySelector("form[novalidate]");
+    if (form) form.removeAttribute("novalidate");
   });
 </script>
