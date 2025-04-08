@@ -48,14 +48,14 @@
         "slide_ztkrr8"
       ],
       "settings": {
-        "autoplay_speed": 2000,
+        "autoplay_speed": 5000,
         "pagination_margin_top": 20,
         "pagination_margin_top_mobile": 10,
         "pagination_min_height": 16,
         "pagination_min_height_mobile": 12,
-        "bullet_width": 16,
+        "bullet_width": 0,
         "bullet_color": "#1e1e1e",
-        "active_bullet_color": "#0080FF"
+        "active_bullet_color": "#0080ff"
       }
     },
     "image_banner": {
