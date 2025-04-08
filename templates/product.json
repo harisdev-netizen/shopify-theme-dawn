@@ -85,6 +85,12 @@
             "price_opacity": 0.7
           }
         },
+        "custom_liquid_33L6yK": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'couple-name' %}"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -140,6 +146,7 @@
         "variant_picker",
         "quantity_selector",
         "product_addon_xnLUbJ",
+        "custom_liquid_33L6yK",
         "buy_buttons",
         "product_key_highlights_EiHDih",
         "collapsible_tab_Qzrck9",
