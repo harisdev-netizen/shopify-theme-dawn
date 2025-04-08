@@ -308,6 +308,83 @@
         "html_class": ""
       }
     },
+    "tp_marquee_1_aUqpDj": {
+      "type": "tp-marquee-1",
+      "blocks": {
+        "marquee_nWw4n6": {
+          "type": "marquee",
+          "settings": {
+            "text": "Save 10% on entire stock"
+          }
+        },
+        "marquee_gwAqzf": {
+          "type": "marquee",
+          "settings": {
+            "text": "Save 10% on entire stock"
+          }
+        },
+        "marquee_3mRHKa": {
+          "type": "marquee",
+          "settings": {
+            "text": "Save 10% on entire stock"
+          }
+        },
+        "marquee_yJR9mG": {
+          "type": "marquee",
+          "settings": {
+            "text": "Save 10% on entire stock"
+          }
+        },
+        "marquee_a7izd7": {
+          "type": "marquee",
+          "settings": {
+            "text": "Save 10% on entire stock"
+          }
+        },
+        "marquee_GkixgE": {
+          "type": "marquee",
+          "settings": {
+            "text": "Save 10% on entire stock"
+          }
+        },
+        "marquee_NqKz7p": {
+          "type": "marquee",
+          "settings": {
+            "text": "Save 10% on entire stock"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_nWw4n6",
+        "marquee_gwAqzf",
+        "marquee_3mRHKa",
+        "marquee_yJR9mG",
+        "marquee_a7izd7",
+        "marquee_GkixgE",
+        "marquee_NqKz7p"
+      ],
+      "settings": {
+        "pause_on_hover": true,
+        "direction": "normal",
+        "duration": 50,
+        "desktop_item_gap": 40,
+        "mobile_item_gap": 10,
+        "desktop_text_size": 48,
+        "mobile_text_size": 16,
+        "text_weight": "400",
+        "background_color": "#121212",
+        "background_gradient": "",
+        "text_color": "#FFFFFF",
+        "section_width": 1920,
+        "repeat_count": 2,
+        "desktop_top_padding": 14,
+        "desktop_bottom_padding": 14,
+        "mobile_top_padding": 14,
+        "mobile_bottom_padding": 14,
+        "html_id": "",
+        "html_class": ""
+      }
+    },
     "collection_slider_yCX3Fr": {
       "type": "collection-slider",
       "blocks": {
@@ -611,6 +688,7 @@
     "tp_image_with_text_1_jXyhpe",
     "tp_countdown_1_DYmqCJ",
     "tp_features_2_RtxH3A",
+    "tp_marquee_1_aUqpDj",
     "collection_slider_yCX3Fr",
     "collection_tabs_YdYtpW",
     "featured_collection",
