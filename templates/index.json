@@ -42,7 +42,7 @@
       "settings": {
         "autoplay_speed": 5000,
         "bullet_color": "#1e1e1e",
-        "active_bullet_color": "#0080FF"
+        "active_bullet_color": "#0080ff"
       }
     },
     "image_banner": {
