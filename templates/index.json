@@ -41,13 +41,13 @@
       ],
       "settings": {
         "autoplay_speed": 5000,
-        "pagination_margin_top": 72,
-        "pagination_margin_top_mobile": 15,
-        "pagination_min_height": 54,
+        "pagination_margin_top": 20,
+        "pagination_margin_top_mobile": 10,
+        "pagination_min_height": 16,
         "pagination_min_height_mobile": 12,
-        "bullet_width": 20,
-        "bullet_color": "#ffffff",
-        "active_bullet_color": "#18473e"
+        "bullet_width": 10,
+        "bullet_color": "#666666",
+        "active_bullet_color": "#334fb4"
       }
     },
     "image_banner": {
