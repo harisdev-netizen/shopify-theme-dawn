@@ -45,9 +45,9 @@
         "pagination_margin_top_mobile": 15,
         "pagination_min_height": 54,
         "pagination_min_height_mobile": 12,
-        "bullet_width": 13,
-        "bullet_color": "#000000",
-        "active_bullet_color": "#ffffff"
+        "bullet_width": 20,
+        "bullet_color": "#ffffff",
+        "active_bullet_color": "#18473e"
       }
     },
     "image_banner": {
