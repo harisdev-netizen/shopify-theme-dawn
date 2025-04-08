@@ -93,8 +93,22 @@
   "name": "Slideshow Banner",
   "tag": "section",
   "class": "section",
-  "disabled_on": {"groups": ["header", "footer"]},
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
   "settings": [
+    {
+      "type": "text",
+      "id": "swiper_aspect_desktop",
+      "label": "Aspect Ratio (Desktop)",
+      "default": "1920 / 640"
+    },
+    {
+      "type": "text",
+      "id": "swiper_aspect_mobile",
+      "label": "Aspect Ratio (Mobile)",
+      "default": "750 / 1100"
+    },
     {
       "type": "range",
       "id": "autoplay_speed",
@@ -147,8 +161,8 @@
       "unit": "px"
     },
     {
-      "type":"header",
-      "content":"Bullet Design"
+      "type": "header",
+      "content": "Bullet Design"
     },
     {
       "type": "range",
@@ -158,6 +172,66 @@
       "max": 100,
       "step": 1,
       "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "bullet_height",
+      "label": "Bullet Height (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "bullet_radius",
+      "label": "Bullet Radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 6,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "bullet_width_mobile",
+      "label": "Bullet Width (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "bullet_height_mobile",
+      "label": "Bullet Height (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 6,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "bullet_active_width_mobile",
+      "label": "Active Bullet Width (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "bullet_active_width",
+      "label": "Active Bullet Width (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 32,
       "unit": "px"
     },
     {
