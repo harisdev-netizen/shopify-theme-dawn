@@ -39,6 +39,7 @@
         "slide_tyeRw6",
         "slide_9qnY7k"
       ],
+      "disabled": true,
       "settings": {
         "autoplay_speed": 5000,
         "bullet_color": "#1e1e1e",
@@ -71,6 +72,7 @@
         "heading",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -82,6 +84,42 @@
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
         "show_text_below": false
+      }
+    },
+    "tp_banner_1_JiAfkU": {
+      "type": "tp-banner-1",
+      "settings": {
+        "heading": "Where Ideas Become Realities",
+        "description": "We listen to your ideas and collaborate closely to create a design that reflects your personality and meets your specific needs.",
+        "is_video_muted": true,
+        "text_alignment": "left",
+        "desktop_heading_text_size": 75,
+        "mobile_heading_text_size": 32,
+        "heading_text_weight": "400",
+        "desktop_description_text_size": 18,
+        "mobile_description_text_size": 18,
+        "description_text_weight": "300",
+        "overlay_color": "",
+        "button_background_color": "#FFFFFF",
+        "button_border_color": "#FFFFFF",
+        "heading_color": "#FFFFFF",
+        "description_color": "#FFFFFF",
+        "overlay_opacity": 0.5,
+        "section_width": 1440,
+        "content_max_width": 700,
+        "mobile_breakpoint": 1023,
+        "desktop_button_position": "row",
+        "mobile_button_position": "column",
+        "container_gap": 50,
+        "description_top_space": 12,
+        "desktop_button_size": 140,
+        "mobile_button_size": 140,
+        "desktop_top_padding": 200,
+        "desktop_bottom_padding": 200,
+        "mobile_top_padding": 30,
+        "mobile_bottom_padding": 40,
+        "html_id": "",
+        "html_class": ""
       }
     },
     "collection_slider_yCX3Fr": {
@@ -321,17 +359,75 @@
         "padding_top": 50,
         "padding_bottom": 50
       }
+    },
+    "tp_newsletter_1_kAJRxi": {
+      "type": "tp-newsletter-1",
+      "settings": {
+        "desktop_icon_width": 132,
+        "mobile_icon_width": 60,
+        "heading": "Get the latest news, events & more delivered to your inbox",
+        "description": "",
+        "placeholder_text": "Enter your email address",
+        "button_text": "Subscribe",
+        "footer_note": "* We respect your privacy. Unsubscribe at anytime.",
+        "space_arround_button": 9,
+        "desktop_heading_text_size": 50,
+        "mobile_heading_text_size": 24,
+        "heading_text_weight": "500",
+        "desktop_description_text_size": 18,
+        "mobile_description_text_size": 18,
+        "description_text_weight": "500",
+        "desktop_input_text_size": 16,
+        "mobile_input_text_size": 16,
+        "input_text_weight": "400",
+        "input_border_tickness": "2",
+        "input_border_radius": 0,
+        "desktop_button_text_size": 16,
+        "mobile_button_text_size": 16,
+        "button_text_weight": "400",
+        "desktop_button_width": 160,
+        "mobile_button_width": 120,
+        "button_hover": "fade",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "heading_color": "#000000",
+        "description_color": "",
+        "input_border_color": "#E1DBDB",
+        "input_background_color": "#FFFFFF",
+        "placeholder_text_color": "#525252",
+        "input_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#FFFFFF",
+        "footer_note_color": "#525252",
+        "section_width": 1440,
+        "header_width": 900,
+        "form_width": 740,
+        "content_alignment": "center",
+        "mobile_breakpoint": 768,
+        "heading_top_space": 0,
+        "description_top_space": 20,
+        "form_top_space": 32,
+        "footer_note_top_space": 16,
+        "desktop_top_padding": 50,
+        "desktop_bottom_padding": 50,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "html_id": "",
+        "html_class": ""
+      }
     }
   },
   "order": [
     "banner_4QCyX7",
     "image_banner",
+    "tp_banner_1_JiAfkU",
     "collection_slider_yCX3Fr",
     "collection_tabs_YdYtpW",
     "featured_collection",
     "collection_list_new_MTgRFY",
     "font_face_section_hWx8fP",
     "testimonials_XaGtXe",
-    "accordians_BramEp"
+    "accordians_BramEp",
+    "tp_newsletter_1_kAJRxi"
   ]
 }
