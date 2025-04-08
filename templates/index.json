@@ -32,14 +32,22 @@
         "slide_fhU3dL"
       ],
       "settings": {
+        "swiper_aspect_desktop": "1920 / 840",
+        "swiper_aspect_mobile": "750 / 1100",
         "autoplay_speed": 4000,
         "pagination_margin_top": 20,
         "pagination_margin_top_mobile": 10,
         "pagination_min_height": 16,
         "pagination_min_height_mobile": 12,
         "bullet_width": 2,
+        "bullet_height": 8,
+        "bullet_radius": 6,
+        "bullet_width_mobile": 12,
+        "bullet_height_mobile": 6,
+        "bullet_active_width_mobile": 24,
+        "bullet_active_width": 32,
         "bullet_color": "#1e1e1e",
-        "active_bullet_color": "#0080FF"
+        "active_bullet_color": "#0080ff"
       }
     },
     "image_banner": {
