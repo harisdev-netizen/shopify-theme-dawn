@@ -1,0 +1,841 @@
+{% comment %}
+{
+  "name": "Image With Text 1",
+  "version": "1.0.0",
+  "url": "https://themepack.co/section/image-with-text-1",
+  "author": "Themepack",
+  "license": "MIT"
+}
+{% endcomment %}
+
+{%- liquid
+  assign version_parameter = 'now' | date: '%s' | plus: 0 | divided_by : 3600 | minus: 1
+  assign heading_tag = 'h2'
+  assign section_width = section.settings.section_width
+  assign mobile_breakpoint = section.settings.mobile_breakpoint
+  assign sizes_mobile = section_width | plus: 0.0 | divided_by: 1 | divided_by: section_width | times: 100 | floor
+  assign sizes_desktop = section_width | plus: 0.0 | divided_by: 2 | divided_by: section_width | times: 100 | floor
+
+  if section.index0 == 0
+    assign heading_tag = 'h1'
+  endif
+
+  capture image_filter
+    case section.settings.image_filter
+      when 'grayscale':
+        echo 'grayscale(100%);'
+      when 'sepia':
+        echo 'sepia(100%) contrast(1.2);'
+      when 'invert':
+        echo 'invert(100%);'
+      endcase
+  endcapture
+-%}
+
+{%- capture sizes -%}
+  (max-width: {{ mobile_breakpoint | plus: 1 | append: 'px' }}) {{ sizes_mobile | append: 'vw' }}, {{ sizes_desktop | append: 'vw' }}
+{%- endcapture -%}
+
+{%- capture html_id -%}
+  {%- if section.settings.html_id != blank -%}
+    id="{{ section.settings.html_id | handleize }}"
+  {%- endif -%}
+{%- endcapture -%}
+
+{{ 'https://cdn.shopify.com/s/files/1/0814/8054/8667/files/tp-core.css?v=' | append: version_parameter | stylesheet_tag }}
+
+{%- capture styles -%}
+<style>
+  #tp-{{ section.id }} {
+    background: {{ section.settings.background_gradient | default: section.settings.background_color }};
+    max-width: {{ section_width }}px;
+    font-size: 0;
+  }
+
+  #tp-{{ section.id }} .tp__image-with-text {
+    flex-direction: {{ section.settings.mobile_image_position }};
+  }
+
+  #tp-{{ section.id }} .tp__content {
+    padding-block: {{ section.settings.mobile_top_padding }}px {{ section.settings.mobile_bottom_padding }}px;
+  }
+
+  #tp-{{ section.id }} .tp__content-container {
+    max-width: calc({{ section.settings.content_width }}px + 24px * 2);
+    padding-inline: 24px;
+  }
+
+  #tp-{{ section.id }} .tp__image img {
+    position: static;
+    filter: {{ image_filter }};
+  }
+
+  #tp-{{ section.id }} .tp__section-subheading {
+    color: {{ section.settings.subheading_color }};
+    font-size: {{ section.settings.mobile_subheading_text_size }}px;
+    font-weight: {{ section.settings.subheading_text_weight }};
+  }
+
+  #tp-{{ section.id }} .tp__section-heading {
+    margin-top;: {{ section.settings.mobile_top_heading_space }}px;
+    font-size: {{ section.settings.mobile_heading_text_size }}px;
+    font-weight: {{ section.settings.heading_text_weight }};
+    color: {{ section.settings.heading_color }};
+    line-height: 2ex;
+  }
+
+  #tp-{{ section.id }} .tp__section-description {
+    font-size: {{ section.settings.mobile_description_text_size }}px;
+    font-weight: {{ section.settings.description_text_weight }};
+    color: {{ section.settings.description_color }};
+    margin-top: {{ section.settings.mobile_top_description_space }}px;
+    line-height: 3ex;
+  }
+
+  #tp-{{ section.id }} .tp__button {
+    max-width: {{ section.settings.button_max_width }}px;
+    margin-top: {{ section.settings.mobile_top_button_space }}px;
+    background-color: {{ section.settings.button_background }};
+    color: {{ section.settings.button_color }};
+    font-size: {{ section.settings.mobile_button_text_size }}px;
+    font-weight: {{ section.settings.button_text_weight }};
+    border-radius: {{ section.settings.button_border_radius }}px;
+    flex-direction: {{ section.settings.button_icon_placement }};
+    gap: 10px;
+    line-height: 1;
+    padding: 14px 32px;
+    border: 2px solid transparent;
+    transition: all 0.3s linear;
+  }
+
+  #tp-{{ section.id }} .tp__button--invert:hover {
+    color: {{ section.settings.button_background }};
+    background-color: transparent;
+    border-color: currentColor;
+  }
+
+  #tp-{{ section.id }} .tp__button--shadow:hover {
+    filter: drop-shadow(2px 4px 6px #000000);
+  }
+
+  #tp-{{ section.id }} .tp__button--scale:hover {
+    transform: scale(1.1);
+  }
+
+  @media screen and (min-width: {{ section.settings.mobile_breakpoint | plus: 1 | append: 'px' }}) {
+    #tp-{{ section.id }} .tp__content {
+      padding-block: {{ section.settings.desktop_top_padding }}px {{ section.settings.desktop_bottom_padding }}px;
+    }
+
+    #tp-{{ section.id }} .tp__image-with-text {
+      flex-direction: {{ section.settings.desktop_image_position }};
+    }
+
+    #tp-{{ section.id }} .tp__image,
+    #tp-{{ section.id }} .tp__content {
+      width: 50%;
+    }
+
+    #tp-{{ section.id }} .tp__section-subheading {
+      font-size: {{ section.settings.desktop_subheading_text_size }}px;
+    }
+
+    #tp-{{ section.id }} .tp__section-heading {
+      font-size: {{ section.settings.desktop_heading_text_size }}px;
+      margin-top: {{ section.settings.desktop_top_heading_space }}px;
+    }
+
+    #tp-{{ section.id }} .tp__section-description {
+      font-size: {{ section.settings.desktop_description_text_size }}px;
+      margin-top: {{ section.settings.desktop_top_description_space }}px;
+    }
+
+    #tp-{{ section.id }} .tp__button {
+      margin-top: {{ section.settings.mobile_top_button_space }}px;
+      font-size: {{ section.settings.desktop_button_text_size }}px;
+    }
+
+    #tp-{{ section.id }} .tp__image {
+      aspect-ratio: auto;
+    }
+
+    #tp-{{ section.id }} .tp__image img {
+      position: absolute;
+    }
+  }
+</style>
+{%- endcapture -%}
+
+{{ styles | strip_newlines }}
+
+<div id="tp-{{ section.id }}" class="tp__margin-center">
+  <div {{ html_id }} class="{{ 'tp__image-with-text tp__flex tp__relative ' | append: section.settings.html_class | strip }}">
+    <div class="tp__content tp__fluid tp__inherit-color-to-links">
+      <div class="tp__content-container tp__fluid tp__margin-center">
+        {%- if section.settings.subheading != blank -%}
+          <h5 class="tp__section-subheading">{{ section.settings.subheading }}</h5>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <{{ heading_tag }} class="tp__section-heading">
+            {{ section.settings.heading }}
+          </{{ heading_tag }}>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <p class="tp__section-description">{{ section.settings.description }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.button_text != blank -%}
+          <a href="{{ section.settings.button_link }}" target="{{ section.settings.button_target }}" class="tp__button tp__content-center tp__fluid tp__flex-row tp__button--{{ section.settings.button_hover }}">
+            {%- if section.settings.button_icon != blank -%}
+              {% assign button_icon_width = section.settings.button_icon_width %}
+              {{ section.settings.button_icon | image_url: width: button_icon_width | image_tag: loading: 'lazy' }}
+            {%- endif -%}
+            {{ section.settings.button_text }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {% if section.settings.desktop_image %}
+      <div class="tp__image tp__fluid tp__relative tp__square-ratio">
+        <picture>
+          <source media="(min-width: {{ mobile_breakpoint | plus: 1 | append: 'px' }})" srcset="{{ section.settings.desktop_image | image_url: width: 1000 }}">
+          <source media="(max-width: {{ mobile_breakpoint | minus: 1 | append: 'px' }})" srcset="{{ section.settings.mobile_image | image_url: width: mobile_breakpoint }}">
+          {{ section.settings.desktop_image | image_url: width: 1000 | image_tag: loading: 'lazy', sizes: sizes, widths: '375, 412, 420, 475, 750, 824, 840, 1125, 950, 1260, 1425', class: "tp__absolute-el tp__media-fluid" }}
+        </picture>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TP - Image with text 1",
+  "class": "tp-section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": [
+      "header"
+    ]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section information",
+      "info": "Codename: tp-Image-with-text-1. For detailed documentation and best practices on using this section, please visit the [Section Guide](https://example.com)."
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "If this section is the first section on the page, this heading will be an <h1> tag. Otherwise, it will be an <h2> tag."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_target",
+      "label": "Button target",
+      "options": [
+        {
+          "value": "_blank",
+          "label": "New tab"
+        },
+        {
+          "value": "_self",
+          "label": "Same tab"
+        }
+      ],
+      "default": "_blank"
+    },
+    {
+      "type": "select",
+      "id": "button_hover",
+      "label": "Button hover",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "invert",
+          "label": "Invert"
+        },
+        {
+          "value": "shadow",
+          "label": "Shadow"
+        },
+        {
+          "value": "scale",
+          "label": "Scale"
+        }
+      ],
+      "default": "invert"
+    },
+    {
+      "type": "image_picker",
+      "id": "button_icon",
+      "label": "Button icon"
+    },
+    {
+      "type": "select",
+      "id": "button_icon_placement",
+      "label": "Button icon placement",
+      "options": [
+        {
+          "value": "row",
+          "label": "Left"
+        },
+        {
+          "value": "row-reverse",
+          "label": "Right"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop: image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile: image"
+    },
+    {
+      "type": "number",
+      "id": "desktop_subheading_text_size",
+      "label": "Desktop: subheading text size (px)",
+      "default": 20
+    },
+    {
+      "type": "number",
+      "id": "mobile_subheading_text_size",
+      "label": "Mobile: subheading text size (px)",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "subheading_text_weight",
+      "label": "Subheading text weight",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin"
+        },
+        {
+          "value": "200",
+          "label": "Extra Light"
+        },
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "number",
+      "id": "desktop_heading_text_size",
+      "label": "Desktop: heading text size (px)",
+      "default": 48
+    },
+    {
+      "type": "number",
+      "id": "mobile_heading_text_size",
+      "label": "Mobile: heading text size (px)",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "heading_text_weight",
+      "label": "Heading text weight",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin"
+        },
+        {
+          "value": "200",
+          "label": "Extra Light"
+        },
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "number",
+      "id": "desktop_description_text_size",
+      "label": "Desktop: description text size (px)",
+      "default": 16
+    },
+    {
+      "type": "number",
+      "id": "mobile_description_text_size",
+      "label": "Mobile: description text size (px)",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "description_text_weight",
+      "label": "Description text weight",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin"
+        },
+        {
+          "value": "200",
+          "label": "Extra Light"
+        },
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "number",
+      "id": "desktop_button_text_size",
+      "label": "Desktop: button text size (px)",
+      "default": 16
+    },
+    {
+      "type": "number",
+      "id": "mobile_button_text_size",
+      "label": "Mobile: button text size (px)",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "button_text_weight",
+      "label": "Button text weight",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin"
+        },
+        {
+          "value": "200",
+          "label": "Extra Light"
+        },
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "number",
+      "id": "button_max_width",
+      "label": "Button width (px)",
+      "default": 340
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius (px)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "button_icon_width",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Button icon width (px)",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Values"
+    },
+    {
+      "type": "header",
+      "content": "Design"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#18473E"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient",
+      "info": "If set, overrides the background color."
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background color",
+      "default": "#FFDD00"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button text color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "image_filter",
+      "label": "Image filter",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "grayscale",
+          "label": "Grayscale"
+        },
+        {
+          "value": "sepia",
+          "label": "Sepia"
+        },
+        {
+          "value": "invert",
+          "label": "Invert"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "header",
+      "content": "Section layout"
+    },
+    {
+      "type": "number",
+      "id": "section_width",
+      "label": "Section width (px)",
+      "default": 1440
+    },
+    {
+      "type": "number",
+      "id": "content_width",
+      "label": "Content width (px)",
+      "default": 650
+    },
+    {
+      "type": "number",
+      "id": "mobile_breakpoint",
+      "label": "Mobile breakpoint (px)",
+      "default": 768
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_position",
+      "label": "Desktop: image position",
+      "options": [
+        {
+          "value": "row-reverse",
+          "label": "Left"
+        },
+        {
+          "value": "row",
+          "label": "Right"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_position",
+      "label": "Mobile: image position",
+      "options": [
+        {
+          "value": "column-reverse",
+          "label": "Top"
+        },
+        {
+          "value": "column",
+          "label": "Bottom"
+        }
+      ],
+      "default": "column"
+    },
+    {
+      "type": "range",
+      "id": "desktop_top_heading_space",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop: top heading space",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_top_heading_space",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile: top heading space",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "desktop_top_description_space",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop: top description space",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_top_description_space",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile: top description space",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "desktop_top_button_space",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop: top button space",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mobile_top_button_space",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile: top button space",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "desktop_top_padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Desktop: top padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_bottom_padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Desktop: bottom padding",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "mobile_top_padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile: top padding",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mobile_bottom_padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile: bottom padding",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "html_id",
+      "label": "HTML ID",
+      "info": "Unique identifier for linking directly to this section. Leave blank if unsure."
+    },
+    {
+      "type": "text",
+      "id": "html_class",
+      "label": "HTML Class",
+      "info": "Comma separated list of classes."
+    }
+  ],
+  "presets": [
+    {
+      "name": "TP - Image with text 1",
+      "settings": {
+        "subheading": "Clean Beauty Essentials",
+        "heading": "Custom Solutions for Your Skin's Unique Needs",
+        "description": "Shopping for skincare at the drugstore is frustrating. Buy it, try it, toss it, repeat. Sound familiar? Get skincare made to fit—with some of the top acne-busting ingredients prescribed by dermatologists nationwide."
+      }
+    }
+  ]
+}
+{% endschema %}
