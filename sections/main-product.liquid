@@ -459,17 +459,6 @@
                       </span>
                     {%- endif -%}
                   </div>
-
-                  {% for block in section.blocks %}
-                    {% case block.type %}
-                      {% when 'heart_form' %}
-                        {% render 'couple-name', block: block %}
-                      {% else %}
-                        {% comment %} existing block logic {% endcomment %}
-                    {% endcase %}
-                  {% endfor %}
-
-
                   {%- if product.quantity_price_breaks_configured? -%}
                     <volume-pricing class="parent-display" id="Volume-{{ section.id }}">
                       {%- if product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
@@ -1302,82 +1291,6 @@
         }
       ]
     },
-    {
-      "name": "Product",
-      "settings": [],
-      "blocks": [
-        {
-          "type": "heart_form",
-          "name": "Heart Beats Form",
-          "limit": 1,
-          "settings": [
-            {
-              "type": "select",
-              "id": "emoji",
-              "label": "Emoji Icon",
-              "default": "💖",
-              "options": [
-                { "value": "💖", "label": "Sparkling Heart 💖" },
-                { "value": "❤️", "label": "Red Heart ❤️" },
-                { "value": "💘", "label": "Heart with Arrow 💘" },
-                { "value": "💕", "label": "Two Hearts 💕" },
-                { "value": "💓", "label": "Beating Heart 💓" },
-                { "value": "💞", "label": "Revolving Hearts 💞" }
-              ]
-            },
-            {
-              "type": "text",
-              "id": "legend_text",
-              "label": "Legend Text",
-              "default": "My heart beats for you"
-            },
-            {
-              "type": "text",
-              "id": "label_lucky_one",
-              "label": "Label for Lucky One",
-              "default": "You the lucky one"
-            },
-            {
-              "type": "text",
-              "id": "placeholder_lucky_one",
-              "label": "Placeholder for Lucky One",
-              "default": "You the lucky one"
-            },
-            {
-              "type": "text",
-              "id": "label_partner",
-              "label": "Label for Beloved Partner",
-              "default": "Beloved partner"
-            },
-            {
-              "type": "text",
-              "id": "placeholder_partner",
-              "label": "Placeholder for Beloved Partner",
-              "default": "Your beloved partner"
-            }
-          ]
-        }
-      ],
-      "presets": [
-        {
-          "name": "Default Product",
-          "blocks": [
-            {
-              "type": "heart_form",
-              "settings": {
-                "emoji": "💖",
-                "legend_text": "My heart beats for you",
-                "label_lucky_one": "You the lucky one",
-                "placeholder_lucky_one": "You the lucky one",
-                "label_partner": "Beloved partner",
-                "placeholder_partner": "Your beloved partner"
-              }
-            }
-          ]
-        }
-      ]
-    },
-
     {
       "type": "description",
       "name": "t:sections.main-product.blocks.description.name",
