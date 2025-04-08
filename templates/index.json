@@ -230,6 +230,84 @@
         "html_class": ""
       }
     },
+    "tp_features_2_RtxH3A": {
+      "type": "tp-features-2",
+      "blocks": {
+        "feature_DtUbJy": {
+          "type": "feature",
+          "settings": {
+            "title": "Feature Title",
+            "description": "Describe your feature here"
+          }
+        },
+        "feature_w6YhQJ": {
+          "type": "feature",
+          "settings": {
+            "title": "Feature Title",
+            "description": "Describe your feature here"
+          }
+        },
+        "feature_RWyYQG": {
+          "type": "feature",
+          "settings": {
+            "title": "Feature Title",
+            "description": "Describe your feature here"
+          }
+        },
+        "feature_yPcCHU": {
+          "type": "feature",
+          "settings": {
+            "title": "Feature Title",
+            "description": "Describe your feature here"
+          }
+        }
+      },
+      "block_order": [
+        "feature_DtUbJy",
+        "feature_w6YhQJ",
+        "feature_RWyYQG",
+        "feature_yPcCHU"
+      ],
+      "settings": {
+        "desktop_layout_direction": "row",
+        "mobile_layout_direction": "column",
+        "image": "shopify://shop_images/Main_0a4e9096-021a-4c1e-8750-24b233166a12.jpg",
+        "image_filter": "none",
+        "image_link": "",
+        "desktop_image_height": 640,
+        "mobile_image_height": 340,
+        "content_alignment": "center",
+        "desktop_title_size": 24,
+        "mobile_title_size": 20,
+        "desktop_description_size": 16,
+        "mobile_description_size": 14,
+        "desktop_icon_size": 64,
+        "mobile_icon_size": 48,
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "title_color": "#000000",
+        "description_color": "#666666",
+        "desktop_columns": 2,
+        "mobile_columns": 1,
+        "desktop_grid_column_gap": 32,
+        "mobile_grid_column_gap": 24,
+        "desktop_grid_row_gap": 32,
+        "mobile_grid_row_gap": 24,
+        "desktop_icon_gap": 15,
+        "mobile_icon_gap": 15,
+        "desktop_title_gap": 10,
+        "mobile_title_gap": 10,
+        "section_width": 1440,
+        "desktop_section_gap": 40,
+        "mobile_section_gap": 24,
+        "desktop_top_padding": 0,
+        "mobile_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_bottom_padding": 0,
+        "html_id": "",
+        "html_class": ""
+      }
+    },
     "collection_slider_yCX3Fr": {
       "type": "collection-slider",
       "blocks": {
@@ -532,6 +610,7 @@
     "tp_banner_1_JiAfkU",
     "tp_image_with_text_1_jXyhpe",
     "tp_countdown_1_DYmqCJ",
+    "tp_features_2_RtxH3A",
     "collection_slider_yCX3Fr",
     "collection_tabs_YdYtpW",
     "featured_collection",
