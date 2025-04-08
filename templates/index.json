@@ -385,6 +385,80 @@
         "html_class": ""
       }
     },
+    "tp_image_with_text_2_9EiiTL": {
+      "type": "tp-image-with-text-2",
+      "blocks": {
+        "stats_zVbDpG": {
+          "type": "stats",
+          "settings": {
+            "title": "12k",
+            "description": "Happy Customers"
+          }
+        },
+        "stats_yKxtbP": {
+          "type": "stats",
+          "settings": {
+            "title": "98%",
+            "description": "5 Star Reviews"
+          }
+        }
+      },
+      "block_order": [
+        "stats_zVbDpG",
+        "stats_yKxtbP"
+      ],
+      "settings": {
+        "subheading": "Residential Design Ideas",
+        "heading": "Award-winning interior design studio based in Islamabad.",
+        "description": "Unlock the full potential of your home with our expert residential design services. Whether it's a cozy apartment or a sprawling estate, we tailor our designs to suit your lifestyle and preferences.",
+        "primary_image": "shopify://shop_images/Main_9129b69a-0c7b-4f66-b6cf-c4222f18028a.jpg",
+        "secondary_image": "shopify://shop_images/Main_b9e0da7f-db89-4d41-83f0-7f417b02831d.jpg",
+        "primary_image_filter": "none",
+        "secondary_image_filter": "none",
+        "text_alignment": "left",
+        "desktop_subheading_text_size": 20,
+        "mobile_subheading_text_size": 20,
+        "subheading_text_weight": "400",
+        "desktop_heading_text_size": 40,
+        "mobile_heading_text_size": 32,
+        "heading_text_weight": "400",
+        "desktop_description_text_size": 18,
+        "mobile_description_text_size": 18,
+        "description_text_weight": "400",
+        "rating": 5,
+        "hide_rating": true,
+        "desktop_stats_title_size": 48,
+        "mobile_stats_title_size": 40,
+        "desktop_stats_description_size": 18,
+        "mobile_stats_description_size": 16,
+        "stats_title_text_weight": "700",
+        "stats_description_text_weight": "400",
+        "background_color": "",
+        "background_gradient": "",
+        "subheading_color": "#000000",
+        "heading_color": "#000000",
+        "description_color": "#525252",
+        "star_color": "#FF9D48",
+        "section_width": 1440,
+        "desktop_container_gap": 100,
+        "mobile_container_gap": 50,
+        "subheading_top_space": 0,
+        "heading_top_space": 24,
+        "description_top_space": 24,
+        "rating_top_space": 60,
+        "stats_top_space": 16,
+        "desktop_stats_gap": 50,
+        "mobile_stats_gap": 30,
+        "desktop_images_position": "row",
+        "mobile_images_position": "column",
+        "desktop_top_padding": 50,
+        "desktop_bottom_padding": 50,
+        "mobile_top_padding": 50,
+        "mobile_bottom_padding": 50,
+        "html_id": "",
+        "html_class": ""
+      }
+    },
     "collection_slider_yCX3Fr": {
       "type": "collection-slider",
       "blocks": {
@@ -689,6 +763,7 @@
     "tp_countdown_1_DYmqCJ",
     "tp_features_2_RtxH3A",
     "tp_marquee_1_aUqpDj",
+    "tp_image_with_text_2_9EiiTL",
     "collection_slider_yCX3Fr",
     "collection_tabs_YdYtpW",
     "featured_collection",
