@@ -32,7 +32,7 @@
         "slide_fhU3dL"
       ],
       "settings": {
-        "swiper_aspect_desktop": "1920 / 840",
+        "swiper_aspect_desktop": "1920 / 820",
         "swiper_aspect_mobile": "750 / 1100",
         "autoplay_speed": 4000,
         "pagination_margin_top": 20,
