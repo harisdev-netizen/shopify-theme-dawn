@@ -270,7 +270,7 @@
       ],
       "settings": {
         "desktop_layout_direction": "row",
-        "mobile_layout_direction": "column",
+        "mobile_layout_direction": "column-reverse",
         "image": "shopify://shop_images/Main_0a4e9096-021a-4c1e-8750-24b233166a12.jpg",
         "image_filter": "none",
         "image_link": "",
