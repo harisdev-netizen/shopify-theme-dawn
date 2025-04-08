@@ -643,8 +643,8 @@ fieldset.custom-fields legend span.heart-emoji {
 
 .autoplay-slideshow .swiper-wrapper {
   width: 100%;
-  height: auto;
-  aspect-ratio: var(--swiper-aspect-desktop);
+  height: 0;
+  padding-top: var(--swiper-aspect-desktop);
   position: relative;
 }
 
