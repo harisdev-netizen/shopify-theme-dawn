@@ -32,7 +32,7 @@
         "announcement_6YdahC"
       ],
       "settings": {
-        "carousal_effect": "slide",
+        "carousal_effect": "fade",
         "auto_play": true,
         "loop": true,
         "text_alignment": "left",
