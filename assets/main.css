@@ -644,13 +644,13 @@ fieldset.custom-fields legend span.heart-emoji {
 .autoplay-slideshow .swiper-wrapper {
   width: 100%;
   height: auto;
-  aspect-ratio: var(--swiper-aspect-desktop);
+  aspect-ratio: var(--swiper-aspect-desktop-width);
   position: relative;
 }
 
 @media screen and (max-width: 749px) {
   .autoplay-slideshow .swiper-wrapper {
-    aspect-ratio: var(--swiper-aspect-mobile);
+    aspect-ratio: var(--swiper-aspect-mobile-height);
   }
 }
 

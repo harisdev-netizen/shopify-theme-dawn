@@ -1,6 +1,6 @@
 {%- liquid
   assign swiper_aspect_desktop_width = section.settings.swiper_aspect_desktop_width | append: " / " | append: section.settings.swiper_aspect_desktop_height
-  assign swiper_aspect_mobile_width = section.settings.swiper_aspect_mobile_width | append: " / " | append: section.settings.swiper_aspect_mobile_height
+  assign swiper_aspect_mobile_height = section.settings.swiper_aspect_mobile_width | append: " / " | append: section.settings.swiper_aspect_mobile_height
   assign unique_id = section.id
   assign autoplay_speed = section.settings.autoplay_speed
   assign bullet_color = section.settings.bullet_color
@@ -20,8 +20,8 @@
 
 <style>
   :root {
-    --swiper-aspect-desktop: {{ swiper_aspect_desktop }};
-    --swiper-aspect-mobile: {{ swiper_aspect_mobile }};
+    --swiper-aspect-desktop-width: {{ swiper_aspect_desktop_width }};
+    --swiper-aspect-mobile-height: {{ swiper_aspect_mobile_height }};
     --pagination-margin-top: {{ pagination_margin_top | default: "20px" }};
     --pagination-margin-top-mobile: {{ pagination_margin_top_mobile | default: "10px" }};
     --pagination-min-height: {{ pagination_min_height | default: "16px" }};
