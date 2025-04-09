@@ -765,11 +765,11 @@ fieldset.custom-fields legend span.heart-emoji {
 .trustbadges-content span {
   display: block;
   color: var(--trustbadges-text-color);
-  font-size: var(--trustbadges-title-font-size);
+  font-size: var(--trustbadges-text-font-size);
 }
 
 .trustbadges-content :nth-child(2) {
-  font-size: var(--trustbadges-text-font-size);
+  font-size: var(--trustbadges-title-font-size);
   font-weight: 600;
   color: var(--trustbadges-title-color);
 }
