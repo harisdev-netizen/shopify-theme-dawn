@@ -11,48 +11,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "tp_announcement_bar_1_8T3PiQ": {
-      "type": "tp-announcement-bar-1",
-      "blocks": {
-        "announcement_9dQV4U": {
-          "type": "Announcement",
-          "settings": {
-            "title": "Welcome to our <a href=\"#\" target=\"_blank\" title=\"#\">Store</a>"
-          }
-        },
-        "announcement_6YdahC": {
-          "type": "Announcement",
-          "settings": {
-            "title": "Welcome to our <a href=\"#\" target=\"_blank\" title=\"#\">Store</a>"
-          }
-        }
-      },
-      "block_order": [
-        "announcement_9dQV4U",
-        "announcement_6YdahC"
-      ],
-      "settings": {
-        "carousal_effect": "fade",
-        "auto_play": true,
-        "loop": true,
-        "text_alignment": "left",
-        "desktop_text_size": 15,
-        "mobile_text_size": 16,
-        "text_weight": "400",
-        "background_color": "#000000",
-        "background_gradient": "",
-        "text_color": "#ffffff",
-        "link_color": "#ffff00",
-        "section_width": 1440,
-        "mobile_breakpoint": 768,
-        "desktop_top_padding": 14,
-        "desktop_bottom_padding": 14,
-        "mobile_top_padding": 14,
-        "mobile_bottom_padding": 14,
-        "html_id": "",
-        "html_class": ""
-      }
-    },
     "header": {
       "type": "header",
       "settings": {
@@ -71,10 +29,45 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "tp_announcement_bar_1_eDzNTz": {
+      "type": "tp-announcement-bar-1",
+      "blocks": {
+        "announcement_KNBDG8": {
+          "type": "Announcement",
+          "settings": {
+            "title": "Welcome to our <a href=\"#\" target=\"_blank\" title=\"#\">Store</a>"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_KNBDG8"
+      ],
+      "settings": {
+        "carousal_effect": "fade",
+        "auto_play": false,
+        "loop": false,
+        "text_alignment": "center",
+        "desktop_text_size": 16,
+        "mobile_text_size": 16,
+        "text_weight": "400",
+        "background_color": "#000000",
+        "background_gradient": "",
+        "text_color": "#FFFFFF",
+        "link_color": "#FFFF00",
+        "section_width": 1440,
+        "mobile_breakpoint": 768,
+        "desktop_top_padding": 14,
+        "desktop_bottom_padding": 14,
+        "mobile_top_padding": 14,
+        "mobile_bottom_padding": 14,
+        "html_id": "",
+        "html_class": ""
+      }
     }
   },
   "order": [
-    "tp_announcement_bar_1_8T3PiQ",
+    "tp_announcement_bar_1_eDzNTz",
     "header"
   ]
 }
