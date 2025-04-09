@@ -32,20 +32,20 @@
         "slide_fhU3dL"
       ],
       "settings": {
-        "swiper_aspect_desktop": "1920 / 820",
+        "swiper_aspect_desktop": "1920 / 640",
         "swiper_aspect_mobile": "750 / 1100",
         "autoplay_speed": 4000,
         "pagination_margin_top": 20,
         "pagination_margin_top_mobile": 10,
         "pagination_min_height": 16,
         "pagination_min_height_mobile": 12,
-        "bullet_width": 2,
+        "bullet_width": 15,
         "bullet_height": 8,
         "bullet_radius": 6,
         "bullet_width_mobile": 12,
         "bullet_height_mobile": 6,
         "bullet_active_width_mobile": 24,
-        "bullet_active_width": 32,
+        "bullet_active_width": 38,
         "bullet_color": "#1e1e1e",
         "active_bullet_color": "#0080ff"
       }
@@ -92,6 +92,7 @@
     },
     "tp_banner_1_JiAfkU": {
       "type": "tp-banner-1",
+      "disabled": true,
       "settings": {
         "heading": "Where Ideas Become Realities",
         "description": "We listen to your ideas and collaborate closely to create a design that reflects your personality and meets your specific needs.",
@@ -128,6 +129,7 @@
     },
     "tp_image_with_text_1_jXyhpe": {
       "type": "tp-image-with-text-1",
+      "disabled": true,
       "settings": {
         "subheading": "Clean Beauty Essentials",
         "heading": "Custom Solutions for Your Skin's Unique Needs",
@@ -182,6 +184,7 @@
     },
     "tp_countdown_1_DYmqCJ": {
       "type": "tp-countdown-1",
+      "disabled": true,
       "settings": {
         "heading": "Black Friday Sale",
         "description": "Hurry! We'll only reserve your cart for:",
@@ -272,6 +275,7 @@
         "feature_RWyYQG",
         "feature_yPcCHU"
       ],
+      "disabled": true,
       "settings": {
         "desktop_layout_direction": "row",
         "mobile_layout_direction": "column-reverse",
@@ -367,6 +371,7 @@
         "marquee_GkixgE",
         "marquee_NqKz7p"
       ],
+      "disabled": true,
       "settings": {
         "pause_on_hover": true,
         "direction": "normal",
@@ -411,6 +416,7 @@
         "stats_zVbDpG",
         "stats_yKxtbP"
       ],
+      "disabled": true,
       "settings": {
         "subheading": "Residential Design Ideas",
         "heading": "Award-winning interior design studio based in Islamabad.",
@@ -465,6 +471,7 @@
     },
     "tp_featured_products_1_KmG48r": {
       "type": "tp-featured-products-1",
+      "disabled": true,
       "settings": {
         "selected_collection": "automated-collection",
         "featured_image": "shopify://shop_images/Main.jpg",
@@ -620,6 +627,7 @@
         "checkbox_MddGNz",
         "social_links_UKcGRz"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Award-winning interior design studio based in USA.",
         "desktop_heading_text_size": 40,
