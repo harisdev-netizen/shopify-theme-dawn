@@ -8,6 +8,7 @@
   assign title_color = section.settings.title_color
   assign text_color = section.settings.text_color
   assign svg_size = section.settings.svg_size
+  assign content_max_width = section.settings.content_max_width
 -%}
 
 <style>
@@ -20,11 +21,12 @@
     --trustbadges-svg-size: {{ svg_size | default: 2 }};
     --trustbadges-text-color: {{ text_color | default: "#555" }};
     --trustbadges-title-color: {{ title_color | default: "#000" }};
+    --trustbadges-content-max-width: {{ content_max_width | default: 1440 }}px;
   }
 </style>
 
 <section class="trustbadges-body trustbadges-body--{{ unique_id }}">
-  <div class="trustbadges-content-only-container trustbadges-content-only-container--{{ unique_id }}">
+  <div class="trustbadges-content-only-container content_max_width trustbadges-content-only-container--{{ unique_id }}">
     <!-- Trustbadge 1 -->
     {% for block in section.blocks %}
       {%- liquid
@@ -52,6 +54,20 @@
     {
       "type": "paragraph",
       "content": "Create a trustbadge grid section to showcase your store's features, benefits, or guarantees. Customize colors, padding, and add multiple badges with custom icons, titles, and descriptions."
+    },
+    {
+      "type": "header",
+      "content": "Section Layout"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max-width",
+      "min": 1200,
+      "max": 2000,
+      "step": 20,
+      "default": 1440,
+      "unit": "px"
     },
     {
       "type": "header",

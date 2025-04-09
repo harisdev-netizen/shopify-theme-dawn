@@ -728,7 +728,7 @@ fieldset.custom-fields legend span.heart-emoji {
   justify-content: center;
   gap: 2rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--trustbadges-content-max-width);
   margin: 0 auto;
 }
 
