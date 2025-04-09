@@ -792,6 +792,98 @@
         "body_font": "helvetica_n4"
       }
     },
+    "tp_testimonials_2_Tbpnhi": {
+      "type": "tp-testimonials-2",
+      "blocks": {
+        "testimonial_6KLJiL": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/2.png",
+            "title": "Amazing Selection and Quality!",
+            "subline": "CEO, Company Name",
+            "name": "John Doe",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "rating": 5
+          }
+        },
+        "testimonial_93dcyt": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/1.png",
+            "title": "High-Quality Products",
+            "subline": "CTO, Company Name",
+            "name": "Jane Doe",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "rating": 4.5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_6KLJiL",
+        "testimonial_93dcyt"
+      ],
+      "settings": {
+        "heading": "Happy Customers",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "desktop_heading_text_size": 32,
+        "mobile_heading_text_size": 24,
+        "heading_text_weight": "500",
+        "desktop_description_text_size": 16,
+        "mobile_description_text_size": 16,
+        "description_text_weight": "400",
+        "header_alignment": "center",
+        "background_color": "#E7F1F2",
+        "background_gradient": "",
+        "arrow_background_color": "#FFFFFF",
+        "heading_color": "#000000",
+        "description_color": "#525252",
+        "testimonial_background_color": "#FFFFFF",
+        "testimonial_background_gradient": "",
+        "testimonial_title_color": "#000000",
+        "testimonial_name_color": "#000000",
+        "testimonial_subline_color": "#525252",
+        "testimonial_description_color": "#4b4d6c",
+        "star_color": "#FF9D48",
+        "header_width": 900,
+        "section_width": 1440,
+        "header_gap": 8,
+        "container_gap": 32,
+        "desktop_testimonials_gap": 36,
+        "mobile_testimonials_gap": 8,
+        "desktop_testimonials_per_row": "2",
+        "mobile_testimonials_per_row": "1",
+        "mobile_hide_image": true,
+        "disable_rating": false,
+        "border_radius": 0,
+        "desktop_image_width": 66,
+        "mobile_image_width": 66,
+        "image_border_radius": 50,
+        "desktop_testimonial_text_alignment": "left",
+        "mobile_testimonial_text_alignment": "center",
+        "desktop_testimonial_heading_text_size": 24,
+        "mobile_testimonial_heading_text_size": 24,
+        "testimonial_heading_text_weight": "400",
+        "desktop_testimonial_name_text_size": 20,
+        "mobile_testimonial_name_text_size": 20,
+        "testimonial_name_text_weight": "500",
+        "desktop_testimonial_subline_text_size": 16,
+        "mobile_testimonial_subline_text_size": 16,
+        "testimonial_subline_text_weight": "400",
+        "desktop_testimonial_description_text_size": 16,
+        "mobile_testimonial_description_text_size": 16,
+        "testimonial_description_text_weight": "400",
+        "hide_arrows_on_mobile": false,
+        "carousel_loop": false,
+        "carousel_autoplay": false,
+        "carousel_autoplay_delay": 5000,
+        "desktop_top_padding": 100,
+        "desktop_bottom_padding": 100,
+        "mobile_top_padding": 52,
+        "mobile_bottom_padding": 60,
+        "html_id": "",
+        "html_class": ""
+      }
+    },
     "testimonials_XaGtXe": {
       "type": "testimonials",
       "blocks": {
@@ -818,6 +910,7 @@
         "testimonial_JzUpWU",
         "testimonial_q6EWzX"
       ],
+      "disabled": true,
       "settings": {}
     },
     "accordians_BramEp": {
@@ -971,6 +1064,7 @@
     "featured_collection",
     "collection_list_new_MTgRFY",
     "font_face_section_hWx8fP",
+    "tp_testimonials_2_Tbpnhi",
     "testimonials_XaGtXe",
     "accordians_BramEp",
     "tp_newsletter_1_kAJRxi"
