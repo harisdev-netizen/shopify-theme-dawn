@@ -34,9 +34,9 @@
     <!-- Trustbadge 1 -->
     {% for block in section.blocks %}
       {%- liquid
-      assign path = block.settings.svg_icon
-      assign title = block.settings.title
-      assign text = block.settings.paragraph
+        assign path = block.settings.svg_icon
+        assign title = block.settings.title
+        assign text = block.settings.paragraph
       -%}
       <div class="trustbadges-content"  {{ block.shopify_attributes }}>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" >
@@ -181,7 +181,7 @@
           "min": 0.8,
           "max": 3,
           "step": 0.1,
-          "default": 1.2,
+          "default": 1.5,
           "unit": "rem"
         },
         {
@@ -190,7 +190,7 @@
           "label": "Text font size",
           "min": 0.8,
           "max": 3,
-          "step": 0.5,
+          "step": 0.1,
           "default": 1.5,
           "unit": "rem"
         }
