@@ -916,7 +916,7 @@
         "hide_arrows_on_mobile": false,
         "carousel_loop": true,
         "carousel_autoplay": true,
-        "carousel_autoplay_delay": 5000,
+        "carousel_autoplay_delay": 3000,
         "desktop_top_padding": 120,
         "desktop_bottom_padding": 120,
         "mobile_top_padding": 52,
