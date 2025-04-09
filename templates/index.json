@@ -792,6 +792,35 @@
         "body_font": "helvetica_n4"
       }
     },
+    "testimonials_XaGtXe": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_JzUpWU": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/man-in-suit-on-stairs.jpg",
+            "customer_name": "Afaq Mehmood",
+            "customer_review": "This is an amazing product!",
+            "rating": 3
+          }
+        },
+        "testimonial_q6EWzX": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/man-in-suit-on-stairs.jpg",
+            "customer_name": "Afaq Mehmood",
+            "customer_review": "This is an amazing product!",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_JzUpWU",
+        "testimonial_q6EWzX"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
     "tp_testimonials_2_Tbpnhi": {
       "type": "tp-testimonials-2",
       "blocks": {
@@ -896,35 +925,6 @@
         "html_class": ""
       }
     },
-    "testimonials_XaGtXe": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial_JzUpWU": {
-          "type": "testimonial",
-          "settings": {
-            "customer_image": "shopify://shop_images/man-in-suit-on-stairs.jpg",
-            "customer_name": "Afaq Mehmood",
-            "customer_review": "This is an amazing product!",
-            "rating": 3
-          }
-        },
-        "testimonial_q6EWzX": {
-          "type": "testimonial",
-          "settings": {
-            "customer_image": "shopify://shop_images/man-in-suit-on-stairs.jpg",
-            "customer_name": "Afaq Mehmood",
-            "customer_review": "This is an amazing product!",
-            "rating": 5
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_JzUpWU",
-        "testimonial_q6EWzX"
-      ],
-      "disabled": true,
-      "settings": {}
-    },
     "accordians_BramEp": {
       "type": "accordians",
       "blocks": {
@@ -971,6 +971,7 @@
         "accordions_3GCTCU",
         "accordions_gDd9Lq"
       ],
+      "disabled": true,
       "settings": {
         "open_default": true,
         "title": "Frequently Asked Questions",
@@ -1076,8 +1077,8 @@
     "featured_collection",
     "collection_list_new_MTgRFY",
     "font_face_section_hWx8fP",
-    "tp_testimonials_2_Tbpnhi",
     "testimonials_XaGtXe",
+    "tp_testimonials_2_Tbpnhi",
     "accordians_BramEp",
     "tp_newsletter_1_kAJRxi"
   ]
