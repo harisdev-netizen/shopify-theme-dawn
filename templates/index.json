@@ -816,11 +816,23 @@
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "rating": 4.5
           }
+        },
+        "testimonial_nVn3wC": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/1.png",
+            "title": "High-Quality Products",
+            "subline": "CTO, Company Name",
+            "name": "Jane Doe",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "rating": 4.5
+          }
         }
       },
       "block_order": [
         "testimonial_6KLJiL",
-        "testimonial_93dcyt"
+        "testimonial_93dcyt",
+        "testimonial_nVn3wC"
       ],
       "settings": {
         "heading": "Happy Customers",
@@ -846,9 +858,9 @@
         "star_color": "#FF9D48",
         "header_width": 900,
         "section_width": 1440,
-        "header_gap": 8,
-        "container_gap": 32,
-        "desktop_testimonials_gap": 36,
+        "header_gap": 24,
+        "container_gap": 42,
+        "desktop_testimonials_gap": 34,
         "mobile_testimonials_gap": 8,
         "desktop_testimonials_per_row": "2",
         "mobile_testimonials_per_row": "1",
@@ -859,7 +871,7 @@
         "mobile_image_width": 66,
         "image_border_radius": 50,
         "desktop_testimonial_text_alignment": "left",
-        "mobile_testimonial_text_alignment": "center",
+        "mobile_testimonial_text_alignment": "left",
         "desktop_testimonial_heading_text_size": 24,
         "mobile_testimonial_heading_text_size": 24,
         "testimonial_heading_text_weight": "400",
@@ -873,11 +885,11 @@
         "mobile_testimonial_description_text_size": 16,
         "testimonial_description_text_weight": "400",
         "hide_arrows_on_mobile": false,
-        "carousel_loop": false,
-        "carousel_autoplay": false,
+        "carousel_loop": true,
+        "carousel_autoplay": true,
         "carousel_autoplay_delay": 5000,
-        "desktop_top_padding": 100,
-        "desktop_bottom_padding": 100,
+        "desktop_top_padding": 120,
+        "desktop_bottom_padding": 120,
         "mobile_top_padding": 52,
         "mobile_bottom_padding": 60,
         "html_id": "",
