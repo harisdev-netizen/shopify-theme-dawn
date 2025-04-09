@@ -1,0 +1,501 @@
+{% liquid
+  assign customer_status = block.settings.customer_status
+  assign customer_tags = block.settings.customer_tags | split: ','
+
+  if customer_status == 'logged_in' and customer == null
+    continue
+  endif
+
+  if customer_status == 'logged_out' and customer != null
+    continue
+  endif
+
+  if customer_status == 'logged_in' and customer_tags != blank and customer != null
+    assign should_show = false
+    for tag in customer_tags
+      assign trimmed_tag = tag | strip
+      if customer.tags contains trimmed_tag
+        assign should_show = true
+        break
+      endif
+    endfor
+
+    if should_show == false
+      continue
+    endif
+  endif
+
+  # Process custom attributes
+  assign custom_attributes = ''
+  if block.settings.custom_attributes != blank
+    assign attributes = block.settings.custom_attributes | newline_to_br | strip_newlines | split: '<br />'
+    for attribute in attributes
+      assign key_value = attribute | split: '='
+      if key_value.size == 2
+        assign custom_attributes = custom_attributes | append: ' ' | append: key_value[0] | append: '="' | append: key_value[1] | append: '"'
+      endif
+    endfor
+  endif
+%}
+
+{% stylesheet %}
+  .tp-divider {
+    text-align: var(--tp-divider-alignment);
+    margin: var(--tp-divider-margin);
+    width: var(--tp-divider-width);
+    position: relative;
+    display: block;
+  }
+
+  .tp-divider__line {
+    display: block;
+    width: var(--tp-divider-width);
+    height: var(--tp-divider-height);
+    border-top: var(--tp-divider-thickness) var(--tp-divider-style) var(--tp-divider-color);
+    border-left: var(--tp-divider-thickness-vertical) var(--tp-divider-style) var(--tp-divider-color);
+    margin: 0 auto;
+  }
+
+  .tp-divider--horizontal .tp-divider__line { border-left: none; }
+  .tp-divider--vertical .tp-divider__line { border-top: none; }
+
+  .tp-divider--with-content {
+    display: flex;
+    align-items: center;
+    justify-content: var(--tp-divider-content-justify);
+  }
+
+  .tp-divider--with-content.tp-divider--vertical {
+    flex-direction: column;
+    height: var(--tp-divider-height);
+  }
+
+  .tp-divider--with-content .tp-divider__line {
+    flex-grow: 1;
+  }
+
+  .tp-divider__content {
+    font-size: var(--tp-divider-content-size);
+    color: var(--tp-divider-content-color);
+    padding: 0 var(--tp-divider-content-padding);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .tp-divider__icon-image {
+    max-height: var(--tp-divider-content-size);
+    width: auto;
+    display: block;
+  }
+
+  @media screen and (max-width: 749px) {
+    .tp-divider-visible-on--desktop {
+      display: none !important;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .tp-divider-visible-on--mobile {
+      display: none !important;
+    }
+  }
+{% endstylesheet %}
+
+<style>
+  .tp-divider--{{ block.id }} {
+    --tp-divider-thickness: {{ block.settings.thickness_mobile }}px;
+    --tp-divider-thickness-vertical: {{ block.settings.thickness_mobile }}px;
+    --tp-divider-style: {{ block.settings.style }};
+    --tp-divider-color: {{ block.settings.color }};
+    --tp-divider-alignment: {{ block.settings.alignment_mobile }};
+    --tp-divider-margin: {{ block.settings.margin_mobile }};
+    --tp-divider-content-size: {{ block.settings.content_size_mobile }}px;
+    --tp-divider-content-color: {{ block.settings.content_color }};
+    --tp-divider-content-padding: {{ block.settings.content_padding_mobile }}px;
+    --tp-divider-content-justify: {% if block.settings.alignment_mobile == 'left' %}flex-start{% elsif block.settings.alignment_mobile == 'right' %}flex-end{% else %}center{% endif %};
+
+    {% if block.settings.orientation == 'horizontal' %}
+    --tp-divider-width: {{ block.settings.horizontal_width_mobile }};
+    --tp-divider-height: auto;
+    {% if block.settings.alignment_mobile == 'left' %}
+      margin-inline: 0 auto;
+    {% elsif block.settings.alignment_mobile == 'right' %}
+      margin-inline: auto 0;
+    {% else %}
+      margin-inline: auto;
+    {% endif %}
+    {% else %}
+    --tp-divider-width: auto;
+    --tp-divider-height: {{ block.settings.vertical_height_mobile }};
+    {% endif %}
+  }
+
+  @media screen and (min-width: 750px) {
+    .tp-divider--{{ block.id }} {
+      --tp-divider-thickness: {{ block.settings.thickness_desktop }}px;
+      --tp-divider-thickness-vertical: {{ block.settings.thickness_desktop }}px;
+      --tp-divider-alignment: {{ block.settings.alignment_desktop }};
+      --tp-divider-margin: {{ block.settings.margin_desktop }};
+      --tp-divider-content-size: {{ block.settings.content_size }}px;
+      --tp-divider-content-padding: {{ block.settings.content_padding_desktop }}px;
+      --tp-divider-content-justify: {% if block.settings.alignment_desktop == 'left' %}flex-start{% elsif block.settings.alignment_desktop == 'right' %}flex-end{% else %}center{% endif %};
+
+      {% if block.settings.orientation == 'horizontal' %}
+      --tp-divider-width: {{ block.settings.horizontal_width_desktop }};
+      --tp-divider-height: auto;
+      {% if block.settings.alignment_desktop == 'left' %}
+        margin-inline: 0 auto;
+      {% elsif block.settings.alignment_desktop == 'right' %}
+        margin-inline: auto 0;
+      {% else %}
+        margin-inline: auto;
+      {% endif %}
+      {% else %}
+      --tp-divider-width: auto;
+      --tp-divider-height: {{ block.settings.vertical_height_desktop }};
+      {% endif %}
+    }
+  }
+</style>
+
+{%- capture html_id -%}
+  {%- if block.settings.html_id != blank -%}
+    id="{{ block.settings.html_id | handleize }}"
+  {%- endif -%}
+{%- endcapture -%}
+
+<div
+  {{ html_id }}
+  class="tp-divider tp-divider--{{ block.id }} tp-divider--{{ block.settings.orientation }} tp-divider-visible-on--{{ block.settings.visible_on }} {% if block.settings.type != 'plain' %}tp-divider--with-content{% endif %} {{ block.settings.css_classes }}"
+  {{ custom_attributes }}
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.type != 'plain' %}
+    <div class="tp-divider__line"></div>
+    <div class="tp-divider__content">
+      {% if block.settings.type == 'icon' %}
+        {% if block.settings.icon != blank %}
+          {{ block.settings.icon | image_url: width: block.settings.icon.width | image_tag: class: 'tp-divider__icon-image' }}
+        {% else %}
+          •
+        {% endif %}
+      {% else %}
+        {{ block.settings.text }}
+      {% endif %}
+    </div>
+    <div class="tp-divider__line"></div>
+  {% else %}
+    <div class="tp-divider__line"></div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "TP - Divider",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Display conditions"
+    },
+    {
+      "type": "select",
+      "id": "visible_on",
+      "label": "Visible on",
+      "options": [
+        {
+          "value": "all",
+          "label": "All devices"
+        },
+        {
+          "value": "desktop",
+          "label": "Desktop only"
+        },
+        {
+          "value": "mobile",
+          "label": "Mobile only"
+        }
+      ],
+      "default": "all"
+    },
+    {
+      "type": "select",
+      "id": "customer_status",
+      "label": "Customer status",
+      "options": [
+        {
+          "value": "all",
+          "label": "All"
+        },
+        {
+          "value": "logged_in",
+          "label": "Logged in"
+        },
+        {
+          "value": "logged_out",
+          "label": "Logged out"
+        }
+      ],
+      "default": "all"
+    },
+    {
+      "type": "text",
+      "id": "customer_tags",
+      "label": "Customer tags",
+      "info": "Show for customers with these tags (comma separated). Only used if customer status is logged in. Tags are case-sensitive. Leave blank to show for all customers."
+    },
+    {
+      "type": "header",
+      "content": "Divider"
+    },
+    {
+      "type": "select",
+      "id": "type",
+      "label": "Type",
+      "options": [
+        {
+          "value": "plain",
+          "label": "Plain line"
+        },
+        {
+          "value": "icon",
+          "label": "Line with icon in center"
+        },
+        {
+          "value": "text",
+          "label": "Line with text in center"
+        }
+      ],
+      "default": "plain"
+    },
+    {
+      "type": "select",
+      "id": "orientation",
+      "label": "Orientation",
+      "options": [
+        {
+          "value": "horizontal",
+          "label": "Horizontal"
+        },
+        {
+          "value": "vertical",
+          "label": "Vertical"
+        }
+      ],
+      "default": "horizontal"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        },
+        {
+          "value": "double",
+          "label": "Double"
+        },
+        {
+          "value": "groove",
+          "label": "Groove"
+        },
+        {
+          "value": "ridge",
+          "label": "Ridge"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "header",
+      "content": "Icon/Text Options"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "OR"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Settings - Desktop"
+    },
+    {
+      "type": "text",
+      "id": "horizontal_width_desktop",
+      "label": "Width",
+      "info": "Only used for horizontal dividers. Supports px, %, vw units. Example: '100px', '50%', '100vw'",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "vertical_height_desktop",
+      "label": "Height",
+      "info": "Only used for vertical dividers. Supports px, %, vh units. Example: '100px', '50%', '100vh'",
+      "default": "200px"
+    },
+    {
+      "type": "range",
+      "id": "thickness_desktop",
+      "label": "Thickness",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "content_size",
+      "label": "Content size",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "content_padding_desktop",
+      "label": "Content padding",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment_desktop",
+      "label": "Alignment",
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Settings - Mobile"
+    },
+    {
+      "type": "text",
+      "id": "horizontal_width_mobile",
+      "label": "Width",
+      "info": "Supports px, %, vw units. Example: '100px', '50%', '100vw'",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "vertical_height_mobile",
+      "label": "Height",
+      "info": "Supports px, %, vh units. Example: '100px', '50%', '100vh'",
+      "default": "150px"
+    },
+    {
+      "type": "range",
+      "id": "thickness_mobile",
+      "label": "Thickness",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "content_size_mobile",
+      "label": "Icon/Text size",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "content_padding_mobile",
+      "label": "Content padding",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment_mobile",
+      "label": "Alignment",
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Layout: Margin"
+    },
+    {
+      "type": "paragraph",
+      "content": "Supports px and % units. Examples: '25px' (all sides), '20% 10%' (top/bottom left/right), '20px 15px 10px 5px' (top right bottom left)"
+    },
+    {
+      "type": "text",
+      "id": "margin_desktop",
+      "label": "Margin: Desktop",
+      "default": "20px 0 20px 0"
+    },
+    {
+      "type": "text",
+      "id": "margin_mobile",
+      "label": "Margin: Mobile",
+      "default": "20px 0 20px 0"
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "html_id",
+      "label": "HTML ID"
+    },
+    {
+      "type": "text",
+      "id": "css_classes",
+      "label": "CSS Classes"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_attributes",
+      "label": "Custom attributes",
+      "info": "Enter key=value pairs, one per line"
+    }
+  ],
+  "presets": [
+    {
+      "name": "TP - Divider"
+    }
+  ]
+}
+{% endschema %}

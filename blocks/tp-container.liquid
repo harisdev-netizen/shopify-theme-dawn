@@ -1,0 +1,791 @@
+{% liquid
+  assign customer_status = block.settings.customer_status
+  assign customer_tags = block.settings.customer_tags | split: ','
+
+  if customer_status == 'logged_in' and customer == null
+    continue
+  endif
+
+  if customer_status == 'logged_out' and customer != null
+    continue
+  endif
+
+  if customer_status == 'logged_in' and customer_tags != blank and customer != null
+    assign should_show = false
+    for tag in customer_tags
+      assign trimmed_tag = tag | strip
+      if customer.tags contains trimmed_tag
+        assign should_show = true
+        break
+      endif
+    endfor
+
+    if should_show == false
+      continue
+    endif
+  endif
+
+  # Process custom attributes
+  assign custom_attributes = ''
+  if block.settings.custom_attributes != blank
+    assign attributes = block.settings.custom_attributes | newline_to_br | strip_newlines | split: '<br />'
+    for attribute in attributes
+      assign key_value = attribute | split: '='
+      if key_value.size == 2
+        assign custom_attributes = custom_attributes | append: ' ' | append: key_value[0] | append: '="' | append: key_value[1] | append: '"'
+      endif
+    endfor
+  endif
+
+  # Construct background
+  assign background_color = block.settings.background_color | default: 'transparent'
+  assign background_gradient = block.settings.background_gradient
+  assign background = ''
+
+  if background_gradient != blank
+    assign background = background_gradient
+  endif
+
+  # Prepend background color
+  assign background = background | prepend: ' ' | prepend: background_color
+%}
+
+{% stylesheet %}
+  /* Base styles */
+  .tp-container {
+    position: var(--tp-container-position, relative);
+    inset: var(--tp-container-position-offset, auto);
+    z-index: var(--tp-container-z-index, 0);
+    overflow: var(--tp-container-overflow, visible);
+
+    /* Border properties */
+    border-width: var(--tp-container-border-width, 0);
+    border-style: var(--tp-container-border-style, solid);
+    border-color: var(--tp-container-border-color, transparent);
+    border-radius: var(--tp-container-border-radius, 0);
+
+    display: flex;
+    width: var(--tp-container-width, auto);
+    max-width: var(--tp-container-max-width, none);
+    height: var(--tp-container-height, auto);
+    min-height: var(--tp-container-min-height, 0);
+    flex-direction: var(--tp-container-flex-direction, row);
+    flex-wrap: var(--tp-container-flex-wrap, nowrap);
+    gap: var(--tp-container-gap-vertical, 0) var(--tp-container-gap-horizontal, 0);
+    padding: var(--tp-container-padding, 0);
+    justify-content: var(--tp-container-justify, flex-start);
+    align-items: var(--tp-container-align, flex-start);
+    text-align: var(--tp-container-text-align, left);
+
+    background: var(--tp-container-background, transparent);
+  }
+
+  /* Display conditions */
+  @media screen and (max-width: 749px) {
+    .tp-container-visible-on--desktop {
+      display: none !important;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .tp-container-visible-on--mobile {
+      display: none !important;
+    }
+  }
+{% endstylesheet %}
+
+<style>
+  .tp-container--{{ block.id }} {
+    /* Position and Layout - Mobile First */
+    --tp-container-position: {{ block.settings.position }};
+    --tp-container-z-index: {{ block.settings.z_index }};
+    --tp-container-overflow: {{ block.settings.overflow }};
+
+    /* Border - Mobile First */
+    --tp-container-border-width: {{ block.settings.border_width_mobile }};
+    --tp-container-border-style: {{ block.settings.border_style_mobile }};
+    --tp-container-border-color: {{ block.settings.border_color_mobile }};
+    --tp-container-border-radius: {{ block.settings.border_radius_mobile }};
+
+    /* Width variables - Mobile First */
+    --tp-container-width: {{ block.settings.width_mobile }};
+    --tp-container-max-width: {{ block.settings.max_width_mobile }};
+
+    /* Height variables - Mobile First */
+    --tp-container-height: {{ block.settings.height_mobile }};
+    --tp-container-min-height: {{ block.settings.min_height_mobile }}px;
+
+    /* Flex variables - Mobile First */
+    --tp-container-flex-direction: {{ block.settings.flex_direction_mobile }};
+    --tp-container-flex-wrap: {{ block.settings.flex_wrap_mobile }};
+
+    /* Gap variables - Mobile First */
+    --tp-container-gap-horizontal: {{ block.settings.gap_mobile_horizontal }}px;
+    --tp-container-gap-vertical: {{ block.settings.gap_mobile_vertical }}px;
+
+    /* Padding variables - Mobile First */
+    --tp-container-padding: {{ block.settings.padding_mobile }};
+
+    /* Background variables */
+    --tp-container-background: {{ background }};
+
+    /* Alignment variables - Mobile First */
+    --tp-container-justify: {{ block.settings.content_alignment_horizontal_mobile }};
+    --tp-container-align: {{ block.settings.content_alignment_vertical_mobile }};
+    --tp-container-text-align: {{ block.settings.text_alignment_mobile }};
+
+    /* Position and offset */
+    --tp-container-position-offset: {{ block.settings.mobile_offset }};
+  }
+
+  /* Desktop-specific overrides */
+  @media screen and (min-width: 750px) {
+    .tp-container--{{ block.id }} {
+      /* Border - Desktop */
+      --tp-container-border-width: {{ block.settings.border_width_desktop }};
+      --tp-container-border-style: {{ block.settings.border_style_desktop }};
+      --tp-container-border-color: {{ block.settings.border_color_desktop }};
+      --tp-container-border-radius: {{ block.settings.border_radius_desktop }};
+
+      --tp-container-width: {{ block.settings.width_desktop }};
+      --tp-container-max-width: {{ block.settings.max_width_desktop }};
+      --tp-container-height: {{ block.settings.height_desktop }};
+      --tp-container-min-height: {{ block.settings.min_height_desktop }}px;
+      --tp-container-flex-direction: {{ block.settings.flex_direction_desktop }};
+      --tp-container-flex-wrap: {{ block.settings.flex_wrap_desktop }};
+      --tp-container-gap-horizontal: {{ block.settings.gap_desktop_horizontal }}px;
+      --tp-container-gap-vertical: {{ block.settings.gap_desktop_vertical }}px;
+      --tp-container-padding: {{ block.settings.padding_desktop }};
+      --tp-container-justify: {{ block.settings.content_alignment_horizontal_desktop }};
+      --tp-container-align: {{ block.settings.content_alignment_vertical_desktop }};
+      --tp-container-text-align: {{ block.settings.text_alignment_desktop }};
+      --tp-container-position-offset: {{ block.settings.desktop_offset }};
+    }
+  }
+</style>
+
+{%- capture html_id -%}
+  {%- if block.settings.html_id != blank -%}
+    id="{{ block.settings.html_id | handleize }}"
+  {%- endif -%}
+{%- endcapture -%}
+
+<div
+  {{ html_id }}
+  class="tp-container tp-container--{{ block.id }} tp-container-visible-on--{{ block.settings.visible_on }} {{ block.settings.css_classes }}"
+  {{ custom_attributes }}
+>
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "TP - Container",
+  "blocks": [{ "type": "@theme" }, { "type": "@app" }],
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Display conditions"
+    },
+    {
+      "type": "select",
+      "id": "visible_on",
+      "label": "Visible on",
+      "options": [
+        {
+          "value": "all",
+          "label": "All devices"
+        },
+        {
+          "value": "desktop",
+          "label": "Desktop only"
+        },
+        {
+          "value": "mobile",
+          "label": "Mobile only"
+        }
+      ],
+      "default": "all"
+    },
+    {
+      "type": "select",
+      "id": "customer_status",
+      "label": "Customer status",
+      "options": [
+        {
+          "value": "all",
+          "label": "All"
+        },
+        {
+          "value": "logged_in",
+          "label": "Logged in"
+        },
+        {
+          "value": "logged_out",
+          "label": "Logged out"
+        }
+      ],
+      "default": "all"
+    },
+    {
+      "type": "text",
+      "id": "customer_tags",
+      "label": "Customer tags",
+      "info": "Show for customers with these tags (comma separated). Only used if customer status is logged in. Tags are case-sensitive. Leave blank to show for all customers."
+    },
+    {
+      "type": "header",
+      "content": "Layout: General"
+    },
+    {
+      "type": "select",
+      "id": "flex_direction_desktop",
+      "label": "Direction: Desktop",
+      "options": [
+        {
+          "value": "row",
+          "label": "Row"
+        },
+        {
+          "value": "column",
+          "label": "Column"
+        }
+      ],
+      "default": "column"
+    },
+    {
+      "type": "select",
+      "id": "flex_direction_mobile",
+      "label": "Direction: Mobile",
+      "options": [
+        {
+          "value": "row",
+          "label": "Row"
+        },
+        {
+          "value": "column",
+          "label": "Column"
+        }
+      ],
+      "default": "column"
+    },
+    {
+      "type": "select",
+      "id": "flex_wrap_desktop",
+      "label": "Wrap: Desktop",
+      "options": [
+        {
+          "value": "wrap",
+          "label": "Wrap"
+        },
+        {
+          "value": "nowrap",
+          "label": "No wrap"
+        }
+      ],
+      "default": "nowrap"
+    },
+    {
+      "type": "select",
+      "id": "flex_wrap_mobile",
+      "label": "Wrap: Mobile",
+      "options": [
+        {
+          "value": "wrap",
+          "label": "Wrap"
+        },
+        {
+          "value": "nowrap",
+          "label": "No wrap"
+        }
+      ],
+      "default": "nowrap"
+    },
+    {
+      "type": "header",
+      "content": "Content alignment: Desktop"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment_horizontal_desktop",
+      "label": "Horizontal",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left (Top if content is vertical)"
+        },
+        {
+          "value": "center",
+          "label": "Center (Middle if content is vertical)"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right (Bottom if content is vertical)"
+        },
+        {
+          "value": "space-between",
+          "label": "Space between"
+        }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment_vertical_desktop",
+      "label": "Vertical",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top (Left if content is horizontal)"
+        },
+        {
+          "value": "center",
+          "label": "Middle (Center if content is horizontal)"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom (Right if content is horizontal)"
+        },
+        {
+          "value": "stretch",
+          "label": "Stretch"
+        }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment_desktop",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Content alignment: Mobile"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment_horizontal_mobile",
+      "label": "Horizontal",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left (Top if content is vertical)"
+        },
+        {
+          "value": "center",
+          "label": "Center (Middle if content is vertical)"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right (Bottom if content is vertical)"
+        },
+        {
+          "value": "space-between",
+          "label": "Space between"
+        }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment_vertical_mobile",
+      "label": "Vertical",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top (Left if content is horizontal)"
+        },
+        {
+          "value": "center",
+          "label": "Middle (Center if content is horizontal)"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom (Right if content is horizontal)"
+        },
+        {
+          "value": "stretch",
+          "label": "Stretch"
+        }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment_mobile",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Layout: Gap desktop"
+    },
+    {
+      "type": "range",
+      "id": "gap_desktop_horizontal",
+      "label": "Horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "gap_desktop_vertical",
+      "label": "Vertical",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Layout: Gap mobile"
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile_horizontal",
+      "label": "Horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile_vertical",
+      "label": "Vertical",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Layout: Padding"
+    },
+    {
+      "type": "paragraph",
+      "content": "Supports px and % units. Examples: '25px' (all sides), '20% 10%' (top/bottom left/right), '20px 15px 10px 5px' (top right bottom left)"
+    },
+    {
+      "type": "text",
+      "id": "padding_desktop",
+      "label": "Padding: Desktop",
+      "default": "0px 0px 0px 0px"
+    },
+    {
+      "type": "text",
+      "id": "padding_mobile",
+      "label": "Padding: Mobile",
+      "default": "0px 0px 0px 0px"
+    },
+    {
+      "type": "header",
+      "content": "Background:"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Color",
+      "default": "transparent"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Gradient"
+    },
+    {
+      "type": "header",
+      "content": "Layout: Height"
+    },
+    {
+      "type": "text",
+      "id": "height_desktop",
+      "label": "Height: Desktop",
+      "info": "Supports px, %, vh units. Example: '500px', '100%', '100vh'. Leave blank for auto height.",
+      "default": "auto"
+    },
+    {
+      "type": "range",
+      "id": "min_height_desktop",
+      "label": "Minimum height: Desktop",
+      "min": 0,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "height_mobile",
+      "label": "Height: Mobile",
+      "info": "Supports px, %, vh units. Example: '500px', '100%', '100vh'. Leave blank for auto height.",
+      "default": "auto"
+    },
+    {
+      "type": "range",
+      "id": "min_height_mobile",
+      "label": "Minimum height: Mobile",
+      "min": 0,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Layout: Width"
+    },
+    {
+      "type": "text",
+      "id": "width_desktop",
+      "label": "Width: Desktop",
+      "info": "Supports px, %, vw units. Example: '500px', '100%', '100vw'. Leave blank for auto width.",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "max_width_desktop",
+      "label": "Max width: Desktop",
+      "info": "Supports px, %, vw units. Example: '500px', '100%', '100vw'. Leave blank for no max width.",
+      "default": "none"
+    },
+    {
+      "type": "text",
+      "id": "width_mobile",
+      "label": "Width: Mobile",
+      "info": "Supports px, %, vw units. Example: '500px', '100%', '100vw'. Leave blank for auto width.",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "max_width_mobile",
+      "label": "Max width: Mobile",
+      "info": "Supports px, %, vw units. Example: '500px', '100%', '100vw'. Leave blank for no max width.",
+      "default": "none"
+    },
+    {
+      "type": "header",
+      "content": "Position"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Type",
+      "options": [
+        {
+          "value": "relative",
+          "label": "Relative"
+        },
+        {
+          "value": "absolute",
+          "label": "Absolute"
+        },
+        {
+          "value": "sticky",
+          "label": "Sticky"
+        }
+      ],
+      "default": "relative"
+    },
+    {
+      "type": "header",
+      "content": "Position: Offset"
+    },
+    {
+      "type": "paragraph",
+      "content": "Supports px and % units. Examples: 'auto' (all sides), '20px' (all sides), '20px auto' (top/bottom left/right), '10px 20px 30px 40px' (top right bottom left). Use 'auto' to use the default position."
+    },
+    {
+      "type": "text",
+      "id": "desktop_offset",
+      "label": "Desktop",
+      "default": "auto"
+    },
+    {
+      "type": "text",
+      "id": "mobile_offset",
+      "label": "Mobile",
+      "default": "auto"
+    },
+    {
+      "type": "number",
+      "id": "z_index",
+      "label": "Z-index",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Overflow"
+    },
+    {
+      "type": "select",
+      "id": "overflow",
+      "label": "Overflow handling",
+      "options": [
+        {
+          "value": "visible",
+          "label": "Visible"
+        },
+        {
+          "value": "hidden",
+          "label": "Hidden"
+        },
+        {
+          "value": "scroll",
+          "label": "Scroll"
+        },
+        {
+          "value": "auto",
+          "label": "Auto"
+        }
+      ],
+      "default": "visible"
+    },
+    {
+      "type": "header",
+      "content": "Border: Desktop"
+    },
+    {
+      "type": "text",
+      "id": "border_width_desktop",
+      "label": "Border width",
+      "default": "0px 0px 0px 0px"
+    },
+    {
+      "type": "color",
+      "id": "border_color_desktop",
+      "label": "Border color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "border_style_desktop",
+      "label": "Border style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "text",
+      "id": "border_radius_desktop",
+      "label": "Border radius",
+      "default": "0px 0px 0px 0px"
+    },
+    {
+      "type": "header",
+      "content": "Border: Mobile"
+    },
+    {
+      "type": "text",
+      "id": "border_width_mobile",
+      "label": "Border width",
+      "default": "0px 0px 0px 0px"
+    },
+    {
+      "type": "color",
+      "id": "border_color_mobile",
+      "label": "Border color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "border_style_mobile",
+      "label": "Border style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "text",
+      "id": "border_radius_mobile",
+      "label": "Border radius",
+      "default": "0px 0px 0px 0px"
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "html_id",
+      "label": "HTML ID"
+    },
+    {
+      "type": "text",
+      "id": "css_classes",
+      "label": "CSS Classes"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_attributes",
+      "label": "Custom attributes",
+      "info": "Enter key=value pairs, one per line"
+    }
+  ],
+  "presets": [
+    {
+      "name": "TP - Container"
+    }
+  ]
+}
+{% endschema %}

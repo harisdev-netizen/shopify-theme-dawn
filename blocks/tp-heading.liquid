@@ -1,0 +1,426 @@
+{% liquid
+  assign customer_status = block.settings.customer_status
+  assign customer_tags = block.settings.customer_tags | split: ','
+
+  if customer_status == 'logged_in' and customer == null
+    continue
+  endif
+
+  if customer_status == 'logged_out' and customer != null
+    continue
+  endif
+
+  if customer_status == 'logged_in' and customer_tags != blank and customer != null
+    assign should_show = false
+    for tag in customer_tags
+      assign trimmed_tag = tag | strip
+      if customer.tags contains trimmed_tag
+        assign should_show = true
+        break
+      endif
+    endfor
+
+    if should_show == false
+      continue
+    endif
+  endif
+
+  # Process custom attributes
+  assign custom_attributes = ''
+  if section.settings.custom_attributes != blank
+    assign attributes = section.settings.custom_attributes | newline_to_br | strip_newlines | split: '<br />'
+    for attribute in attributes
+      assign key_value = attribute | split: '='
+      if key_value.size == 2
+        assign custom_attributes = custom_attributes | append: ' ' | append: key_value[0] | append: '="' | append: key_value[1] | append: '"'
+      endif
+    endfor
+  endif
+%}
+
+{% stylesheet %}
+  .tp-heading {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--tp-heading-color, #000000);
+    font-size: var(--tp-heading-font-size, 32px);
+    font-weight: var(--tp-heading-font-weight, 700);
+    letter-spacing: var(--tp-heading-letter-spacing, 0px);
+    line-height: var(--tp-heading-line-height, 1);
+    text-align: var(--tp-heading-text-align, left);
+  }
+
+  @media screen and (max-width: 749px) {
+    .tp-heading-visible-on--desktop {
+      display: none !important;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .tp-heading-visible-on--mobile {
+      display: none !important;
+    }
+  }
+{% endstylesheet %}
+
+<style>
+  .tp-heading--{{ block.id }} {
+    --tp-heading-color: {{ block.settings.color | default: '#000000' }};
+    --tp-heading-font-size: {{ block.settings.font_size_mobile | default: 24 }}px;
+    --tp-heading-font-weight: {{ block.settings.font_weight_mobile | default: 700 }};
+    --tp-heading-letter-spacing: {{ block.settings.letter_spacing_mobile | default: 0 }}px;
+    --tp-heading-line-height: {{ block.settings.line_height_mobile | default: 1 }};
+    --tp-heading-text-align: {{ block.settings.alignment_mobile | default: 'left' }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .tp-heading--{{ block.id }} {
+      --tp-heading-font-size: {{ block.settings.font_size_desktop | default: 32 }}px;
+      --tp-heading-font-weight: {{ block.settings.font_weight_desktop | default: 700 }};
+      --tp-heading-letter-spacing: {{ block.settings.letter_spacing_desktop | default: 0 }}px;
+      --tp-heading-line-height: {{ block.settings.line_height_desktop | default: 1 }};
+      --tp-heading-text-align: {{ block.settings.alignment_desktop | default: 'left' }};
+    }
+  }
+
+  {%- liquid
+    if block.settings.custom_css != blank
+      assign css_selector = '.tp-heading--' | append: block.id
+      echo block.settings.custom_css | replace: '.tp-heading', css_selector
+    endif
+  -%}
+</style>
+
+{% liquid
+  # HTML ID
+  assign html_id = block.settings.html_id | default: '' | handleize
+  if html_id != blank
+    assign html_id = 'id="' | append: html_id | append: '"'
+  endif
+
+  # Heading tag
+  assign heading_tag = block.settings.heading_tag | default: 'h2'
+%}
+
+<{{ heading_tag }}
+  {{ html_id }}
+  class="tp-heading tp-heading--{{ block.id }} tp-heading-visible-on--{{ block.settings.visible_on }} {{ block.settings.css_classes }}"
+  {{ custom_attributes }}
+  {{ block.shopify_attributes }}
+>
+  {{- block.settings.text -}}
+</{{ heading_tag }}>
+
+{% schema %}
+{
+  "name": "TP - Heading",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Display conditions"
+    },
+    {
+      "type": "select",
+      "id": "visible_on",
+      "label": "Visible on",
+      "options": [
+        {
+          "value": "all",
+          "label": "All devices"
+        },
+        {
+          "value": "desktop",
+          "label": "Desktop only"
+        },
+        {
+          "value": "mobile",
+          "label": "Mobile only"
+        }
+      ],
+      "default": "all"
+    },
+    {
+      "type": "select",
+      "id": "customer_status",
+      "label": "Customer status",
+      "options": [
+        {
+          "value": "all",
+          "label": "All"
+        },
+        {
+          "value": "logged_in",
+          "label": "Logged in"
+        },
+        {
+          "value": "logged_out",
+          "label": "Logged out"
+        }
+      ],
+      "default": "all"
+    },
+    {
+      "type": "text",
+      "id": "customer_tags",
+      "label": "Customer tags",
+      "info": "Show for customers with these tags (comma separated, case-sensitive). Only used if customer status is logged in."
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Heading text"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Settings - desktop"
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "label": "Font size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "font_weight_desktop",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light: 300"
+        },
+        {
+          "value": "400",
+          "label": "Regular: 400"
+        },
+        {
+          "value": "500",
+          "label": "Medium: 500"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold: 600"
+        },
+        {
+          "value": "700",
+          "label": "Bold: 700"
+        },
+        {
+          "value": "800",
+          "label": "Extra-bold: 800"
+        },
+        {
+          "value": "900",
+          "label": "Black: 900"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing_desktop",
+      "label": "Letter spacing",
+      "min": -10,
+      "max": 10,
+      "step": 0.5,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "line_height_desktop",
+      "label": "Line height",
+      "min": 0.5,
+      "max": 3,
+      "step": 0.5,
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "alignment_desktop",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Settings - mobile"
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "label": "Font size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "font_weight_mobile",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light: 300"
+        },
+        {
+          "value": "400",
+          "label": "Regular: 400"
+        },
+        {
+          "value": "500",
+          "label": "Medium: 500"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold: 600"
+        },
+        {
+          "value": "700",
+          "label": "Bold: 700"
+        },
+        {
+          "value": "800",
+          "label": "Extra-bold: 800"
+        },
+        {
+          "value": "900",
+          "label": "Black: 900"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing_mobile",
+      "label": "Letter spacing",
+      "min": -10,
+      "max": 10,
+      "step": 0.5,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "line_height_mobile",
+      "label": "Line height",
+      "min": 0.5,
+      "max": 3,
+      "step": 0.5,
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "alignment_mobile",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "html_id",
+      "label": "HTML ID"
+    },
+    {
+      "type": "text",
+      "id": "css_classes",
+      "label": "CSS classes"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_attributes",
+      "label": "Custom attributes",
+      "info": "Enter key=value pairs, one per line"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "presets": [
+    {
+      "name": "TP - Heading"
+    }
+  ]
+}
+{% endschema %}
