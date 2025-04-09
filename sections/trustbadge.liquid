@@ -1,0 +1,162 @@
+{%- liquid
+  assign unique_id = section.id
+  assign padding_block = section.settings.section_padding_block
+  assign padding_inline = section.settings.section_padding_inline
+  assign section_bg_color = section.settings.section_bg_color
+  assign trustbadge_bg_color = section.settings.content_bg_color
+  assign svg_color = section.settings.svg_color
+  assign title_color = section.settings.title_color
+  assign text_color = section.settings.text_color
+  assign svg_size = section.settings.svg_size
+-%}
+
+<style>
+  :root-{{ unique_id }} {
+    --trustbadges-section-bg-color: {{ section_bg_color | default: "#f9f9f9" }};
+    --trustbadges-trustbadge-bg-color: {{ trustbadge_bg_color | default: "#ffffff" }};
+    --trustbadges-padding-inline: {{ padding_inline | default: 2 }};
+    --trustbadges-padding-block: {{ padding_block | default: 3 }};
+    --trustbadges-svg-color: {{ svg_color | default: "#333" }};
+    --trustbadges-svg-size: {{ svg_size | default: 2 }};
+    --trustbadges-text-color: {{ text_color | default: "#555" }};
+    --trustbadges-title-color: {{ title_color | default: "#000" }};
+  }
+</style>
+
+<section class="trustbadges-body trustbadges-body--{{ unique_id }}">
+  <div class="trustbadges-content-only-container trustbadges-content-only-container--{{ unique_id }}">
+    <!-- Trustbadge 1 -->
+    {% for block in section.blocks %}
+      {%- liquid
+      assign path = block.settings.svg_icon
+      assign title = block.settings.title
+      assign text = block.settings.paragraph
+      -%}
+      <div class="trustbadges-content"  {{ block.shopify_attributes }}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" >
+          <path {{ path }} />
+        </svg>
+        <span>{{ title }}</span>
+        <span>{{ text }}</span>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name":  "Trustbadge Grid",
+  "tag" : "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Trustbadge"
+    },
+    {
+      "type": "paragraph",
+      "content": "Create a trustbadge grid section to showcase your store's features, benefits, or guarantees. Customize colors, padding, and add multiple badges with custom icons, titles, and descriptions."
+    },
+    {
+      "type": "range",
+      "id": "section_padding_block",
+      "label": "Padding top-bottom",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 5,
+      "unit": "rem"
+    },
+     {
+      "type": "range",
+      "id": "section_padding_inline",
+      "label": "Padding left-right",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 4,
+      "unit": "rem"
+    },
+    {
+      "type": "range",
+      "id": "svg_size",
+      "label": "SVG size",
+      "min": 1,
+      "max": 10,
+      "step": 0.5,
+      "default": 4,
+      "unit": "rem"
+    },
+    {
+      "type": "header",
+      "content": "Design"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section background color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "color",
+      "id": "content_bg_color",
+      "label": "Trustbadge background color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "color",
+      "id": "svg_color",
+      "label": "SVG color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Trustbadge",
+      "type": "trustbadge",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "custom_icon_picker",
+          "label": "Custom Icon"
+        },
+        {
+          "type": "textarea",
+          "id" : "svg_icon",
+          "label": "SVG Path",
+          "info" : "Add the path of the svg icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title text",
+          "default": "Free Shipping"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "paragraph",
+          "label": "Body text",
+          "default": "Enjoy free delivery on all orders"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trustbadge Grid"
+    }
+  ]
+}
+{% endschema %}
