@@ -416,11 +416,11 @@
         "section_padding_block": 5,
         "section_padding_inline": 4,
         "svg_size": 4,
-        "section_bg_color": "#ffffff",
-        "content_bg_color": "#121212",
-        "svg_color": "#ffffff",
-        "title_color": "#ffffff",
-        "text_color": "#ffffff"
+        "section_bg_color": "#121212",
+        "content_bg_color": "#ffffff",
+        "svg_color": "#121212",
+        "title_color": "#121212",
+        "text_color": "#525252"
       }
     }
   },
