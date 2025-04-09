@@ -23,93 +23,6 @@
   }
 </style>
 
-
-{% comment %} <style>
-    .trustbadges-body--{{ unique_id }} {
-      width: 100%;
-      background: {{ section_bg_color }};
-      padding-inline: {{ padding_inline }}rem;
-      padding-block: {{ padding_block }}rem;
-      box-sizing: border-box;
-    }
-
-    .trustbadges-content-only-container--{{ unique_id }} {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-   .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      flex: 1;
-      max-width: 300px;
-      text-align: center;
-      gap: 1rem;
-      padding-block: 2.5rem;
-      padding-inline: 0.7rem;
-      border: 1px solid #fafafa;
-      border-radius: 8px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      height: 100%;
-      background: {{ trustbadge_bg_color }};
-    }
-
-   .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-    }
-
-  .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content svg {
-      color: {{ svg_color }};
-      display: block;
-      width: {{ svg_size }}rem;
-      height: {{ svg_size }}rem;
-    }
-
-  .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content span {
-      display: block;
-      color: {{ text_color }};
-      font-size: 1.2rem;
-    }
-
-  .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content :nth-child(2) {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: {{ title_color }};
-    }
-
-    @media screen and (max-width: 750px) {
-      .trustbadges-body--{{ unique_id }} {
-        padding-block: {{ padding_block | divided_by: 1.5 }}rem;
-        padding-inline: {{ padding_inline | divided_by: 2 }}rem;
-      }
-      .trustbadges-content-only-container--{{ unique_id }} {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-      }
-     .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content svg{
-      width: {{ svg_size | divided_by: 1.5 }}rem;
-      height: {{ svg_size | divided_by: 1.5 }}rem;
-     }
-      
-     .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content span {
-        font-size: 1rem;
-      }
-
-     .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content :nth-child(2) {
-        font-size: 1.2rem;
-      }
-    }
-</style> {% endcomment %}
-
 <section class="trustbadges-body trustbadges-body--{{ unique_id }}">
   <div class="trustbadges-content-only-container trustbadges-content-only-container--{{ unique_id }}">
     <!-- Trustbadge 1 -->
@@ -136,6 +49,10 @@
   "tag" : "section",
   "class": "section",
   "settings": [
+    {
+      "type": "paragraph",
+      "content": "Create a trustbadge grid section to showcase your store's features, benefits, or guarantees. Customize colors, padding, and add multiple badges with custom icons, titles, and descriptions."
+    },
     {
       "type": "range",
       "id": "section_padding_block",
