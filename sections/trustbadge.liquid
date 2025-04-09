@@ -1,0 +1,232 @@
+{%- liquid
+  assign unique_id = section.id
+  assign padding_block = section.settings.section_padding_block
+  assign padding_inline = section.settings.section_padding_inline
+  assign section_bg_color = section.settings.section_bg_color
+  assign trustbadge_bg_color = section.settings.content_bg_color
+  assign svg_color = section.settings.svg_color
+  assign title_color = section.settings.title_color
+  assign text_color = section.settings.text_color
+  assign svg_size = section.settings.svg_size
+-%}
+
+<style>
+  :root {
+    --trustbadges-section-bg-color: {{ section_bg_color | default: "#f9f9f9" }};
+    --trustbadges-trustbadge-bg-color: {{ trustbadge_bg_color | default: "#ffffff" }};
+    --trustbadges-padding-inline: {{ padding_inline | default: 2 }};
+    --trustbadges-padding-block: {{ padding_block | default: 3 }};
+    --trustbadges-svg-color: {{ svg_color | default: "#333" }};
+    --trustbadges-svg-size: {{ svg_size | default: 2 }};
+    --trustbadges-text-color: {{ text_color | default: "#555" }};
+    --trustbadges-title-color: {{ title_color | default: "#000" }};
+  }
+</style>
+
+
+{% comment %} <style>
+    .trustbadges-body--{{ unique_id }} {
+      width: 100%;
+      background: {{ section_bg_color }};
+      padding-inline: {{ padding_inline }}rem;
+      padding-block: {{ padding_block }}rem;
+      box-sizing: border-box;
+    }
+
+    .trustbadges-content-only-container--{{ unique_id }} {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+   .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      max-width: 300px;
+      text-align: center;
+      gap: 1rem;
+      padding-block: 2.5rem;
+      padding-inline: 0.7rem;
+      border: 1px solid #fafafa;
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      height: 100%;
+      background: {{ trustbadge_bg_color }};
+    }
+
+   .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    }
+
+  .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content svg {
+      color: {{ svg_color }};
+      display: block;
+      width: {{ svg_size }}rem;
+      height: {{ svg_size }}rem;
+    }
+
+  .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content span {
+      display: block;
+      color: {{ text_color }};
+      font-size: 1.2rem;
+    }
+
+  .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content :nth-child(2) {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: {{ title_color }};
+    }
+
+    @media screen and (max-width: 750px) {
+      .trustbadges-body--{{ unique_id }} {
+        padding-block: {{ padding_block | divided_by: 1.5 }}rem;
+        padding-inline: {{ padding_inline | divided_by: 2 }}rem;
+      }
+      .trustbadges-content-only-container--{{ unique_id }} {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+     .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content svg{
+      width: {{ svg_size | divided_by: 1.5 }}rem;
+      height: {{ svg_size | divided_by: 1.5 }}rem;
+     }
+      
+     .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content span {
+        font-size: 1rem;
+      }
+
+     .trustbadges-content-only-container--{{ unique_id }} .trustbadges-content :nth-child(2) {
+        font-size: 1.2rem;
+      }
+    }
+</style> {% endcomment %}
+
+<section class="trustbadges-body trustbadges-body--{{ unique_id }}">
+  <div class="trustbadges-content-only-container trustbadges-content-only-container--{{ unique_id }}">
+    <!-- Trustbadge 1 -->
+    {% for block in section.blocks %}
+      {%- liquid
+      assign path = block.settings.svg_icon
+      assign title = block.settings.title
+      assign text = block.settings.paragraph
+      -%}
+      <div class="trustbadges-content"  {{ block.shopify_attributes }}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" >
+          <path {{ path }} />
+        </svg>
+        <span>{{ title }}</span>
+        <span>{{ text }}</span>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name":  "Trustbadge Grid",
+  "tag" : "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "section_padding_block",
+      "label": "Padding top-bottom",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 5,
+      "unit": "rem"
+    },
+     {
+      "type": "range",
+      "id": "section_padding_inline",
+      "label": "Padding left-right",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 4,
+      "unit": "rem"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section background color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "color",
+      "id": "content_bg_color",
+      "label": "Trustbadge background color",
+      "default": "#1e1e1e"
+    },
+    {
+      "type": "color",
+      "id": "svg_color",
+      "label": "SVG color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "svg_size",
+      "label": "SVG size",
+      "min": 1,
+      "max": 10,
+      "step": 0.5,
+      "default": 4,
+      "unit": "rem"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Trustbadge",
+      "type": "trustbadge",
+      "settings": [
+        {
+          "type": "textarea",
+          "id" : "svg_icon",
+          "label": "SVG Path",
+          "info" : "Add the path of the svg icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title text",
+          "default": "Free Shipping"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "paragraph",
+          "label": "Body text",
+          "default": "Enjoy free delivery on all orders"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trustbadge Grid"
+    }
+  ]
+}
+{% endschema %}

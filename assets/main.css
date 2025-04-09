@@ -711,3 +711,90 @@ fieldset.custom-fields legend span.heart-emoji {
     width: var(--bullet-active-width-mobile);
   }
 }
+
+/* TRUSTBADGE SECTION */
+.trustbadges-body {
+  width: 100%;
+  background: var(--trustbadges-section-bg-color);
+  padding-inline: calc(var(--trustbadges-padding-inline) * 1rem);
+  padding-block: calc(var(--trustbadges-padding-block) * 1rem);
+  box-sizing: border-box;
+}
+
+.trustbadges-content-only-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trustbadges-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+  gap: 1rem;
+  padding-block: 2.5rem;
+  padding-inline: 0.7rem;
+  border: 1px solid #fafafa;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+  background: var(--trustbadges-trustbadge-bg-color);
+}
+
+.trustbadges-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.trustbadges-content svg {
+  color: var(--trustbadges-svg-color);
+  display: block;
+  width: calc(var(--trustbadges-svg-size) * 1rem);
+  height: calc(var(--trustbadges-svg-size) * 1rem);
+}
+
+.trustbadges-content span {
+  display: block;
+  color: var(--trustbadges-text-color);
+  font-size: 1.2rem;
+}
+
+.trustbadges-content :nth-child(2) {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--trustbadges-title-color);
+}
+
+@media screen and (max-width: 750px) {
+  .trustbadges-body {
+    padding-block: calc(var(--trustbadges-padding-block) / 1.5 * 1rem);
+    padding-inline: calc(var(--trustbadges-padding-inline) / 2 * 1rem);
+  }
+
+  .trustbadges-content-only-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .trustbadges-content svg {
+    width: calc(var(--trustbadges-svg-size) / 1.5 * 1rem);
+    height: calc(var(--trustbadges-svg-size) / 1.5 * 1rem);
+  }
+
+  .trustbadges-content span {
+    font-size: 1rem;
+  }
+
+  .trustbadges-content :nth-child(2) {
+    font-size: 1.2rem;
+  }
+}
