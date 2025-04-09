@@ -1059,32 +1059,6 @@
         "html_id": "",
         "html_class": ""
       }
-    },
-    "trustbadge_UegcG8": {
-      "type": "trustbadge",
-      "blocks": {
-        "trustbadge_Y4yi9U": {
-          "type": "trustbadge",
-          "settings": {
-            "svg_icon": "",
-            "title": "Free Shipping",
-            "paragraph": "Enjoy free delivery on all orders"
-          }
-        }
-      },
-      "block_order": [
-        "trustbadge_Y4yi9U"
-      ],
-      "settings": {
-        "section_padding_block": 5,
-        "section_padding_inline": 4,
-        "section_bg_color": "#1e1e1e",
-        "content_bg_color": "#1e1e1e",
-        "svg_color": "#ffffff",
-        "title_color": "#ffffff",
-        "text_color": "#ffffff",
-        "svg_size": 4
-      }
     }
   },
   "order": [
@@ -1106,7 +1080,6 @@
     "testimonials_XaGtXe",
     "tp_testimonials_2_Tbpnhi",
     "accordians_BramEp",
-    "tp_newsletter_1_kAJRxi",
-    "trustbadge_UegcG8"
+    "tp_newsletter_1_kAJRxi"
   ]
 }
