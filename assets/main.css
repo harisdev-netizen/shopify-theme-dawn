@@ -798,3 +798,10 @@ fieldset.custom-fields legend span.heart-emoji {
     font-size: 1.2rem;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .trustbadges-content-only-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
+  }
+}
