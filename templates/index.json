@@ -873,18 +873,18 @@
         "mobile_description_text_size": 16,
         "description_text_weight": "400",
         "header_alignment": "center",
-        "background_color": "#E7F1F2",
+        "background_color": "#e7f1f2",
         "background_gradient": "",
-        "arrow_background_color": "#FFFFFF",
+        "arrow_background_color": "#ffffff",
         "heading_color": "#000000",
         "description_color": "#525252",
-        "testimonial_background_color": "#FFFFFF",
+        "testimonial_background_color": "#ffffff",
         "testimonial_background_gradient": "",
         "testimonial_title_color": "#000000",
         "testimonial_name_color": "#000000",
         "testimonial_subline_color": "#525252",
         "testimonial_description_color": "#4b4d6c",
-        "star_color": "#FF9D48",
+        "star_color": "#ff9d48",
         "header_width": 900,
         "section_width": 1440,
         "header_gap": 24,
@@ -1059,6 +1059,32 @@
         "html_id": "",
         "html_class": ""
       }
+    },
+    "trustbadge_UegcG8": {
+      "type": "trustbadge",
+      "blocks": {
+        "trustbadge_Y4yi9U": {
+          "type": "trustbadge",
+          "settings": {
+            "svg_icon": "",
+            "title": "Free Shipping",
+            "paragraph": "Enjoy free delivery on all orders"
+          }
+        }
+      },
+      "block_order": [
+        "trustbadge_Y4yi9U"
+      ],
+      "settings": {
+        "section_padding_block": 5,
+        "section_padding_inline": 4,
+        "section_bg_color": "#1e1e1e",
+        "content_bg_color": "#1e1e1e",
+        "svg_color": "#ffffff",
+        "title_color": "#ffffff",
+        "text_color": "#ffffff",
+        "svg_size": 4
+      }
     }
   },
   "order": [
@@ -1080,6 +1106,7 @@
     "testimonials_XaGtXe",
     "tp_testimonials_2_Tbpnhi",
     "accordians_BramEp",
-    "tp_newsletter_1_kAJRxi"
+    "tp_newsletter_1_kAJRxi",
+    "trustbadge_UegcG8"
   ]
 }
