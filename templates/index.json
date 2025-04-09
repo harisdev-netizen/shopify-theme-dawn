@@ -403,6 +403,7 @@
         "trustbadge_wEGTen": {
           "type": "trustbadge",
           "settings": {
+            "custom_icon_picker": "shopify://shop_images/easy-return.png",
             "svg_icon": "",
             "title": "Free Shipping",
             "paragraph": "Enjoy free delivery on all orders"
@@ -416,20 +417,7 @@
         "section_padding_block": 5,
         "section_padding_inline": 4,
         "svg_size": 4,
-        "section_bg_color": "#121212",
-        "content_bg_color": "#1e1e1e",
-        "svg_color": "#ffffff",
-        "title_color": "#ffffff",
-        "text_color": "#ffffff"
-      }
-    },
-    "trustbadge_BXxmVN": {
-      "type": "trustbadge",
-      "settings": {
-        "section_padding_block": 5,
-        "section_padding_inline": 4,
-        "svg_size": 4,
-        "section_bg_color": "#1e1e1e",
+        "section_bg_color": "#ffffff",
         "content_bg_color": "#1e1e1e",
         "svg_color": "#ffffff",
         "title_color": "#ffffff",
@@ -446,7 +434,6 @@
     "tp_testimonials_2_Tbpnhi",
     "accordians_BramEp",
     "tp_newsletter_1_kAJRxi",
-    "trustbadge_kLtRAN",
-    "trustbadge_BXxmVN"
+    "trustbadge_kLtRAN"
   ]
 }
