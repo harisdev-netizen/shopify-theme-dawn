@@ -9,6 +9,8 @@
   assign text_color = section.settings.text_color
   assign svg_size = section.settings.svg_size
   assign content_max_width = section.settings.content_max_width
+  assign title_font_size = section.settings.title_font_size
+  assign text_font_size = section.settings.text_font_size
 -%}
 
 <style>
@@ -21,6 +23,8 @@
     --trustbadges-svg-size: {{ svg_size | default: 2 }};
     --trustbadges-text-color: {{ text_color | default: "#555" }};
     --trustbadges-title-color: {{ title_color | default: "#000" }};
+    --trustbadges-title-font-size: {{ title_font_size | default: 1.2 }}rem;
+    --trustbadges-text-font-size: {{ text_font_size | default: 1.5 }}rem;
     --trustbadges-content-max-width: {{ content_max_width | default: 1440 }}px;
   }
 </style>
@@ -169,6 +173,26 @@
           "id": "paragraph",
           "label": "Body text",
           "default": "Enjoy free delivery on all orders"
+        },
+        {
+          "type": "range",
+          "id": "title_font_size",
+          "label": "Title font size",
+          "min": 0.8,
+          "max": 3,
+          "step": 0.1,
+          "default": 1.2,
+          "unit": "rem"
+        },
+        {
+          "type": "range",
+          "id": "text_font_size",
+          "label": "Text font size",
+          "min": 0.8,
+          "max": 3,
+          "step": 0.5,
+          "default": 1.5,
+          "unit": "rem"
         }
       ]
     }
