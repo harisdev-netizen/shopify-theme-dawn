@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
 {%- liquid
   assign banner_title = section.settings.title
   assign banner_description = section.settings.description
@@ -63,7 +65,7 @@
     /* justify-content: flex-start; */
     height: 100%;
     /* padding: 2rem; */
-    color: var(--banner-title-color, #fff);
+    color: var(--banner-title-color);
   }
 
   .banner-text {
@@ -84,7 +86,7 @@
 
   .banner-title {
     font-size: var(--banner-title-font-size);
-    font-family: var(--banner-title-font-family, Arial, sans-serif);
+    font-family: var(--banner-title-font-family);
     font-weight: var(--banner-title-font-weight);
     margin-bottom: 1rem;
     color: var(--banner-title-color);
@@ -92,7 +94,7 @@
 
   .banner-description {
     font-size: var(--banner-description-font-size);
-    font-family: var(--banner-description-font-family, Arial, sans-serif);
+    font-family: var(--banner-description-font-family);
     font-weight: var(--banner-description-font-weight);
     margin-bottom: 1.5rem;
     color: var(--banner-title-color);
@@ -106,9 +108,9 @@
     background-color: var(--banner-button-color);
     color: var(--banner-button-text-color);
     text-decoration: none;
-    border-radius: var(--banner-button-border-radius, 4px);
+    border-radius: var(--banner-button-border-radius);
     transition: background-color 0.3s ease;
-    font-family: var(--banner-button-font-family, Arial, sans-serif);
+    font-family: var(--banner-button-font-family);
     font-weight: var(--banner-button-font-weight);
   }
 
@@ -128,19 +130,19 @@
     z-index: 10;
   }
 
-  .autoplay-slideshow .swiper-pagination-bullet {
+  .swiper-pagination .swiper-pagination-bullet {
     width: var(--bullet-width);
     height: var(--bullet-height);
     border-radius: var(--bullet-radius);
-    background-color: var(--bullet-color) !important;
-    opacity: 0.5;
+    background-color: rgba(var(--bullet-background-color), var(--bullet-background-opacity));
+    /* opacity: 0.5; */
     margin: 0;
     transition: all 0.3s ease;
   }
 
-  .autoplay-slideshow .swiper-pagination-bullet-active {
+  .swiper-pagination .swiper-pagination-bullet-active {
     width: var(--bullet-active-width);
-    background-color: var(--active-bullet-color) !important;
+    background-color: rgba(var(--active-bullet-color), 1);
     opacity: 2 !important;
   }
 
@@ -166,21 +168,21 @@
   }
 
   .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-    background: var(--active-bullet-color);
+    background: rgba(var(--active-bullet-color), 1);
   }
 
   @media screen and (max-width: 640px) {
-    .autoplay-slideshow .swiper-pagination {
+    .swiper-pagination .swiper-pagination {
       margin-top: var(--pagination-margin-top-mobile);
       min-height: var(--pagination-min-height-mobile);
     }
 
-    .autoplay-slideshow .swiper-pagination-bullet {
+    .swiper-pagination .swiper-pagination-bullet {
       width: var(--bullet-width-mobile);
       height: var(--bullet-height-mobile);
     }
 
-    .autoplay-slideshow .swiper-pagination-bullet-active {
+    .swiper-pagination .swiper-pagination-bullet-active {
       width: var(--bullet-active-width-mobile);
     }
 
@@ -213,26 +215,26 @@
     --banner-button-text-color: {{ section.settings.banner_button_text_color }};
     --banner-button-font-family: {{ section.settings.banner_button_font.family }}, {{ section.settings.banner_button_font.fallback_families }};
     --banner-button-font-weight: {{ section.settings.banner_button_font.weight }};
-    --banner-button-border-radius: {{ section.settings.banner_button_border_radius | default: 4 }}px;
+    --banner-button-border-radius: {{ section.settings.banner_button_border_radius }}px;
     --swiper-aspect-desktop: {{ swiper_aspect_desktop | default: "1920 / 640" }};
     --swiper-aspect-mobile: {{ swiper_aspect_mobile | default: "750 / 1100" }};
-    --pagination-margin-top: {{ pagination_margin_top | default: "20px" }};
-    --pagination-margin-top-mobile: {{ pagination_margin_top_mobile | default: "10px" }};
-    --pagination-min-height: {{ pagination_min_height | default: "16px" }};
-    --pagination-min-height-mobile: {{ pagination_min_height_mobile | default: "12px" }};
-    --bullet-width: {{ bullet_width | default: "16px" }};
-    --bullet-height: {{ bullet_height | default: "8px" }};
-    --bullet-radius: {{ bullet_radius | default: "6px" }};
-    --bullet-width-mobile: {{ bullet_width_mobile | default: "12px" }};
-    --bullet-height-mobile: {{ bullet_height_mobile | default: "6px" }};
-    --bullet-active-width: {{ bullet_active_width | default: "32px" }};
-    --bullet-active-width-mobile: {{ bullet_active_width_mobile | default: "24px" }};
-    --bullet-color: {{ bullet_color | default: "#999" }};
-    --active-bullet-color: {{ active_bullet_color | default: "#000" }};
+    --pagination-margin-top: {{ pagination_margin_top }}px;
+    --pagination-margin-top-mobile: {{ pagination_margin_top_mobile }}px;
+    --pagination-min-height: {{ pagination_min_height }}px;
+    --pagination-min-height-mobile: {{ pagination_min_height_mobile }}px;
+    --bullet-width: {{ bullet_width }}px;
+    --bullet-height: {{ bullet_height }}px;
+    --bullet-radius: {{ bullet_radius }}px;
+    --bullet-width-mobile: {{ bullet_width_mobile }}px;
+    --bullet-height-mobile: {{ bullet_height_mobile }}px;
+    --bullet-active-width: {{ bullet_active_width }}px;
+    --bullet-active-width-mobile: {{ bullet_active_width_mobile }}px;
+    --bullet-color: {{ bullet_color }};
+    --active-bullet-color: {{ active_bullet_color.red }},  {{ active_bullet_color.green}}, {{ active_bullet_color.blue }};
+    --bullet-background-color: {{ bullet_color.red}} , {{ bullet_color.green }} , {{ bullet_color.blue }};
+    --bullet-background-opacity: {{ section.settings.bullet_background_opacity }};
   }
 </style>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 <!-- Add wrapper div for proper pagination positioning -->
 <div class="banner-wrapper" style="position: relative; padding-bottom: 50px;">
@@ -292,10 +294,10 @@
         loop: true,
         centeredSlides: true,
         spaceBetween: 30,
-        autoplay: {
+        {% comment %} autoplay: {
           delay: {{ autoplay_speed }},
           disableOnInteraction: false,
-        },
+        }, {% endcomment %}
         pagination: {
           el: ".swiper-pagination--{{ unique_id }}",
           clickable: true,
@@ -408,6 +410,15 @@
       "step": 1,
       "default": 4,
       "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "bullet_background_opacity",
+      "label": "Bullet Background Opacity",
+      "min": 0,
+      "max": 0.5,
+      "step": 0.1,
+      "default": 0.5
     },
     {
       "type": "color",
