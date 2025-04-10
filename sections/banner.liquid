@@ -136,7 +136,7 @@
 {% endstylesheet %}
 
 <style>
-  .autoplay-slideshow--{{ unique_id }} {
+  #autoplay-slideshow--{{ unique_id }} {
     --banner-title-color: {{ section.settings.banner_title_color }};
     --banner-title-font-family: {{ section.settings.banner_title_font_family }};
     --banner-title-font-size: {{ section.settings.banner_title_font_size }}rem;
@@ -164,7 +164,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-<div class="swiper autoplay-slideshow autoplay-slideshow--{{ unique_id }}">
+<div id="autoplay-slideshow--{{ unique_id }}"class="swiper autoplay-slideshow autoplay-slideshow--{{ unique_id }}">
   <div class="swiper-wrapper swiper-wrapper--{{ unique_id }}">
     {% for block in section.blocks %}
       <div class="swiper-slide swiper-slide--{{ unique_id }}">
@@ -384,6 +384,30 @@
       "label": "Active Bullet Color",
       "default": "#000000"
     },
+    {
+          "type": "color",
+          "id": "banner_title_color",
+          "label": "Title Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "banner_button_color",
+          "label": "Button Background Color",
+          "default": "#0080FF"
+        },
+        {
+          "type": "color",
+          "id": "banner_button_hover_color",
+          "label": "Button Hover Background Color",
+          "default": "#0056b3"
+        },
+        {
+          "type": "color",
+          "id": "banner_button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        }
   ],
   "blocks": [
     {
@@ -427,12 +451,6 @@
         "content": "Banner Text and Button"
         },
         {
-          "type": "color",
-          "id": "banner_title_color",
-          "label": "Title Color",
-          "default": "#ffffff"
-        },
-        {
           "type": "text",
           "id": "banner_title_font_family",
           "label": "Title Font Family",
@@ -447,24 +465,7 @@
           "step": 0.1,
           "default": 2
         },
-        {
-          "type": "color",
-          "id": "banner_button_color",
-          "label": "Button Background Color",
-          "default": "#0080FF"
-        },
-        {
-          "type": "color",
-          "id": "banner_button_hover_color",
-          "label": "Button Hover Background Color",
-          "default": "#0056b3"
-        },
-        {
-          "type": "color",
-          "id": "banner_button_text_color",
-          "label": "Button Text Color",
-          "default": "#ffffff"
-        },
+        
         {
           "type": "range",
           "id": "banner_button_border_radius",
