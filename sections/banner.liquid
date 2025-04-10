@@ -136,14 +136,14 @@
 {% endstylesheet %}
 
 <style>
-  . autoplay-slideshow--{{ unique_id }} {
-    --banner-title-color: {{ section.settings.banner_title_color }};
-    --banner-title-font-family: {{ section.settings.banner_title_font_family }};
-    --banner-title-font-size: {{ section.settings.banner_title_font_size }}rem;
-    --banner-button-color: {{ section.settings.banner_button_color }};
-    --banner-button-hover-color: {{ section.settings.banner_button_hover_color }};
-    --banner-button-text-color: {{ section.settings.banner_button_text_color }};
-    --banner-button-border-radius: {{ section.settings.banner_button_border_radius }}px;
+  .autoplay-slideshow--{{ unique_id }} {
+    --banner-title-color: {{ section.settings.banner_title_color | default: "#ffffff" }};
+    --banner-title-font-family: {{ section.settings.banner_title_font_family | default: "Arial, sans-serif" }};
+    --banner-title-font-size: {{ section.settings.banner_title_font_size | default: 2 }}rem;
+    --banner-button-color: {{ section.settings.banner_button_color | default: "#0080FF" }};
+    --banner-button-hover-color: {{ section.settings.banner_button_hover_color | default: "#0056b3" }};
+    --banner-button-text-color: {{ section.settings.banner_button_text_color | default: "#ffffff" }};
+    --banner-button-border-radius: {{ section.settings.banner_button_border_radius | default: 4 }}px;
     --swiper-aspect-desktop: {{ swiper_aspect_desktop | default: "1920 / 640" }};
     --swiper-aspect-mobile: {{ swiper_aspect_mobile | default: "750 / 1100" }};
     --pagination-margin-top: {{ pagination_margin_top | default: "20px" }};
@@ -481,20 +481,7 @@
   "presets": [
     {
       "name": "Slideshow Banner",
-      "category": "Image",
-      "blocks": [
-        {
-          "type": "slide"
-        },
-        {
-          "type": "slide"
-        },
-        {
-          "type": "slide"
-        }
-      ]
     }
   ]
 }
 {% endschema %}
-
