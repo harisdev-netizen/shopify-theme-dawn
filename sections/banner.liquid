@@ -66,11 +66,11 @@
 
 <!-- Initialize Swiper -->
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("load", function () {
     var swiper = new Swiper(".autoplay-slideshow-{{ unique_id }}", {
-      spaceBetween: 30,
-      centeredSlides: true,
       loop: true,
+      centeredSlides: true,
+      spaceBetween: 30,
       autoplay: {
         delay: {{ autoplay_speed }},
         disableOnInteraction: false,
@@ -78,12 +78,7 @@
       pagination: {
         el: ".swiper-pagination-{{ unique_id }}",
         clickable: true,
-      },
-      on: {
-        init: function () {
-          console.log("Swiper initialized after DOM is ready.");
-        },
-      },
+      }
     });
   });
 </script>
@@ -100,6 +95,10 @@
     {
       "type": "paragraph",
       "content": "Create a slideshow banner with autoplay and customizable settings like aspect ratios, autoplay speed, and bullet styles. Add slides with images for desktop and mobile, and optional links."
+    },
+    {
+      "type": "header",
+      "content": "Banner Layout"
     },
     {
       "type": "text",
@@ -166,7 +165,7 @@
     },
     {
       "type": "header",
-      "content": "Bullet Design"
+      "content": "Banner Bullet Design"
     },
     {
       "type": "range",
