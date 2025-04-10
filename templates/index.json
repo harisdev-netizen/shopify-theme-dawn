@@ -171,7 +171,7 @@
           "type": "accordions",
           "settings": {
             "question": "Which payment methods can I use to place order?",
-            "answer": "<p>At Glowfinity we provide <br/>Cash on delivery, Cards and Net Banking as payment methods to place order.</p>"
+            "answer": "<p>At Glowfinity we provide <strong>Cash on delivery</strong>, <strong>Cards</strong> and <strong>Net Banking</strong> as payment methods to place order.</p>"
           }
         },
         "accordions_izcwch": {
