@@ -170,8 +170,8 @@
       <div class="swiper-slide swiper-slide--{{ unique_id }}">
         <div class="banner-content">
           <div class="banner-text">
-            <h2 class="banner-title">{{ block.settings.title | escape }}</h2>
-            <a href="{{ block.settings.button_link }}" class="banner-button">{{ block.settings.button_text | escape }}</a>
+            <h2 class="banner-title">{{ section.settings.title | escape }}</h2>
+            <a href="{{ section.settings.button_link }}" class="banner-button">{{ section.settings.button_text | escape }}</a>
           </div>
           <a href="{{ block.settings.collection_link }}">
             <picture>
@@ -384,6 +384,28 @@
           "default": "Arial, sans-serif"
         },
         {
+          "type": "text",
+          "id": "title",
+          "label": "Banner Title",
+          "default": "Your Slide Title"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "url",
+          "id": "collection_link",
+          "label": "Slide Image Link"
+        },
+        {
           "type": "range",
           "id": "banner_title_font_size",
           "label": "Title Font Size (rem)",
@@ -454,28 +476,6 @@
           "type": "image_picker",
           "id": "slide_mobile",
           "label": "Mobile Slide Image"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Banner Title",
-          "default": "Your Slide Title"
-        },
-        {
-          "type": "text",
-          "id": "button_text",
-          "label": "Button Text",
-          "default": "Shop Now"
-        },
-        {
-          "type": "url",
-          "id": "button_link",
-          "label": "Button Link"
-        },
-        {
-          "type": "url",
-          "id": "collection_link",
-          "label": "Slide Image Link"
         },
       ]
     }
