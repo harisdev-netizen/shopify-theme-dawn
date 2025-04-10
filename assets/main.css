@@ -636,7 +636,7 @@ fieldset.custom-fields legend span.heart-emoji {
 }
 
 /* AUTOPLAY BANNER */
-.autoplay-slideshow {
+/* .autoplay-slideshow {
   width: 100%;
   position: relative;
 }
@@ -670,11 +670,11 @@ fieldset.custom-fields legend span.heart-emoji {
 
 .banner-content {
   position: relative;
-  /* display: flex;
+  display: flex;
   align-items: center;
-  justify-content: flex-start; */
+  justify-content: flex-start;
   height: 100%;
-  /* padding: 2rem; */
+  padding: 2rem;
   color: var(--banner-title-color, #fff);
 }
 
@@ -749,7 +749,7 @@ fieldset.custom-fields legend span.heart-emoji {
   .autoplay-slideshow .swiper-pagination-bullet-active {
     width: var(--bullet-active-width-mobile);
   }
-}
+} */
 
 /* TRUSTBADGE SECTION */
 .trustbadges-body {
