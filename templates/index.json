@@ -14,6 +14,7 @@
       "blocks": {
         "slide_MjtkUV": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "slide_desktop": "shopify://shop_images/banner_image.jpg",
             "collection_link": ""
@@ -21,6 +22,7 @@
         },
         "slide_fhU3dL": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "slide_desktop": "shopify://shop_images/theme_cover_image.jpg",
             "collection_link": ""
