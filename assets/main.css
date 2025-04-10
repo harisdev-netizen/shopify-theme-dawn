@@ -668,6 +668,45 @@ fieldset.custom-fields legend span.heart-emoji {
   object-fit: cover;
 }
 
+.banner-content {
+  position: relative;
+  /* display: flex;
+  align-items: center;
+  justify-content: flex-start; */
+  height: 100%;
+  /* padding: 2rem; */
+  color: var(--banner-title-color, #fff);
+}
+
+.banner-text {
+  position: absolute;
+  left: 2rem;
+  z-index: 2;
+  max-width: 50%;
+}
+
+.banner-title {
+  font-size: var(--banner-title-font-size, 2rem);
+  font-family: var(--banner-title-font-family, Arial, sans-serif);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--banner-title-color, #fff);
+}
+
+.banner-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--banner-button-color, #0080FF);
+  color: var(--banner-button-text-color, #fff);
+  text-decoration: none;
+  border-radius: var(--banner-button-border-radius, 4px);
+  transition: background-color 0.3s ease;
+}
+
+.banner-button:hover {
+  background-color: var(--banner-button-hover-color, #0056b3);
+}
+
 .autoplay-slideshow .swiper-pagination {
   position: relative;
   margin-top: var(--pagination-margin-top);
