@@ -73,21 +73,21 @@
     font-family: var(--banner-title-font-family, Arial, sans-serif);
     font-weight: bold;
     margin-bottom: 1rem;
-    color: var(--banner-title-color, #fff);
+    color: var(--banner-title-color);
   }
 
   .banner-button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: var(--banner-button-color, #0080FF);
-    color: var(--banner-button-text-color, #fff);
+    background-color: var(--banner-button-color);
+    color: var(--banner-button-text-color);
     text-decoration: none;
     border-radius: var(--banner-button-border-radius, 4px);
     transition: background-color 0.3s ease;
   }
 
   .banner-button:hover {
-    background-color: var(--banner-button-hover-color, #0056b3);
+    background-color: var(--banner-button-hover-color);
   }
 
   .autoplay-slideshow .swiper-pagination {
@@ -137,12 +137,12 @@
 
 <style>
   .autoplay-slideshow--{{ unique_id }} {
-    --banner-title-color: {{ section.settings.banner_title_color | default: "#ffffff" }};
-    --banner-title-font-family: {{ section.settings.banner_title_font_family | default: "Arial, sans-serif" }};
-    --banner-title-font-size: {{ section.settings.banner_title_font_size | default: 2 }}rem;
-    --banner-button-color: {{ section.settings.banner_button_color | default: "#0080FF" }};
-    --banner-button-hover-color: {{ section.settings.banner_button_hover_color | default: "#0056b3" }};
-    --banner-button-text-color: {{ section.settings.banner_button_text_color | default: "#ffffff" }};
+    --banner-title-color: {{ section.settings.banner_title_color }};
+    --banner-title-font-family: {{ section.settings.banner_title_font_family }};
+    --banner-title-font-size: {{ section.settings.banner_title_font_size }}rem;
+    --banner-button-color: {{ section.settings.banner_button_color }};
+    --banner-button-hover-color: {{ section.settings.banner_button_hover_color }};
+    --banner-button-text-color: {{ section.settings.banner_button_text_color }};
     --banner-button-border-radius: {{ section.settings.banner_button_border_radius | default: 4 }}px;
     --swiper-aspect-desktop: {{ swiper_aspect_desktop | default: "1920 / 640" }};
     --swiper-aspect-mobile: {{ swiper_aspect_mobile | default: "750 / 1100" }};
