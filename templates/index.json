@@ -23,11 +23,11 @@
             "collection_link": "",
             "banner_title_color": "#121212",
             "banner_title_font_family": "Arial, sans-serif",
-            "banner_title_font_size": 3.3,
-            "banner_button_color": "#0080ff",
+            "banner_title_font_size": 2.6,
+            "banner_button_color": "#121212",
             "banner_button_hover_color": "#ffffff",
             "banner_button_text_color": "#ffffff",
-            "banner_button_border_radius": 32
+            "banner_button_border_radius": 15
           }
         },
         "slide_FkQXNm": {
