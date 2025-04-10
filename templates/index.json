@@ -21,7 +21,6 @@
         },
         "slide_FkQXNm": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "slide_desktop": "shopify://shop_images/1920x640.svg",
             "slide_mobile": "shopify://shop_images/750x1100.svg"
