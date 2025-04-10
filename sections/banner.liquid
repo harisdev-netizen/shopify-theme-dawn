@@ -26,6 +26,7 @@
   .autoplay-slideshow {
     width: 100%;
     position: relative;
+    overflow: visible !important;
   }
 
   .autoplay-slideshow .swiper-wrapper {
@@ -116,33 +117,31 @@
   }
 
   .autoplay-slideshow .swiper-pagination {
-    position: relative;
-    margin-top: var(--pagination-margin-top);
-    min-height: var(--pagination-min-height);
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    opacity: 1;
-    width: 100%;
     z-index: 10;
-    bottom: 30px;
   }
 
   .autoplay-slideshow .swiper-pagination-bullet {
     width: var(--bullet-width);
     height: var(--bullet-height);
     border-radius: var(--bullet-radius);
-    background-color: var(--bullet-color);
+    background-color: var(--bullet-color) !important;
     opacity: 0.5;
-    transition: all 0.3s ease-in-out;
     margin: 0;
+    transition: all 0.3s ease;
   }
 
   .autoplay-slideshow .swiper-pagination-bullet-active {
     width: var(--bullet-active-width);
-    background-color: var(--active-bullet-color);
-    opacity: 1;
+    background-color: var(--active-bullet-color) !important;
+    opacity: 2 !important;
   }
 
   .autoplay-slideshow .swiper-horizontal > .swiper-pagination-bullets,
@@ -235,34 +234,38 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-<div id="autoplay-slideshow--{{ unique_id }}"class="swiper autoplay-slideshow autoplay-slideshow--{{ unique_id }}">
-  <div class="swiper-wrapper swiper-wrapper--{{ unique_id }}">
-    {% for block in section.blocks %}
-      <div class="swiper-slide swiper-slide--{{ unique_id }}">
-        <div class="banner-content">
-          <div class="banner-text">
-            <h1 class="banner-title">{{ banner_title | escape }}</h1>
-            {% if banner_description != blank %}
-              <p class="banner-description">{{ banner_description | escape }}</p>
-            {% endif %}
-            <a href="{{ button_link }}" class="banner-button">{{ button_text | escape }}</a>
+<!-- Add wrapper div for proper pagination positioning -->
+<div class="banner-wrapper" style="position: relative; padding-bottom: 50px;">
+  <div id="autoplay-slideshow--{{ unique_id }}" class="swiper autoplay-slideshow autoplay-slideshow--{{ unique_id }}">
+    <div class="swiper-wrapper swiper-wrapper--{{ unique_id }}">
+      {% for block in section.blocks %}
+        <div class="swiper-slide swiper-slide--{{ unique_id }}">
+          <div class="banner-content">
+            <div class="banner-text">
+              <h1 class="banner-title">{{ banner_title | escape }}</h1>
+              {% if banner_description != blank %}
+                <p class="banner-description">{{ banner_description | escape }}</p>
+              {% endif %}
+              <a href="{{ button_link }}" class="banner-button">{{ button_text | escape }}</a>
+            </div>
+            <a href="{{ block.settings.collection_link }}">
+              <picture>
+                <!-- Desktop image (min-width: 750px) -->
+                <source media="(min-width: 750px)" srcset="{{ block.settings.slide_desktop | image_url: width: 1920 }}" width="1920" height="640" >
+                <!-- Mobile image (max-width: 749px) -->
+                <source media="(max-width: 749px)" srcset="{{ block.settings.slide_mobile | image_url: width: 750 }}" width="750" height="1100" >
+                <!-- Fallback image -->
+                <img src="{{ block.settings.slide_desktop | image_url: width: 1920 }}" alt="{{ block.settings.slide_desktop.alt | escape }}" width="1920" height="640" loading="eager" >
+              </picture>
+            </a>
           </div>
-          <a href="{{ block.settings.collection_link }}">
-            <picture>
-              <!-- Desktop image (min-width: 750px) -->
-              <source media="(min-width: 750px)" srcset="{{ block.settings.slide_desktop | image_url: width: 1920 }}" width="1920" height="640" >
-              <!-- Mobile image (max-width: 749px) -->
-              <source media="(max-width: 749px)" srcset="{{ block.settings.slide_mobile | image_url: width: 750 }}" width="750" height="1100" >
-              <!-- Fallback image -->
-              <img src="{{ block.settings.slide_desktop | image_url: width: 1920 }}" alt="{{ block.settings.slide_desktop.alt | escape }}" width="1920" height="640" loading="eager" >
-            </picture>
-          </a>
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
+    
+    <!-- Pagination below the slides -->
+    <div class="swiper-pagination swiper-pagination--{{ unique_id }}"></div>
   </div>
-
-  <div class="swiper-pagination swiper-pagination--{{ unique_id }}"></div>
 </div>
 
 <!-- Swiper JS -->
@@ -270,31 +273,44 @@
 
 <!-- Initialize Swiper -->
 <script>
-    window.addEventListener("load", function () {
-    var swiper = new Swiper(".autoplay-slideshow--{{ unique_id }}", {
-      loop: true,
-      centeredSlides: true,
-      spaceBetween: 30,
-      autoplay: {
-        delay: {{ autoplay_speed }},
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination--{{ unique_id }}",
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '"></span>';
-        },
-        type: 'bullets'
-      },
-      on: {
-        init: function () {
-          document.querySelector(".autoplay-slideshow--{{ unique_id }}")?.classList.add("swiper-initialized");
-          // Ensure pagination is visible
-          document.querySelector(".swiper-pagination--{{ unique_id }}").style.opacity = "1";
+  window.addEventListener("DOMContentLoaded", function() {
+    // Make sure Swiper is loaded
+    if (typeof Swiper === 'undefined') {
+      // If Swiper is not loaded yet, wait for it
+      var swiperCheckInterval = setInterval(function() {
+        if (typeof Swiper !== 'undefined') {
+          clearInterval(swiperCheckInterval);
+          initSwiper();
         }
-      }
-    });
+      }, 100);
+    } else {
+      initSwiper();
+    }
+    
+    function initSwiper() {
+      var swiper = new Swiper(".autoplay-slideshow--{{ unique_id }}", {
+        loop: true,
+        centeredSlides: true,
+        spaceBetween: 30,
+        autoplay: {
+          delay: {{ autoplay_speed }},
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination--{{ unique_id }}",
+          clickable: true,
+          type: 'bullets'
+        },
+        on: {
+          init: function() {
+            console.log("Swiper initialized");
+          },
+          slideChange: function() {
+            console.log("Slide changed");
+          }
+        }
+      });
+    }
   });
 </script>
 
@@ -308,35 +324,146 @@
   },
   "settings": [
     {
-      "type": "paragraph",
-      "content": "Create a slideshow banner with autoplay and customizable settings like aspect ratios, autoplay speed, and bullet styles. Add slides with images for desktop and mobile, and optional links."
+      "type": "header",
+      "content": "Banner Text"
+    },
+    {
+      "type": "font_picker",
+      "id": "banner_title_font",
+      "label": "Title Font",
+      "default": "helvetica_n4"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Banner Title",
+      "default": "Your Slide Title"
+    },
+    {
+      "type": "range",
+      "id": "banner_title_font_size",
+      "label": "Title Font Size",
+      "min": 1,
+      "max": 6,
+      "step": 0.1,
+      "default": 3,
+      "unit": "rem"
+    },
+    {
+      "type": "font_picker",
+      "id": "banner_description_font",
+      "label": "Description Font",
+      "default": "helvetica_n4"
+      
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Banner Description",
+      "default": "Add a compelling description to engage your audience and drive conversions."
+    },
+    {
+      "type": "range",
+      "id": "banner_description_font_size",
+      "label": "Description Font Size",
+      "min": 0.8,
+      "max": 3,
+      "step": 0.1,
+      "default": 1.2,
+      "unit": "rem"
+    },
+    {
+      "type": "color",
+      "id": "banner_title_color",
+      "label": "Text Color",
+      "default": "#ffffff"
     },
     {
       "type": "header",
-      "content": "Banner Layout"
+      "content": "Button Settings"
+    },
+    {
+      "type": "font_picker",
+      "id": "banner_button_font",
+      "label": "Button Font",
+      "default": "helvetica_n7"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "range",
+      "id": "banner_button_border_radius",
+      "label": "Button Border Radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 4,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "banner_button_color",
+      "label": "Button Background Color",
+      "default": "#0080FF"
+    },
+    {
+      "type": "color",
+      "id": "banner_button_hover_color",
+      "label": "Button Hover Background Color",
+      "default": "#0056b3"
+    },
+    {
+      "type": "color",
+      "id": "banner_button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Slideshow Layout"
     },
     {
       "type": "text",
       "id": "swiper_aspect_desktop",
       "label": "Aspect Ratio (Desktop)",
-      "default": "1920 / 640"
+      "default": "1920 / 640",
+      "info": "Width / Height - e.g. 1920 / 640"
     },
     {
       "type": "text",
       "id": "swiper_aspect_mobile",
       "label": "Aspect Ratio (Mobile)",
-      "default": "750 / 1100"
+      "default": "750 / 1100",
+      "info": "Width / Height - e.g. 750 / 1100"
     },
     {
       "type": "range",
       "id": "autoplay_speed",
-      "label": "Rotate slides in Mobile",
-      "info": "1000ms = 1sec",
+      "label": "Autoplay Speed",
+      "info": "Time between slide transitions in milliseconds",
       "min": 1000,
       "max": 9000,
       "step": 1000,
-      "default": 2000,
+      "default": 3000,
       "unit": "ms"
+    },
+    {
+      "type": "url",
+      "id": "collection_link",
+      "label": "Slide Image Link"
+    },
+    {
+      "type": "header",
+      "content": "Pagination Bullets"
     },
     {
       "type": "range",
@@ -377,10 +504,6 @@
       "step": 1,
       "default": 12,
       "unit": "px"
-    },
-    {
-      "type": "header",
-      "content": "Banner Bullet Design"
     },
     {
       "type": "range",
@@ -434,6 +557,16 @@
     },
     {
       "type": "range",
+      "id": "bullet_active_width",
+      "label": "Active Bullet Width (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
       "id": "bullet_active_width_mobile",
       "label": "Active Bullet Width (Mobile)",
       "min": 0,
@@ -443,131 +576,16 @@
       "unit": "px"
     },
     {
-      "type": "range",
-      "id": "bullet_active_width",
-      "label": "Active Bullet Width (Desktop)",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "default": 32,
-      "unit": "px"
-    },
-
-    {
-        "type": "header",
-        "content": "Banner Text and Button"
+      "type": "color",
+      "id": "bullet_color",
+      "label": "Bullet Color",
+      "default": "#999999"
     },
     {
-        "type": "font_picker",
-        "id": "banner_title_font",
-        "label": "Title Font",
-        "default": "helvetica_n4"
-    },
-    {
-        "type": "text",
-        "id": "title",
-        "label": "Banner Title",
-        "default": "Your Slide Title"
-    },
-    {
-        "type": "range",
-        "id": "banner_title_font_size",
-        "label": "Title Font Size",
-        "min": 1,
-        "max": 6,
-        "step": 0.1,
-        "default": 3,
-        "unit": "rem"
-    },
-    {
-        "type": "font_picker",
-        "id": "banner_description_font",
-        "label": "Description Font",
-        "default": "helvetica_n4"
-    },
-    {
-        "type": "textarea",
-        "id": "description",
-        "label": "Banner Description",
-        "default": "Add a compelling description to engage your audience and drive conversions."
-    },
-    {
-        "type": "range",
-        "id": "banner_description_font_size",
-        "label": "Description Font Size",
-        "min": 0.8,
-        "max": 3,
-        "step": 0.1,
-        "default": 1.2,
-        "unit": "rem"
-    },
-    {
-        "type": "font_picker",
-        "id": "banner_button_font",
-        "label": "Button Font",
-        "default": "helvetica_n7"
-    },
-    {
-        "type": "text",
-        "id": "button_text",
-        "label": "Button Text", 
-        "default": "Shop Now"
-    },
-    {
-        "type": "url",
-        "id": "button_link",
-        "label": "Button Link"
-    },
-    {
-        "type": "url",
-        "id": "collection_link",
-        "label": "Slide Image Link"
-    },        
-    {
-        "type": "range",
-        "id": "banner_button_border_radius",
-        "label": "Button Border Radius",
-        "min": 0,
-        "max": 50,
-        "step": 1,
-        "default": 4,
-        "unit": "px"
-    },
-    {
-        "type": "color",
-        "id": "bullet_color",
-        "label": "Bullet Color",
-        "default": "#999999"
-    },
-    {
-        "type": "color",
-        "id": "active_bullet_color",
-        "label": "Active Bullet Color",
-        "default": "#000000"
-    },
-    {
-        "type": "color",
-        "id": "banner_title_color",
-        "label": "Text Color",
-        "default": "#ffffff"
-    },
-    {
-        "type": "color",
-        "id": "banner_button_color",
-        "label": "Button Background Color",
-        "default": "#0080FF"
-    },
-    {
-        "type": "color",
-        "id": "banner_button_hover_color",
-        "label": "Button Hover Background Color",
-        "default": "#0056b3"
-    },
-    {
-        "type": "color",
-        "id": "banner_button_text_color",
-        "label": "Button Text Color",
-        "default": "#ffffff"
+      "type": "color",
+      "id": "active_bullet_color",
+      "label": "Active Bullet Color",
+      "default": "#000000"
     }
   ],
   "blocks": [
