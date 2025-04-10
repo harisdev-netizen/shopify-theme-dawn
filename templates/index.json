@@ -14,17 +14,25 @@
       "blocks": {
         "slide_MjtkUV": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "slide_desktop": "shopify://shop_images/banner_image.jpg",
+            "slide_desktop": "shopify://shop_images/1920x640.svg",
+            "slide_mobile": "shopify://shop_images/750x1100.svg",
             "collection_link": ""
           }
         },
-        "slide_fhU3dL": {
+        "slide_FkQXNm": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "slide_desktop": "shopify://shop_images/theme_cover_image.jpg",
+            "slide_desktop": "shopify://shop_images/1920x640.svg",
+            "slide_mobile": "shopify://shop_images/750x1100.svg",
+            "collection_link": ""
+          }
+        },
+        "slide_zrri3a": {
+          "type": "slide",
+          "settings": {
+            "slide_desktop": "shopify://shop_images/1920x640.svg",
+            "slide_mobile": "shopify://shop_images/750x1100.svg",
             "collection_link": ""
           }
         },
@@ -39,7 +47,8 @@
       },
       "block_order": [
         "slide_MjtkUV",
-        "slide_fhU3dL",
+        "slide_FkQXNm",
+        "slide_zrri3a",
         "slide_JmkJpz"
       ],
       "settings": {
