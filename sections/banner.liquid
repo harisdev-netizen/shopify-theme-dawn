@@ -1,4 +1,7 @@
 {%- liquid
+  assign banner_title = section.settings.title
+  assign button_link = section.settings.button_link
+  assign button_text = section.settings.button_text
   assign swiper_aspect_desktop = section.settings.swiper_aspect_desktop
   assign swiper_aspect_mobile = section.settings.swiper_aspect_mobile
   assign unique_id = section.id
@@ -170,8 +173,8 @@
       <div class="swiper-slide swiper-slide--{{ unique_id }}">
         <div class="banner-content">
           <div class="banner-text">
-            <h2 class="banner-title">{{ section.settings.title | escape }}</h2>
-            <a href="{{ section.settings.button_link }}" class="banner-button">{{ section.settings.button_text | escape }}</a>
+            <h1 class="banner-title">{{ banner_title | escape }}</h1>
+            <a href="{{ button_link }}" class="banner-button">{{ button_text | escape }}</a>
           </div>
           <a href="{{ block.settings.collection_link }}">
             <picture>
