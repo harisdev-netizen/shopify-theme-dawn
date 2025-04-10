@@ -71,19 +71,19 @@
     transform: translateY(-50%);
     z-index: 2;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     max-width: 625px;
     width: 100%;
     margin: 0 auto;
-    text-align: center;
+    text-align: start;
   }
 
   .banner-title {
-    font-size: var(--banner-title-font-size, 2rem);
+    font-size: var(--banner-title-font-size);
     font-family: var(--banner-title-font-family, Arial, sans-serif);
-    font-weight: bold;
+    font-weight: var(--banner-title-font-weight);
     margin-bottom: 1rem;
     color: var(--banner-title-color);
   }
@@ -152,6 +152,7 @@
     --banner-title-color: {{ section.settings.banner_title_color }};
     --banner-title-font-family: {{ section.settings.banner_title_font_family }};
     --banner-title-font-size: {{ section.settings.banner_title_font_size }}rem;
+    --banner-title-font-weight: {{ section.settings.banner_title_font_weight | default: 400 }};
     --banner-button-color: {{ section.settings.banner_button_color }};
     --banner-button-hover-color: {{ section.settings.banner_button_hover_color }};
     --banner-button-text-color: {{ section.settings.banner_button_text_color }};
@@ -404,8 +405,17 @@
         {
           "type": "text",
           "id": "button_text",
-          "label": "Button Text",
+          "label": "Button Text", 
           "default": "Shop Now"
+        },
+        {
+          "type": "range",
+          "id": "button_font_weight",
+          "label": "Button Font Weight",
+          "min": 300,
+          "max": 900,
+          "step": 100,
+          "default": 400
         },
         {
           "type": "url",
