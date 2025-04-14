@@ -15,15 +15,15 @@
         "slide_MjtkUV": {
           "type": "slide",
           "settings": {
-            "slide_desktop": "shopify://shop_images/1920x640.svg",
-            "slide_mobile": "shopify://shop_images/750x1100.svg"
+            "slide_desktop": "shopify://shop_images/gradient.jpg",
+            "slide_mobile": "shopify://shop_images/gradient_1_400c3671-a6bf-4d32-b2f2-e976431feba2.jpg"
           }
         },
         "slide_FkQXNm": {
           "type": "slide",
           "settings": {
-            "slide_desktop": "shopify://shop_images/1920x640.svg",
-            "slide_mobile": "shopify://shop_images/750x1100.svg"
+            "slide_desktop": "shopify://shop_images/gradient_2.jpg",
+            "slide_mobile": "shopify://shop_images/gradient_3.jpg"
           }
         },
         "slide_E3pYVE": {
