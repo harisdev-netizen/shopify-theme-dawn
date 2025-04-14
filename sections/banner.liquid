@@ -25,6 +25,10 @@
 -%}
 
 {% stylesheet %}
+  .banner-wrapper {
+    overflow-x: hidden;
+  }
+
   .autoplay-slideshow {
     width: 100%;
     position: relative;
@@ -294,10 +298,10 @@
         loop: true,
         centeredSlides: true,
         spaceBetween: 30,
-        {% comment %} autoplay: {
+        autoplay: {
           delay: {{ autoplay_speed }},
           disableOnInteraction: false,
-        }, {% endcomment %}
+        },
         pagination: {
           el: ".swiper-pagination--{{ unique_id }}",
           clickable: true,
