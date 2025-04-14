@@ -26,17 +26,8 @@
             "slide_mobile": "shopify://shop_images/750x1100.svg"
           }
         },
-        "slide_zrri3a": {
+        "slide_E3pYVE": {
           "type": "slide",
-          "disabled": true,
-          "settings": {
-            "slide_desktop": "shopify://shop_images/1920x640.svg",
-            "slide_mobile": "shopify://shop_images/750x1100.svg"
-          }
-        },
-        "slide_JmkJpz": {
-          "type": "slide",
-          "disabled": true,
           "settings": {
             "slide_desktop": "shopify://shop_images/1920x640.svg",
             "slide_mobile": "shopify://shop_images/750x1100.svg"
@@ -46,13 +37,28 @@
       "block_order": [
         "slide_MjtkUV",
         "slide_FkQXNm",
-        "slide_zrri3a",
-        "slide_JmkJpz"
+        "slide_E3pYVE"
       ],
       "settings": {
+        "banner_title_font": "helvetica_n7",
+        "title": "DISCOVER AFFORDABLE OVERSIZED FASHION",
+        "banner_title_font_size": 4.6,
+        "banner_description_font": "inter_n5",
+        "description": "UPTO 70% OFF ON ALL APPAREL",
+        "banner_description_font_size": 2.2,
+        "banner_title_color": "#000000",
+        "banner_button_font": "inter_n5",
+        "button_text": "SHOP NOW",
+        "button_link": "#",
+        "banner_button_border_radius": 21,
+        "bullet_background_opacity": 0.5,
+        "banner_button_color": "#121212",
+        "banner_button_hover_color": "#242833",
+        "banner_button_text_color": "#ffffff",
         "swiper_aspect_desktop": "1920 / 840",
         "swiper_aspect_mobile": "750 / 1100",
         "autoplay_speed": 4000,
+        "collection_link": "",
         "pagination_margin_top": 20,
         "pagination_margin_top_mobile": 10,
         "pagination_min_height": 16,
@@ -62,25 +68,10 @@
         "bullet_radius": 6,
         "bullet_width_mobile": 12,
         "bullet_height_mobile": 6,
-        "bullet_active_width_mobile": 13,
         "bullet_active_width": 15,
-        "banner_title_font": "helvetica_n7",
-        "title": "DISCOVER AFFORDABLE OVERSIZED FASHION",
-        "banner_title_font_size": 4.6,
-        "banner_description_font": "inter_n5",
-        "description": "UPTO 70% OFF ON ALL APPAREL",
-        "banner_description_font_size": 2.2,
-        "banner_button_font": "inter_n5",
-        "button_text": "SHOP NOW",
-        "button_link": "#",
-        "collection_link": "",
-        "banner_button_border_radius": 21,
+        "bullet_active_width_mobile": 13,
         "bullet_color": "#1e1e1e",
-        "active_bullet_color": "#0080ff",
-        "banner_title_color": "#000000",
-        "banner_button_color": "#121212",
-        "banner_button_hover_color": "#242833",
-        "banner_button_text_color": "#ffffff"
+        "active_bullet_color": "#0080ff"
       }
     },
     "featured_collection": {
