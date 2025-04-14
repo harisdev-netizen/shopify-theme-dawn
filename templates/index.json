@@ -63,7 +63,7 @@
         "pagination_margin_top_mobile": 10,
         "pagination_min_height": 16,
         "pagination_min_height_mobile": 12,
-        "bullet_width": 7,
+        "bullet_width": 100,
         "bullet_height": 8,
         "bullet_radius": 6,
         "bullet_width_mobile": 12,
