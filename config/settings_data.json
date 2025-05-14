@@ -146,6 +146,11 @@
         "type": "shopify://apps/air-reviews-1/blocks/app-embed/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
         "disabled": false,
         "settings": {}
+      },
+      "12695309257651622986": {
+        "type": "shopify://apps/sectionhub/blocks/app-embed/9b74df56-d9a0-4a6f-8248-1a8825110996",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
