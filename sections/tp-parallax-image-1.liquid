@@ -1,0 +1,696 @@
+{% comment %}
+  {
+    "name": "TP Parallax Image 1",
+    "version": "1.0.0",
+    "url": "https://themepack.co/section/tp-parallax-image-1",
+    "author": "Themepack",
+    "license": "MIT"
+  }
+{% endcomment %}
+
+{%- liquid
+  assign heading_tag = 'h2'
+  if section.index0 == 0
+    assign heading_tag = 'h1'
+  endif
+-%}
+
+{%- capture html_id -%}
+  {%- if section.settings.html_id != blank -%}
+    id="{{ section.settings.html_id | handleize }}"
+  {%- endif -%}
+{%- endcapture -%}
+
+{% stylesheet %}
+  .tp-parallax-image-1 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .tp-parallax-image-1 a {
+    color: inherit;
+  }
+
+  .tp-parallax-image-1 .tp__margin-left { margin-inline: 0 auto; }
+  .tp-parallax-image-1 .tp__margin-center { margin-inline: auto; }
+  .tp-parallax-image-1 .tp__margin-right { margin-inline: auto 0; }
+
+  .tp-parallax-image-1 .tp__container {
+    justify-content: var(--tp-content-position-horizontal);
+    background-image: var(--tp-background-image);
+    max-width: var(--tp-section-width);
+    min-height: var(--tp-section-height);
+    background-color: var(--tp-background);
+    align-items: var(--tp-content-position-vertical);
+    background-position: var(--tp-background-position);
+    padding-block: var(--tp-padding-block);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    position: relative;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .tp-parallax-image-1 .tp__content {
+    background: rgba(var(--tp-content-background), var(--tp-content-background-opacity));
+    border-radius: var(--tp-content-border-radius);
+    text-align: var(--tp-content-alignment);
+    align-items: var(--tp-content-alignment);
+    max-width: var(--tp-section-width);
+    padding: var(--tp-content-padding);
+    width: var(--tp-content-width);
+    gap: var(--tp-content-gap);
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+  }
+
+  .tp-parallax-image-1 .tp__section-heading {
+    font-size: var(--tp-heading-size-mobile);
+    font-weight: var(--tp-heading-weight);
+    color: var(--tp-heading-color);
+  }
+
+  .tp-parallax-image-1 .tp__section-description {
+    font-size: var(--tp-description-size-mobile);
+    font-weight: var(--tp-description-weight);
+    color: var(--tp-description-color);
+  }
+
+  .tp-parallax-image-1 .tp__button {
+    color: var(--tp-button-color);
+    background-color: var(--tp-button-background);
+    border-radius: var(--tp-button-border-radius);
+    padding: var(--tp-button-padding);
+    font-size: var(--tp-button-font-size);
+    font-weight: var(--tp-button-font-weight);
+    max-width: var(--tp-button-width);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .tp-parallax-image-1 .tp__button--fade:hover {
+    opacity: 0.8;
+  }
+
+  .tp-parallax-image-1 .tp__button--invert:hover {
+    background-color: transparent !important;
+    border-color: var(--tp-button-background) !important;
+    color: var(--tp-button-background) !important;
+  }
+{% endstylesheet %}
+
+{% style %}
+  #tp-{{ section.id }} {
+    --tp-section-width: {{ section.settings.section_width }}px;
+    --tp-section-height: {{ section.settings.min_height }}vh;
+    --tp-padding-block: {{ section.settings.desktop_top_padding | times: 0.75 }}px {{ section.settings.desktop_bottom_padding | times: 0.75 }}px;
+    --tp-background: {{ section.settings.background_gradient | default: section.settings.background_color }};
+    --tp-background-position: {{ section.settings.background_position }};
+    --tp-content-width: {{ section.settings.content_width }}px;
+    --tp-content-alignment: {{ section.settings.content_alignment }};
+    --tp-content-position-horizontal: {{ section.settings.content_position_horizontal }};
+    --tp-content-position-vertical: {{ section.settings.content_position_vertical }};
+    --tp-content-padding: {{ section.settings.content_padding }};
+    --tp-heading-size-mobile: {{ section.settings.heading_text_size_mobile }}px;
+    --tp-description-size-mobile: {{ section.settings.description_text_size_mobile }}px;
+    --tp-heading-weight: {{ section.settings.heading_text_weight }};
+    --tp-description-weight: {{ section.settings.description_text_weight }};
+    --tp-heading-color: {{ section.settings.heading_color }};
+    --tp-description-color: {{ section.settings.description_color }};
+    --tp-button-color: {{ section.settings.button_color }};
+    --tp-button-background: {{ section.settings.button_background }};
+    --tp-button-border: {{ section.settings.button_color }} {{ section.settings.button_border_width }}px solid;
+    --tp-button-border-radius: {{ section.settings.button_border_radius }}px;
+    --tp-button-padding: {{ section.settings.button_padding }};
+    --tp-button-font-size: {{ section.settings.button_text_size_mobile }}px;
+    --tp-button-font-weight: {{ section.settings.button_text_weight }};
+    --tp-button-width: {{ section.settings.button_width }}px;
+    --tp-content-background: {{ section.settings.content_background.red }}, {{ section.settings.content_background.green }}, {{ section.settings.content_background.blue }};
+    --tp-content-background-opacity: {{ section.settings.content_background_opacity }};
+    --tp-content-border-radius: {{ section.settings.content_border_radius }}px;
+    --tp-content-gap: {{ section.settings.content_gap }}px;
+      
+    {% if section.settings.parallax_image %}
+      --tp-background-image: url({{ section.settings.parallax_image | image_url: width: section.settings.parallax_image.width }});
+    {% else %}
+      --tp-background-image: {{ section.settings.background_gradient | default: section.settings.background_color }};
+    {% endif %}
+  }
+  @media screen and (min-width: 768px) {
+    #tp-{{ section.id }} {
+      --tp-padding-block: {{ section.settings.desktop_top_padding }}px {{ section.settings.desktop_bottom_padding }}px;
+      --tp-button-font-size: {{ section.settings.button_text_size_desktop }}px;
+      --tp-heading-size: {{ section.settings.heading_text_size_desktop }}px;
+      --tp-description-size: {{ section.settings.description_text_size_desktop }}px;
+    }
+  }
+{% endstyle %}
+
+<div id="tp-{{ section.id }}" class="tp-{{ section.id }}">
+  <div {{ html_id }} class="{{ 'tp__container ' | append: section.settings.html_class | strip }}">
+    {% if section.settings.heading != blank
+      or section.settings.description != blank
+      or section.settings.button_text != blank
+    %}
+      <div class="tp__content">
+        {% if section.settings.heading != blank %}
+          <{{ heading_tag }} class="tp__section-heading">{{ section.settings.heading }}</{{ heading_tag }}>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <p class="tp__section-description">{{ section.settings.description }}</p>
+        {% endif %}
+
+        {% if section.settings.button_link != blank %}
+          <a
+            href="{{ section.settings.button_link }}"
+            target="{{ section.settings.button_target }}"
+            class="tp__button tp__margin-{{ section.settings.content_alignment }} tp__button--{{ section.settings.button_hover }}"
+          >
+            {{- section.settings.button_text -}}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TP - Parallax Image 1",
+  "tag": "section",
+  "class": "tp-section tp-parallax-image-1",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Information",
+      "info": "Codename: tp-parallax-image-1. For detailed documentation and best practices on using this section, please visit the [Section Guide](https://themepack.co/docs/sections/parallax-image-1)"
+    },
+    {
+      "type": "header",
+      "content": "Content",
+      "info": "If you want to use just parallax image, then you can leave the heading, button text and description blank."
+    },
+    {
+      "type": "image_picker",
+      "id": "parallax_image",
+      "label": "Parallax image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Parallax Section"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "This is a simple CSS-only parallax section."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Button"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "select",
+      "id": "button_target",
+      "label": "Button Target",
+      "options": [
+        {
+          "value": "_blank",
+          "label": "Blank"
+        },
+        {
+          "value": "_self",
+          "label": "Self"
+        }
+      ],
+      "default": "_self"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "number",
+      "id": "heading_text_size_desktop",
+      "label": "Desktop: Heading Size (px)",
+      "default": 40
+    },
+    {
+      "type": "number",
+      "id": "heading_text_size_mobile",
+      "label": "Mobile: Heading Size (px)",
+      "default": 30
+    },
+    {
+      "type": "select",
+      "id": "heading_text_weight",
+      "label": "Heading text weight",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin"
+        },
+        {
+          "value": "200",
+          "label": "Extra Light"
+        },
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "number",
+      "id": "description_text_size_desktop",
+      "label": "Desktop: Description Size (px)",
+      "default": 20
+    },
+    {
+      "type": "number",
+      "id": "description_text_size_mobile",
+      "label": "Mobile: Description Size (px)",
+      "default": 15
+    },
+    {
+      "type": "select",
+      "id": "description_text_weight",
+      "label": "Description text weight",
+      "options": [
+        {
+          "value": "100",
+          "label": "Thin"
+        },
+        {
+          "value": "200",
+          "label": "Extra Light"
+        },
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "number",
+      "id": "button_text_size_desktop",
+      "label": "Desktop: Button font size (px)",
+      "default": 16
+    },
+    {
+      "type": "number",
+      "id": "button_text_size_mobile",
+      "label": "Mobile: Button font size (px)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 5,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "button_hover",
+      "label": "Button hover",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "invert",
+          "label": "Invert"
+        },
+        {
+          "value": "fade",
+          "label": "fade"
+        }
+      ],
+      "default": "invert"
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "label": "Content Gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "label": "Section Height (vh)",
+      "min": 30,
+      "max": 100,
+      "step": 10,
+      "default": 60,
+      "unit": "vh"
+    },
+    {
+      "type": "range",
+      "id": "content_border_radius",
+      "label": "Content Border Radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "text",
+      "id": "content_padding",
+      "label": "Content Padding",
+      "default": "20px",
+      "info": "Enter the padding for the content. Example: 20px (top right bottom left). If you want to use the same padding for all sides, enter the same value for all sides."
+    },
+    {
+      "type": "header",
+      "content": "Design"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient",
+      "default": "linear-gradient(120deg, rgba(51, 79, 180, 1), rgba(22, 248, 9, 1) 100%)",
+      "info": "If set, overrides the background color."
+    },
+    {
+      "type": "color",
+      "id": "content_background",
+      "label": "Content background",
+      "default": "transparent"
+    },
+    {
+      "type": "range",
+      "id": "content_background_opacity",
+      "label": "Content background opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.5,
+      "unit": "dec"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "number",
+      "id": "section_width",
+      "label": "Section width (px)",
+      "default": 1440
+    },
+    {
+      "type": "text",
+      "id": "button_padding",
+      "label": "Button padding",
+      "default": "5px 25px",
+      "info": "Enter the padding for the button. Example: 10px 20px (top right bottom left). If you want to use the same padding for all sides, enter the same value for all sides."
+    },
+    {
+      "type": "number",
+      "id": "content_width",
+      "label": "Content width (px)",
+      "default": 600
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": "Background Position",
+      "options": [
+        {
+          "value": "top left",
+          "label": "Top Left"
+        },
+        {
+          "value": "top center",
+          "label": "Top Center"
+        },
+        {
+          "value": "top right",
+          "label": "Top Right"
+        },
+        {
+          "value": "center left",
+          "label": "Center Left"
+        },
+        {
+          "value": "center center",
+          "label": "Center Center"
+        },
+        {
+          "value": "center right",
+          "label": "Center Right"
+        },
+        {
+          "value": "bottom left",
+          "label": "Bottom Left"
+        },
+        {
+          "value": "bottom center",
+          "label": "Bottom Center"
+        },
+        {
+          "value": "bottom right",
+          "label": "Bottom Right"
+        }
+      ],
+      "default": "center center"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "content_position_horizontal",
+      "label": "Content Position Horizontal",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "content_position_vertical",
+      "label": "Content Position Vertical",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Middle"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "desktop_top_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop: top padding",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "desktop_bottom_padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop: bottom padding",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "mobile_top_padding",
+
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile: top padding",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mobile_bottom_padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile: bottom padding",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "text",
+      "id": "html_id",
+      "label": "HTML ID",
+      "info": "Unique identifier for linking directly to this section. Leave blank if unsure."
+    },
+    {
+      "type": "text",
+      "id": "html_class",
+      "label": "HTML Class",
+      "info": "Comma separated list of classes."
+    }
+  ],
+  "presets": [
+    {
+      "name": "TP - Parallax Image 1",
+      "settings": {
+        "button_link": "#"
+      }
+    }
+  ]
+}
+{% endschema %}
