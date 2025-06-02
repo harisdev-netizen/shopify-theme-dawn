@@ -151,6 +151,11 @@
         "type": "shopify://apps/sectionhub/blocks/app-embed/9b74df56-d9a0-4a6f-8248-1a8825110996",
         "disabled": false,
         "settings": {}
+      },
+      "2272418749815756922": {
+        "type": "shopify://apps/pagekit-store-theme-sections/blocks/app-embed/dbe6d2ad-bd3b-417c-987a-a88747cf292a",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
