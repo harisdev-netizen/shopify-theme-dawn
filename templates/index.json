@@ -314,6 +314,25 @@
         "title_color": "#121212",
         "text_color": "#525252"
       }
+    },
+    "collection_list_new_CXXA3H": {
+      "type": "collection-list-new",
+      "blocks": {
+        "collection_list_7BjEV6": {
+          "type": "collection-list",
+          "settings": {
+            "collection_image": "shopify://shop_images/3.png",
+            "collection_link": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "collection_list_7BjEV6"
+      ],
+      "name": "Collection List New",
+      "settings": {
+        "collection_list_heading": "Explore our Best products"
+      }
     }
   },
   "order": [
@@ -323,6 +342,7 @@
     "font_face_section_hWx8fP",
     "testimonials_XaGtXe",
     "accordians_BramEp",
-    "trustbadge_kLtRAN"
+    "trustbadge_kLtRAN",
+    "collection_list_new_CXXA3H"
   ]
 }
