@@ -333,6 +333,28 @@
       "settings": {
         "collection_list_heading": "Explore our Best products"
       }
+    },
+    "collection_slider_3PT3wj": {
+      "type": "collection-slider",
+      "blocks": {
+        "collection_CYXx4p": {
+          "type": "collection",
+          "settings": {
+            "collection": "automated-collection"
+          }
+        }
+      },
+      "block_order": [
+        "collection_CYXx4p"
+      ],
+      "name": "Collection Slider",
+      "settings": {
+        "gradient_color": "linear-gradient(90deg, rgba(121, 251, 251, 1), rgba(68, 117, 249, 1) 48%, rgba(249, 72, 63, 0.7595) 100%)",
+        "collection_width": 200,
+        "border_radius": 50,
+        "scrollbar_color": "#FF6347",
+        "margin_block": 0
+      }
     }
   },
   "order": [
@@ -343,6 +365,7 @@
     "testimonials_XaGtXe",
     "accordians_BramEp",
     "trustbadge_kLtRAN",
-    "collection_list_new_CXXA3H"
+    "collection_list_new_CXXA3H",
+    "collection_slider_3PT3wj"
   ]
 }
