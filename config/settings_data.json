@@ -156,6 +156,15 @@
         "type": "shopify://apps/pagekit-store-theme-sections/blocks/app-embed/dbe6d2ad-bd3b-417c-987a-a88747cf292a",
         "disabled": false,
         "settings": {}
+      },
+      "16936711665464183970": {
+        "type": "shopify://apps/slider-revolution/blocks/app-embed/d2c2325b-ecb9-42b8-a0b0-ca2ffb6e3203",
+        "disabled": false,
+        "settings": {
+          "enabled_templates": "",
+          "enable_fontawesome": true,
+          "enable_stroke": true
+        }
       }
     },
     "color_schemes": {
