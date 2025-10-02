@@ -1,0 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_583093659914732376": {
+      "settings": {
+        "checksum": "eec70e8dcdaa660a6087557ab3ac7619a28c9c34d3427de74f0d0aeb078b2555_1_1_0_0__1",
+        "ggCUR1ER-fg_label": "<p>Shop Now</p>",
+        "ggWUc1mv93W_text": "<p>Feel confident in your own skin! Remove unwanted hair anytime, anywhere.</p>",
+        "ggqjVL7Cptr_text": "It's time to #DitchTheRazor",
+        "ggv3TCIG8FA_text": "<p><span style=\"background-color:rgb(46,42,57);color:rgba(244,241,255,0.75);font-size:18px;\">Over 12,500+ Happy Customers</span></p>",
+        "section_preload": "true"
+      },
+      "type": "gp-section-583093659914732376"
+    },
+    "gp_section_583106883951264600": {
+      "settings": {
+        "checksum": "0e647ac7f5cc86e2892c7bfa3116e674d159f7bc47976348b1b684abc1a28dd0_1_1_0_0__1",
+        "gg0XMYDABx4_text": "As featured in"
+      },
+      "type": "gp-section-583106883951264600"
+    }
+  },
+  "order": [
+    "gp_section_583093659914732376",
+    "gp_section_583106883951264600"
+  ]
+}
