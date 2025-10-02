@@ -8,6 +8,355 @@
  * ------------------------------------------------------------
  */
 {
+  "sections": {
+    "banner_bCj7Mg": {
+      "type": "banner",
+      "blocks": {
+        "slide_MjtkUV": {
+          "type": "slide",
+          "settings": {
+            "slide_desktop": "shopify://shop_images/gradient.jpg",
+            "slide_mobile": "shopify://shop_images/gradient_1_400c3671-a6bf-4d32-b2f2-e976431feba2.jpg"
+          }
+        },
+        "slide_FkQXNm": {
+          "type": "slide",
+          "settings": {
+            "slide_desktop": "shopify://shop_images/gradient_2.jpg",
+            "slide_mobile": "shopify://shop_images/gradient_3.jpg"
+          }
+        },
+        "slide_E3pYVE": {
+          "type": "slide",
+          "settings": {
+            "slide_desktop": "shopify://shop_images/gradient_4.jpg",
+            "slide_mobile": "shopify://shop_images/gradient_5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slide_MjtkUV",
+        "slide_FkQXNm",
+        "slide_E3pYVE"
+      ],
+      "settings": {
+        "banner_title_font": "helvetica_n7",
+        "title": "DISCOVER AFFORDABLE OVERSIZED FASHION",
+        "banner_title_font_size": 4.6,
+        "banner_description_font": "inter_n5",
+        "description": "UPTO 70% OFF ON ALL APPAREL",
+        "banner_description_font_size": 2.2,
+        "banner_title_color": "#000000",
+        "banner_button_font": "inter_n5",
+        "button_text": "SHOP NOW",
+        "button_link": "#",
+        "banner_button_border_radius": 21,
+        "bullet_background_opacity": 0.5,
+        "banner_button_color": "#121212",
+        "banner_button_hover_color": "#242833",
+        "banner_button_text_color": "#ffffff",
+        "swiper_aspect_desktop": "1920 / 840",
+        "swiper_aspect_mobile": "750 / 1100",
+        "autoplay_speed": 4000,
+        "collection_link": "",
+        "pagination_margin_top": 20,
+        "pagination_margin_top_mobile": 10,
+        "pagination_min_height": 16,
+        "pagination_min_height_mobile": 12,
+        "bullet_width": 150,
+        "bullet_height": 6,
+        "bullet_radius": 6,
+        "bullet_width_mobile": 27,
+        "bullet_height_mobile": 6,
+        "bullet_active_width": 15,
+        "bullet_active_width_mobile": 13,
+        "bullet_color": "#1e1e1e",
+        "active_bullet_color": "#0080ff"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "all",
+        "products_to_show": 8,
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "collection_list_new_MTgRFY": {
+      "type": "collection-list-new",
+      "blocks": {
+        "collection_list_mNit4M": {
+          "type": "collection-list",
+          "settings": {
+            "collection_image": "shopify://shop_images/Main_f44a9605-cd62-464d-b095-d45cdaa0d0d7.jpg",
+            "collection_link": "shopify://collections"
+          }
+        },
+        "collection_list_mWwHfT": {
+          "type": "collection-list",
+          "settings": {
+            "collection_image": "shopify://shop_images/Main_f44a9605-cd62-464d-b095-d45cdaa0d0d7.jpg",
+            "collection_link": "shopify://collections"
+          }
+        },
+        "collection_list_LwpM9B": {
+          "type": "collection-list",
+          "settings": {
+            "collection_image": "shopify://shop_images/Main_f44a9605-cd62-464d-b095-d45cdaa0d0d7.jpg",
+            "collection_link": "shopify://collections"
+          }
+        },
+        "collection_list_ifLQUa": {
+          "type": "collection-list",
+          "settings": {
+            "collection_image": "shopify://shop_images/Main_f44a9605-cd62-464d-b095-d45cdaa0d0d7.jpg",
+            "collection_link": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "collection_list_mNit4M",
+        "collection_list_mWwHfT",
+        "collection_list_LwpM9B",
+        "collection_list_ifLQUa"
+      ],
+      "settings": {
+        "collection_list_heading": "Explore our Best products"
+      }
+    },
+    "font_face_section_hWx8fP": {
+      "type": "font-face-section",
+      "settings": {
+        "heading_text": "Font Picker",
+        "heading_font": "catamaran_n4",
+        "body_text": "This is the paragraph of Font Face Section",
+        "body_font": "helvetica_n4"
+      }
+    },
+    "testimonials_XaGtXe": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_JzUpWU": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/man-in-suit-on-stairs.jpg",
+            "customer_name": "Afaq Mehmood",
+            "customer_review": "This is an amazing product!",
+            "rating": 3
+          }
+        },
+        "testimonial_q6EWzX": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/man-in-suit-on-stairs.jpg",
+            "customer_name": "Afaq Mehmood",
+            "customer_review": "This is an amazing product!",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_JzUpWU",
+        "testimonial_q6EWzX"
+      ],
+      "settings": {}
+    },
+    "accordians_BramEp": {
+      "type": "accordians",
+      "blocks": {
+        "accordions_8JJexe": {
+          "type": "accordions",
+          "settings": {
+            "question": "How will I track my order?",
+            "answer": "<p>You will receive tracking number via email and your phone number once the order is processed from our warehouse.</p>"
+          }
+        },
+        "accordions_apkVfJ": {
+          "type": "accordions",
+          "settings": {
+            "question": "Which payment methods can I use to place order?",
+            "answer": "<p>At Glowfinity we provide <strong>Cash on delivery</strong>, <strong>Cards</strong> and <strong>Net Banking</strong> as payment methods to place order.</p>"
+          }
+        },
+        "accordions_izcwch": {
+          "type": "accordions",
+          "settings": {
+            "question": "What if I want to return the product?",
+            "answer": "<p>We have a hassle free 5 days return policy. You can email or call us at our support number within 48 hours of receiving the product.</p>"
+          }
+        },
+        "accordions_3GCTCU": {
+          "type": "accordions",
+          "settings": {
+            "question": "When will I receive my ordered items?",
+            "answer": "<p><strong>PREPAID OFFERS:</strong> We offer FREE DELIVERY for Prepaid Customers.<br/><br/>There is no order verification time. We will ship your order within 1 day, and we will try to get it delivered to you within 3–4 days.<br/><br/><strong>CASH ON DELIVERY (COD) ORDERS:</strong> For those who prefer Cash on Delivery (COD), we offer two options to suit your needs.<br/><br/>Please note that COD orders require a verification process, so expect 1-2 days for order verification, an additional day for processing, and a total delivery time of about one 4 to 5 days.</p>"
+          }
+        },
+        "accordions_gDd9Lq": {
+          "type": "accordions",
+          "settings": {
+            "question": "How to contact if I need any help?",
+            "answer": "<p>Our team is happy to help you in your shopping journey.<br/><br/>Email us at: support@domain.com<br/>WhatsApp: +92 99999 99999<br/><br/>Timings: 10AM to 5PM (Mon to Friday)</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordions_8JJexe",
+        "accordions_apkVfJ",
+        "accordions_izcwch",
+        "accordions_3GCTCU",
+        "accordions_gDd9Lq"
+      ],
+      "settings": {
+        "open_default": true,
+        "title": "Frequently Asked Questions",
+        "title_align": "left",
+        "title_margin": 3.8,
+        "section_width": 66,
+        "section_bg": "rgba(0,0,0,0)",
+        "inner_bg": "#ffffff",
+        "border_color": "#cacaca",
+        "border_radius_inner": 6,
+        "text_icon_color": "#000000",
+        "btn_bg": "#121212",
+        "activebtn_fontcolor": "#ffffff",
+        "answer_bg": "#f3f3f3",
+        "answer_text": "#333333",
+        "title_size": 3,
+        "title_size_mb": 2.2,
+        "question_size": 2,
+        "question_size_mb": 1.8,
+        "answer_size": 1.8,
+        "answer_size_mb": 1.6,
+        "icon_size": 1.6,
+        "icon_size_mb": 1.4,
+        "icon_width": 1.5,
+        "icon_width_mb": 1.5,
+        "tfont": "helvetica_n4",
+        "qfont": "helvetica_n4",
+        "afont": "helvetica_n4",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "trustbadge_kLtRAN": {
+      "type": "trustbadge",
+      "blocks": {
+        "trustbadge_wEGTen": {
+          "type": "trustbadge",
+          "settings": {
+            "svg_icon": "<path d=\"M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2\"></path>",
+            "title": "Free Shipping",
+            "paragraph": "Enjoy free delivery on all orders"
+          }
+        },
+        "trustbadge_BV6rDk": {
+          "type": "trustbadge",
+          "settings": {
+            "svg_icon": "<path d=\"M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm0 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z\"></path>",
+            "title": "Secure Payments",
+            "paragraph": "Lock in safe payments with our trusted setup."
+          }
+        },
+        "trustbadge_kVKbJR": {
+          "type": "trustbadge",
+          "settings": {
+            "svg_icon": "<path fill-rule=\"evenodd\" d=\"M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411\"></path>",
+            "title": "Track Order",
+            "paragraph": "Track: Control Your Orders like a Pro!"
+          }
+        },
+        "trustbadge_PAfhAy": {
+          "type": "trustbadge",
+          "settings": {
+            "svg_icon": "<path d=\"M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5\"></path>",
+            "title": "Customer Support",
+            "paragraph": "Embrace extraordinary care at every interaction."
+          }
+        }
+      },
+      "block_order": [
+        "trustbadge_wEGTen",
+        "trustbadge_BV6rDk",
+        "trustbadge_kVKbJR",
+        "trustbadge_PAfhAy"
+      ],
+      "settings": {
+        "content_max_width": 1200,
+        "section_padding_block": 5,
+        "section_padding_inline": 4,
+        "svg_size": 3,
+        "title_font_size": 1.5,
+        "text_font_size": 1.2,
+        "section_bg_color": "#121212",
+        "content_bg_color": "#ffffff",
+        "svg_color": "#121212",
+        "title_color": "#121212",
+        "text_color": "#525252"
+      }
+    },
+    "collection_list_new_CXXA3H": {
+      "type": "collection-list-new",
+      "blocks": {
+        "collection_list_7BjEV6": {
+          "type": "collection-list",
+          "settings": {
+            "collection_image": "shopify://shop_images/3.png",
+            "collection_link": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "collection_list_7BjEV6"
+      ],
+      "name": "Collection List New",
+      "settings": {
+        "collection_list_heading": "Explore our Best products"
+      }
+    },
+    "collection_slider_3PT3wj": {
+      "type": "collection-slider",
+      "blocks": {
+        "collection_CYXx4p": {
+          "type": "collection",
+          "settings": {
+            "collection": "automated-collection"
+          }
+        }
+      },
+      "block_order": [
+        "collection_CYXx4p"
+      ],
+      "name": "Collection Slider",
+      "settings": {
+        "gradient_color": "linear-gradient(90deg, rgba(121, 251, 251, 1), rgba(68, 117, 249, 1) 48%, rgba(249, 72, 63, 0.7595) 100%)",
+        "collection_width": 200,
+        "border_radius": 50,
+        "scrollbar_color": "#FF6347",
+        "margin_block": 0
+      }
+    }
+  },
   "order": [
     "banner_bCj7Mg",
     "featured_collection",
@@ -18,354 +367,5 @@
     "trustbadge_kLtRAN",
     "collection_list_new_CXXA3H",
     "collection_slider_3PT3wj"
-  ],
-  "sections": {
-    "accordians_BramEp": {
-      "block_order": [
-        "accordions_8JJexe",
-        "accordions_apkVfJ",
-        "accordions_izcwch",
-        "accordions_3GCTCU",
-        "accordions_gDd9Lq"
-      ],
-      "blocks": {
-        "accordions_3GCTCU": {
-          "settings": {
-            "answer": "<p><strong>PREPAID OFFERS:</strong> We offer FREE DELIVERY for Prepaid Customers.<br/><br/>There is no order verification time. We will ship your order within 1 day, and we will try to get it delivered to you within 3–4 days.<br/><br/><strong>CASH ON DELIVERY (COD) ORDERS:</strong> For those who prefer Cash on Delivery (COD), we offer two options to suit your needs.<br/><br/>Please note that COD orders require a verification process, so expect 1-2 days for order verification, an additional day for processing, and a total delivery time of about one 4 to 5 days.</p>",
-            "question": "When will I receive my ordered items?"
-          },
-          "type": "accordions"
-        },
-        "accordions_8JJexe": {
-          "settings": {
-            "answer": "<p>You will receive tracking number via email and your phone number once the order is processed from our warehouse.</p>",
-            "question": "How will I track my order?"
-          },
-          "type": "accordions"
-        },
-        "accordions_apkVfJ": {
-          "settings": {
-            "answer": "<p>At Glowfinity we provide <strong>Cash on delivery</strong>, <strong>Cards</strong> and <strong>Net Banking</strong> as payment methods to place order.</p>",
-            "question": "Which payment methods can I use to place order?"
-          },
-          "type": "accordions"
-        },
-        "accordions_gDd9Lq": {
-          "settings": {
-            "answer": "<p>Our team is happy to help you in your shopping journey.<br/><br/>Email us at: support@domain.com<br/>WhatsApp: +92 99999 99999<br/><br/>Timings: 10AM to 5PM (Mon to Friday)</p>",
-            "question": "How to contact if I need any help?"
-          },
-          "type": "accordions"
-        },
-        "accordions_izcwch": {
-          "settings": {
-            "answer": "<p>We have a hassle free 5 days return policy. You can email or call us at our support number within 48 hours of receiving the product.</p>",
-            "question": "What if I want to return the product?"
-          },
-          "type": "accordions"
-        }
-      },
-      "settings": {
-        "activebtn_fontcolor": "#ffffff",
-        "afont": "helvetica_n4",
-        "answer_bg": "#f3f3f3",
-        "answer_size": 1.8,
-        "answer_size_mb": 1.6,
-        "answer_text": "#333333",
-        "border_color": "#cacaca",
-        "border_radius_inner": 6,
-        "btn_bg": "#121212",
-        "icon_size": 1.6,
-        "icon_size_mb": 1.4,
-        "icon_width": 1.5,
-        "icon_width_mb": 1.5,
-        "inner_bg": "#ffffff",
-        "open_default": true,
-        "padding_bottom": 50,
-        "padding_top": 50,
-        "qfont": "helvetica_n4",
-        "question_size": 2,
-        "question_size_mb": 1.8,
-        "section_bg": "rgba(0,0,0,0)",
-        "section_width": 66,
-        "text_icon_color": "#000000",
-        "tfont": "helvetica_n4",
-        "title": "Frequently Asked Questions",
-        "title_align": "left",
-        "title_margin": 3.8,
-        "title_size": 3,
-        "title_size_mb": 2.2
-      },
-      "type": "accordians"
-    },
-    "banner_bCj7Mg": {
-      "block_order": [
-        "slide_MjtkUV",
-        "slide_FkQXNm",
-        "slide_E3pYVE"
-      ],
-      "blocks": {
-        "slide_E3pYVE": {
-          "settings": {
-            "slide_desktop": "shopify://shop_images/gradient_4.jpg",
-            "slide_mobile": "shopify://shop_images/gradient_5.jpg"
-          },
-          "type": "slide"
-        },
-        "slide_FkQXNm": {
-          "settings": {
-            "slide_desktop": "shopify://shop_images/gradient_2.jpg",
-            "slide_mobile": "shopify://shop_images/gradient_3.jpg"
-          },
-          "type": "slide"
-        },
-        "slide_MjtkUV": {
-          "settings": {
-            "slide_desktop": "shopify://shop_images/gradient.jpg",
-            "slide_mobile": "shopify://shop_images/gradient_1_400c3671-a6bf-4d32-b2f2-e976431feba2.jpg"
-          },
-          "type": "slide"
-        }
-      },
-      "settings": {
-        "active_bullet_color": "#0080ff",
-        "autoplay_speed": 4000,
-        "banner_button_border_radius": 21,
-        "banner_button_color": "#121212",
-        "banner_button_font": "inter_n5",
-        "banner_button_hover_color": "#242833",
-        "banner_button_text_color": "#ffffff",
-        "banner_description_font": "inter_n5",
-        "banner_description_font_size": 2.2,
-        "banner_title_color": "#000000",
-        "banner_title_font": "helvetica_n7",
-        "banner_title_font_size": 4.6,
-        "bullet_active_width": 15,
-        "bullet_active_width_mobile": 13,
-        "bullet_background_opacity": 0.5,
-        "bullet_color": "#1e1e1e",
-        "bullet_height": 6,
-        "bullet_height_mobile": 6,
-        "bullet_radius": 6,
-        "bullet_width": 150,
-        "bullet_width_mobile": 27,
-        "button_link": "#",
-        "button_text": "SHOP NOW",
-        "collection_link": "",
-        "description": "UPTO 70% OFF ON ALL APPAREL",
-        "pagination_margin_top": 20,
-        "pagination_margin_top_mobile": 10,
-        "pagination_min_height": 16,
-        "pagination_min_height_mobile": 12,
-        "swiper_aspect_desktop": "1920 / 840",
-        "swiper_aspect_mobile": "750 / 1100",
-        "title": "DISCOVER AFFORDABLE OVERSIZED FASHION"
-      },
-      "type": "banner"
-    },
-    "collection_list_new_CXXA3H": {
-      "block_order": [
-        "collection_list_7BjEV6"
-      ],
-      "blocks": {
-        "collection_list_7BjEV6": {
-          "settings": {
-            "collection_image": "shopify://shop_images/3.png",
-            "collection_link": "shopify://collections"
-          },
-          "type": "collection-list"
-        }
-      },
-      "name": "Collection List New",
-      "settings": {
-        "collection_list_heading": "Explore our Best products"
-      },
-      "type": "collection-list-new"
-    },
-    "collection_list_new_MTgRFY": {
-      "block_order": [
-        "collection_list_mNit4M",
-        "collection_list_mWwHfT",
-        "collection_list_LwpM9B",
-        "collection_list_ifLQUa"
-      ],
-      "blocks": {
-        "collection_list_LwpM9B": {
-          "settings": {
-            "collection_image": "shopify://shop_images/Main_f44a9605-cd62-464d-b095-d45cdaa0d0d7.jpg",
-            "collection_link": "shopify://collections"
-          },
-          "type": "collection-list"
-        },
-        "collection_list_ifLQUa": {
-          "settings": {
-            "collection_image": "shopify://shop_images/Main_f44a9605-cd62-464d-b095-d45cdaa0d0d7.jpg",
-            "collection_link": "shopify://collections"
-          },
-          "type": "collection-list"
-        },
-        "collection_list_mNit4M": {
-          "settings": {
-            "collection_image": "shopify://shop_images/Main_f44a9605-cd62-464d-b095-d45cdaa0d0d7.jpg",
-            "collection_link": "shopify://collections"
-          },
-          "type": "collection-list"
-        },
-        "collection_list_mWwHfT": {
-          "settings": {
-            "collection_image": "shopify://shop_images/Main_f44a9605-cd62-464d-b095-d45cdaa0d0d7.jpg",
-            "collection_link": "shopify://collections"
-          },
-          "type": "collection-list"
-        }
-      },
-      "settings": {
-        "collection_list_heading": "Explore our Best products"
-      },
-      "type": "collection-list-new"
-    },
-    "collection_slider_3PT3wj": {
-      "block_order": [
-        "collection_CYXx4p"
-      ],
-      "blocks": {
-        "collection_CYXx4p": {
-          "settings": {
-            "collection": "automated-collection"
-          },
-          "type": "collection"
-        }
-      },
-      "name": "Collection Slider",
-      "settings": {
-        "border_radius": 50,
-        "collection_width": 200,
-        "gradient_color": "linear-gradient(90deg, rgba(121, 251, 251, 1), rgba(68, 117, 249, 1) 48%, rgba(249, 72, 63, 0.7595) 100%)",
-        "margin_block": 0,
-        "scrollbar_color": "#FF6347"
-      },
-      "type": "collection-slider"
-    },
-    "featured_collection": {
-      "settings": {
-        "collection": "all",
-        "color_scheme": "scheme-1",
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "description": "",
-        "description_style": "body",
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "heading_size": "h2",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "padding_bottom": 36,
-        "padding_top": 44,
-        "products_to_show": 8,
-        "quick_add": "none",
-        "show_description": false,
-        "show_rating": false,
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_view_all": true,
-        "swipe_on_mobile": false,
-        "title": "Featured products",
-        "view_all_style": "solid"
-      },
-      "type": "featured-collection"
-    },
-    "font_face_section_hWx8fP": {
-      "settings": {
-        "body_font": "helvetica_n4",
-        "body_text": "This is the paragraph of Font Face Section",
-        "heading_font": "catamaran_n4",
-        "heading_text": "Font Picker"
-      },
-      "type": "font-face-section"
-    },
-    "testimonials_XaGtXe": {
-      "block_order": [
-        "testimonial_JzUpWU",
-        "testimonial_q6EWzX"
-      ],
-      "blocks": {
-        "testimonial_JzUpWU": {
-          "settings": {
-            "customer_image": "shopify://shop_images/man-in-suit-on-stairs.jpg",
-            "customer_name": "Afaq Mehmood",
-            "customer_review": "This is an amazing product!",
-            "rating": 3
-          },
-          "type": "testimonial"
-        },
-        "testimonial_q6EWzX": {
-          "settings": {
-            "customer_image": "shopify://shop_images/man-in-suit-on-stairs.jpg",
-            "customer_name": "Afaq Mehmood",
-            "customer_review": "This is an amazing product!",
-            "rating": 5
-          },
-          "type": "testimonial"
-        }
-      },
-      "settings": {},
-      "type": "testimonials"
-    },
-    "trustbadge_kLtRAN": {
-      "block_order": [
-        "trustbadge_wEGTen",
-        "trustbadge_BV6rDk",
-        "trustbadge_kVKbJR",
-        "trustbadge_PAfhAy"
-      ],
-      "blocks": {
-        "trustbadge_BV6rDk": {
-          "settings": {
-            "paragraph": "Lock in safe payments with our trusted setup.",
-            "svg_icon": "<path d=\"M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm0 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z\"></path>",
-            "title": "Secure Payments"
-          },
-          "type": "trustbadge"
-        },
-        "trustbadge_PAfhAy": {
-          "settings": {
-            "paragraph": "Embrace extraordinary care at every interaction.",
-            "svg_icon": "<path d=\"M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5\"></path>",
-            "title": "Customer Support"
-          },
-          "type": "trustbadge"
-        },
-        "trustbadge_kVKbJR": {
-          "settings": {
-            "paragraph": "Track: Control Your Orders like a Pro!",
-            "svg_icon": "<path fill-rule=\"evenodd\" d=\"M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411\"></path>",
-            "title": "Track Order"
-          },
-          "type": "trustbadge"
-        },
-        "trustbadge_wEGTen": {
-          "settings": {
-            "paragraph": "Enjoy free delivery on all orders",
-            "svg_icon": "<path d=\"M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2\"></path>",
-            "title": "Free Shipping"
-          },
-          "type": "trustbadge"
-        }
-      },
-      "settings": {
-        "content_bg_color": "#ffffff",
-        "content_max_width": 1200,
-        "section_bg_color": "#121212",
-        "section_padding_block": 5,
-        "section_padding_inline": 4,
-        "svg_color": "#121212",
-        "svg_size": 3,
-        "text_color": "#525252",
-        "text_font_size": 1.2,
-        "title_color": "#121212",
-        "title_font_size": 1.5
-      },
-      "type": "trustbadge"
-    }
-  }
+  ]
 }
